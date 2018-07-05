@@ -114,7 +114,6 @@ header.childhead{
   min-height: 400px;
   padding-top: 0;
   padding-bottom: 0;
-  background-attachment:fixed;
   background-size: cover;
 }
 
@@ -137,7 +136,11 @@ header.childhead{
 .ptb {
   padding-top: 110px;
   padding-bottom: 110px;
+  h3,p,strong,label,li{
+    color:$color-text;
+  }
 }
+
 .mb-30 {
   margin-bottom: 30px;
 }
@@ -183,15 +186,17 @@ header.childhead{
 
 .contact-form p input[type="text"],
 .contact-form p textarea {
-  border: 1px solid #ddd;
+  border: 1px solid $color-ye;
   border-radius: 0;
   font-size: 13px;
   padding: 10px;
   width: 100%;
+  background-color:$color-bgd;
+  color:$color-text;
 }
 .contact-form .form-submit input {
-  background: #bd8348 none repeat scroll 0 0;
-  border-radius: 0;
+  background: $color-ye none repeat scroll 0 0;
+  border-radius: 0.2em;
   color: #fff;
   font-size: 13px;
   font-weight: 300;
@@ -253,16 +258,19 @@ header.childhead{
 }
 #input-email {
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid $color-ye;
   border-radius: 0;
   font-size: 13px;
   padding: 10px;
+  background-color:$color-bgd;
+  color:$color-text;
 }
 
 #submit-contact-us-btn{
   border: none;
   width: 100%;
-  background-color: #fbeada;
+  background-color: $color-ye;
+  padding:0.5em;
 }
 
 body, html{

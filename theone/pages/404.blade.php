@@ -1,4 +1,4 @@
-@extends(_get_frontend_layout_path('frontend'))
+@extends(_get_frontend_layout_path('childfrontend'))
 
 @section('content')
     <header class="masthead" style="background-image:  url({{ asset('images/backgrounds/nbg.png') }}) ">

@@ -1,4 +1,4 @@
-<section class="call-to-action" style="background-image: url({{ asset('images/backgrounds/footer-v1.jpg') }});">
+<section class="call-to-action" style="background-image: url({{ asset('images/backgrounds/bg-footer.jpg') }});">
     <div class="container wow fadeIn">
         <div class="row">
             <div class="col-md-10 offset-md-1">
