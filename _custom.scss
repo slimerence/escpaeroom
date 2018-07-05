@@ -1,0 +1,412 @@
+@import "theone/assets/scss/vitality";
+$color-bg:#343233;
+$color-text:#efdab9;
+$color-ye:#ffd152;
+$color-bgd:#2c2a2b;
+$color-yeu:#ffbb00;
+@font-face {
+  font-family:umbrage;
+  src :url('theone/assets/fonts/umbrage2.ttf')
+}
+header.masthead .masthead-title{
+  font-family: umbrage;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.bg-moving{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.special-img{
+  border:1px solid $color-text;
+  box-shadow: 1px 1px 20px #010000;
+}
+
+.bg-special{
+  background-color:$color-bgd ;
+}
+.bg-normal{
+  background-color:$color-bg ;
+}
+.color-ye{
+  color:$color-ye;
+}
+.color-text{
+  color:$color-text;
+}
+h1,h2,h3{
+  font-weight: 300;
+}
+p{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+h2{
+  font-family: umbrage;
+}
+
+h4{
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  line-height: 28px;
+}
+
+.weltext{
+  margin: auto;
+  h1{
+    color:#fff;
+    font-family: 微软雅黑;
+    font-size: 4em;
+  }
+
+  h2{
+    margin-top:0.8em;
+    color: #fff;
+    font-family: 微软雅黑;
+    font-size: 1.5em;
+  }
+}
+
+.childhead .weltext{
+  h1{
+    text-shadow: 1px 1px 17px #675050;
+  }
+}
+.titleline{
+  content: "";
+  width: 10%;
+  margin: 1em auto 0 auto;
+  height: 0.3rem;
+  background: #fae17d;
+}
+
+.copyright {
+  margin: 0 auto;
+  color: #ffffff;
+  font-size:0.8em;
+}
+
+section.page-section {
+
+}
+
+@media (min-width: 992px) {
+  .call-to-action {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .call-to-action {
+    padding: 100px 0;
+  }
+}@media (max-width: 768px) {
+  #mainNav{
+
+  }
+}
+
+header.childhead{
+  position:relative;
+  height: 50vh;
+  min-height: 400px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-attachment:fixed;
+  background-size: cover;
+}
+
+.pricetable{
+  margin: 2em 0;
+  box-shadow: 1px 1px 20px 0px #c5c5c5;
+  text-align:center;
+}
+.table td{
+
+}
+.table thead th {
+  border-bottom: 2px solid #ef4035;
+}
+
+.blog-post {
+  display: inline-block;
+  width: 100%;
+}
+.ptb {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.blog-post .post-media {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.item>img{
+    height: auto;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+
+}
+
+.blog-post .post-header h5, .blog-post .post-header h4, .blog-post .post-header h3 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.blog-post .post-more-link {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  a{
+    color: #323232;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+
+/*----- contact ------*/
+
+.contact-form p input[type="text"],
+.contact-form p textarea {
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 10px;
+  width: 100%;
+}
+.contact-form .form-submit input {
+  background: #bd8348 none repeat scroll 0 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.contact-title.text-center span {
+  color: #9d9d9d;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.contact-title.text-center {
+  color: #606060;
+  margin-bottom: 50px;
+}
+.contact-title.text-center>h2 {
+  margin-bottom: 30px;
+}
+.contact-info {
+  padding: 30px 0 100px;
+}
+#commentform {
+  margin-top: 30px;
+}
+.contact-info strong {
+  display: inline-table;
+  font-size: 15px;
+  font-weight: 500;
+}
+.contact-info>ul {
+  list-style: outside none none;
+  padding: 0;
+}
+.contact-info li {
+  float: left;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.contact-info .f-sicon2 ul {
+  margin: 30px 0 0 0;
+  padding: 0;
+}
+.contact-info .f-sicon2 li {
+  float: inherit;
+  margin: 0 15px 0 0;
+}
+.contact-info .f-sicon2 li a {
+  color: rgb(96, 96, 96);
+  font-size: 16px;
+}
+.contact-info .img-icon {
+  float: left;
+  margin-right: 25px;
+}
+#input-email {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 10px;
+}
+
+#submit-contact-us-btn{
+  border: none;
+  width: 100%;
+  background-color: #fbeada;
+}
+
+body, html{
+  font-family: 微软雅黑;
+}
+
+#about{
+  .img-fluid{
+    width: 100%;
+  }
+  ul li{
+    font-size: 14px;
+    color: $color-text;
+  }
+  p,h2{
+    color: $color-text;
+  }
+}
+
+#services{
+  h3{
+    font-size: 1.2rem;
+    font-weight:600;
+    color: $color-text;
+  }
+  .fa{
+    color:$color-ye;
+  }
+  p{
+    color: $color-text;
+  }
+}
+
+.pro-img{
+  img{
+    width: 100%;
+    height:auto;
+  }
+}
+.pricing .pricing-item{
+  background: $color-bg;
+  color: $color-text;
+  .list-group-item{
+    background: $color-bgd;
+  }
+  h3{
+    margin-top: 0.8em;
+    font-size: 1.1rem ;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color:$color-ye;
+  }
+  hr{
+    margin-top:0;
+  }
+}
+.product-caption,.product-caption p{
+  margin: 0;
+  font-size: 0.98em;
+
+}
+.product-caption{
+
+  height:3em;
+  overflow:hidden;
+}
+
+.bookbtn{
+  background: $color-ye;
+  color:$color-bgd;
+  a{
+    color:$color-bgd;
+    font-weight: 400;
+  }
+  border-radius: 0.2em;
+  padding: 0.5em 0;
+}
+.bookbtn:hover{
+  background: $color-yeu;
+}
+
+#number{
+  span{
+    font-family: umbrage;
+    font-size: 3em;
+    color: $color-ye;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #efdab9;
+  }
+  i{
+    color: $color-ye;
+  }
+  background-color: $color-bgd;
+}
+
+
+.quote{
+  font-family: umbrage;
+}
+
+.bg-reverse{
+  background-color: #ffd15299;
+  color: $color-bg;
+  h3 {
+    font-family:'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:1.2rem;
+    font-weight: bold;
+  }
+}
+.content-special{
+  color:$color-text;
+  h3{
+    font-family:'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:1.2rem;
+    font-weight: bold;
+  }
+  i{
+    color:$color-ye;
+  }
+  .owl-carousel.owl-theme .owl-controls .owl-page span{
+    background-color: $color-ye;
+  }
+}
+
+footer{
+  h4{
+    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+}
+
+.btn-private{
+  background: $color-ye;
+  color:$color-bgd;
+  a{
+    color:$color-bgd;
+    font-weight: 400;
+  }
+  border-radius: 0.2em;
+  padding: 0.5em 2em;
+}
+.btn-private:hover{
+  background: $color-yeu;
+  color:$color-bg;
+}
