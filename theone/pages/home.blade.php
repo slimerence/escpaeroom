@@ -74,7 +74,7 @@
     <section class="page-section pricing" id="locations" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container wow fadeIn">
             <div class="text-center">
-                <h2 class="color-text">ROOMS</h2>
+                <h2 class="color-text">GAMES</h2>
                 <hr class="colored">
                 <p class="color-ye">Our firm has nine locations across three different states. We serve clients in the Western United States.</p>
             </div>
