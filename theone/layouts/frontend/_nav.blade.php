@@ -16,7 +16,7 @@
                     <a class="nav-link" href="{{ url('/about-us') }}">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/courses') }}">GAMES</a>
+                    <a class="nav-link" href="{{ url('/games') }}">GAMES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/team-building') }}">TEAM BUILDING</a>

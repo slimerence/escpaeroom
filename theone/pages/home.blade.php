@@ -69,8 +69,7 @@
             </div>
         </div>
     </section>
-    @include(_get_frontend_theme_path('pages.elements.number'))
-    @include(_get_frontend_theme_path('pages.elements.serviceadd'))
+
     <!-- Call to Action -->
     <section class="page-section pricing" id="locations" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container wow fadeIn">
@@ -99,6 +98,8 @@
         </div>
     </section>
 
+    @include(_get_frontend_theme_path('pages.elements.serviceadd'))
+    @include(_get_frontend_theme_path('pages.elements.number'))
     @include(_get_frontend_theme_path('pages.elements.testimonials'))
     <section class="page-section call-to-action" style="background-image:url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container wow fadeIn">

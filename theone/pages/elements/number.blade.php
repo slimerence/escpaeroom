@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="wow fadeIn px-4 " data-wow-delay=".8s">
                     <span class="count">3</span>
-                    <h3>ROOMS</h3>
+                    <h3>GAMES</h3>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
