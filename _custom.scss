@@ -115,6 +115,14 @@ header.childhead{
   padding-top: 0;
   padding-bottom: 0;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .child-title{
+    font-family: umbrage;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
 }
 
 .pricetable{
