@@ -1,11 +1,11 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 
 @section('content')
-    <header class="childhead masthead" style="background-image:  url({{ asset('images/backgrounds/bg-footer.jpg') }}) ">
+    <header class="childhead" style="background-image:  url({{ asset('images/backgrounds/childbanner.jpg') }}) ">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-12 my-auto text-center text-white">
-                    <div class="masthead-title">CONTACT NOW</div>
+                    <div class="child-title">CONTACT NOW</div>
                 </div>
             </div>
         </div>
