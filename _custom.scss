@@ -48,6 +48,12 @@ header.masthead .masthead-title{
 .bg-normal{
   background-color:$color-bg ;
 }
+.bg-ye{
+  background-color: $color-ye;
+}
+.color-dark{
+  color: $color-bgd;
+}
 .color-ye{
   color:$color-ye;
 }
@@ -513,7 +519,7 @@ footer{
   color:$color-bg;
 }
 .product-detail{
-  padding:5em 0 5em 0;
+  padding:3em 0 2em 0;
 }
 .top-info{
   h5{
@@ -540,7 +546,9 @@ footer{
       border: none;
     }
   }
-
+  ul{
+    padding: 0 15px;
+  }
   i{
     margin-right: 10px;
     color:$color-ye;
@@ -569,6 +577,7 @@ footer{
 }
 
 .left-info{
+  padding-top: 0.5em;
  i{
    color: $color-ye;
  }
@@ -615,5 +624,21 @@ footer{
   h2{
     font-size: 30px;
     margin: 1em 0 0 0;
+  }
+}
+
+#reservation{
+  padding-bottom:10em;
+}
+
+.week-day{
+  h4{
+    font-size:1.2rem;
+  }
+}
+
+.day{
+  &:hover{
+    background-color: $color-bg;
   }
 }

@@ -121,4 +121,12 @@ $(document).ready(function(){
         });
     }
 
+    if($('.date-picker-btn').length > 0){
+        $('.date-picker-btn').on('click',function(e){
+            e.preventDefault();
+            var selected = $(this).data('value');
+            console.log(selected);
+        })
+    }
+
 });

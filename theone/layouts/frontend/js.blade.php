@@ -15,9 +15,3 @@
 <script src="{{url('js/jqBootstrapValidation.js')}}"></script>
 <!-- Custom scripts for this theme -->
 <script src="{{url('js/vitality.js')}}"></script>
-
-@if(isset($vuejs_libs_required))
-    @foreach($vuejs_libs_required as $lib)
-        @include('frontend.vuejs.'.$lib)
-    @endforeach
-@endif
