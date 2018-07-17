@@ -113,4 +113,11 @@
         </div>
         <!-- /.contact form  -->
     </section>
+    @if($config->embed_map_code)
+        <div id="google-map-area" style="height: 450px">
+            {!! $config->embed_map_code !!}
+        </div>
+        <!--== Google Map Area End ==-->
+    @endif
+
 @endsection

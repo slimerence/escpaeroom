@@ -9,10 +9,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <!-- Contact form JavaScript -->
 <script src="{{url('js/all.js')}}"></script>
 <script src="{{url('js/jqBootstrapValidation.js')}}"></script>
-
 <!-- Custom scripts for this theme -->
 <script src="{{url('js/vitality.js')}}"></script>
+
+@if(isset($vuejs_libs_required))
+    @foreach($vuejs_libs_required as $lib)
+        @include('frontend.vuejs.'.$lib)
+    @endforeach
+@endif

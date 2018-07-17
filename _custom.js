@@ -6,6 +6,12 @@ window.Popper = require('popper.js').default;
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.Vue = require('vue');
+// 加载Element UI 库
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+// import { Loading } from 'element-ui';
+Vue.use(ElementUI);
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -75,6 +81,43 @@ $(document).ready(function(){
                     $(this).text(Math.ceil(now));
                 }
             });
+        });
+    }
+
+    if($('.slick-img').length > 0) {
+        $('.slick-img').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows:false,
+            focusOnSelect:true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     }
 

@@ -11,26 +11,71 @@
         </div>
     </header>
 
-    <section class="product-detail bg-dark">
+    <section class="product-detail bg-normal color-text">
         <div class="container wow fadeIn">
             <div class="row">
-                <div class="col-lg-9">
-                    <div class="row">
-                        <div class="col-lg-4">
 
-                        </div>
-                        <div class="col-lg-4">
-
-                        </div>
-                        <div class="col-lg-4">
-
-                        </div>
+                <div class="col-lg-8 left-info">
+                    <div class="row top-info no-margin">
+                        @foreach($product_attributes as $key=>$product_attribute)
+                            <div class="col-lg-4 text-center pd-box {{ $key==2 ? 'no-border-right':'' }}">
+                            @if($product_attribute->location == \App\Models\Utils\OptionTool::$LOCATION_ADDITIONAL)
+                                <?php $productAttributeValue = $product_attribute->valuesOf($product);
+                                    if(count($productAttributeValue)>0){
+                                        $value = $productAttributeValue[0]->value;
+                                    }
+                                ?>
+                                @if($key==0)
+                                    <?php
+                                        $count = intval($value);
+                                    ?>
+                                    @for ($i=0;$i<$count;$i++)
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    @endfor
+                                    @for ($i=0;$i<(5-$count);$i++)
+                                        <i class="fa fa-star-o " aria-hidden="true"></i>
+                                    @endfor
+                                    <h5>{{ $product_attribute->name }}</h5>
+                                @elseif( $key==1)
+                                   <i class="fa fa-user mr-10" aria-hidden="true"></i> <span>{{ $value }}</span>
+                                    <h5>{{ $product_attribute->name }}</h5>
+                                @else
+                                    <i class="fa fa-clock-o mr-10" aria-hidden="true"></i><span>{{ $value }}</span>
+                                    <h5>{{ $product_attribute->name }}</h5>
+                                @endif
+                            @endif
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="bottom-info">
+                        <h3 class="mb-20">Game Task</h3>
+                        <p>@include(_get_frontend_theme_path('catalog.elements.sections.maindesc'))</p>
+                        <h3 class="mt-20 mb-20">Background story</h3>
+                        {!! $product->getProductDescription() !!}
                     </div>
                 </div>
-                <div class="col-lg-3">
-
+                <div class="col-lg-4 right-info">
+                    <ul>
+                        <li><div class="iconbox"><i class="fa fa-phone" aria-hidden="true"></i></div>{{ $siteConfig->contact_phone }}</li>
+                        <li><div class="iconbox"><i class="fa fa-envelope" aria-hidden="true"></i></div>{{ $siteConfig->contact_email }}</li>
+                        <li><div class="iconbox"><i class="fa fa-map-marker" aria-hidden="true"></i></div>{{ $siteConfig->contact_address }}</li>
+                        <li><div class="bookbtn product-book text-center">
+                                <a href="#">BOOK NOW</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="slick-img">
+                        @foreach($product_images as $key=>$media)
+                            @if(!$key==0)
+                                <img data-lazy="{{ asset($media->url) }}">
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    @include(_get_frontend_theme_path('pages.elements.reservation'))
 @endsection
