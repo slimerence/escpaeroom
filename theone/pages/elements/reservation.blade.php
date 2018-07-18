@@ -1,7 +1,7 @@
 <section id="reservation" class="bg-normal color-text">
     <div class="container">
         <?php
-        $today = Carbon\Carbon::today();
+        $today = Carbon\Carbon::now();
         $tempDate = Carbon\Carbon::createFromDate($today->year, $today->month, 1);
         ?>
             <div class="container-fluid">
@@ -30,20 +30,23 @@
                     ?>
                     @while($tempDate->month == $today->month)
                         @for($i=0; $i < 7; $i++)
+                            @if( $tempDate < $today )
+                                <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
+                                    <h5 class="text-center">
+                                        <span class="date unclickable">{{ $tempDate->day }}</span>
+                                    </h5>
+                                </div>
+                            @else
                             <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
                                 {{ $tempDate->month == $today->month ? 'bg-special':'bg-dark' }} ">
-                                @if( $tempDate > $today )
-                                <a href="#" class="date-picker-btn" data-value="{{ $tempDate }}">
+                                <?php  $currentDate = $tempDate->toDateString() ?>
+                                <a href="{{ url('api/booking/get-available-time-slot') }}" class="date-picker-btn" data-value="{{ $currentDate }}">
                                 <h5 class="text-center">
                                     <span class="date">{{ $tempDate->day }}</span>
                                 </h5>
                                 </a>
-                                @else
-                                    <h5 class="text-center">
-                                        <span class="date">{{ $tempDate->day }}</span>
-                                    </h5>
-                                @endif
                             </div>
+                            @endif
 
                             <?php $tempDate->addDay(); ?>
                         @endfor

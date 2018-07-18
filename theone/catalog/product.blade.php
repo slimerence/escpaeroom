@@ -60,7 +60,7 @@
                         <li><div class="iconbox"><i class="fa fa-envelope" aria-hidden="true"></i></div>{{ $siteConfig->contact_email }}</li>
                         <li><div class="iconbox"><i class="fa fa-map-marker" aria-hidden="true"></i></div>{{ $siteConfig->contact_address }}</li>
                         <li><div class="bookbtn product-book text-center">
-                                <a href="#" data-toggle="modal" data-target="#modalLoginForm">BOOK NOW</a>
+                                <a href="#reservation" >BOOK NOW</a>
                             </div>
                         </li>
                     </ul>

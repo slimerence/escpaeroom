@@ -52,5 +52,6 @@ class TimeSlot
             }
         }
         return $timeSlots;
+        dd($timeSlots);
     }
 }
