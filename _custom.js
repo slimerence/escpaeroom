@@ -1,7 +1,5 @@
-
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
-
 
 window.axios = require('axios');
 
@@ -12,6 +10,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import { Loading } from 'element-ui';
 Vue.use(ElementUI);
+
+/**
+ * 为了实现在选择不同日期的时候, 方便的加载依然有效的时间片段
+ */
+import getAvailableTimeSlots from './_tools.js';
+window.moment = require('moment');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -124,12 +128,58 @@ $(document).ready(function(){
     if($('.date-picker-btn').length > 0){
         $('.date-picker-btn').on('click',function(e){
             e.preventDefault();
-            var selected = $(this).data('value');
-            $('.book-input input').val('');
-            $('#booking-date').val(selected);
+            let selected = $(this).data('value'); // 客人选定的日期
+            $('#booking-date').val(selected).trigger('change'); // 触发日期改变的事件即可
+            // 显示modal
             $('#modalBookingForm').modal('show');
-        })
+        });
     }
+
+    // 当日期左右按钮选择的时候
+    if($('.change-select-date-btn').length > 0){
+      $('.change-select-date-btn').on('click',function(e){
+        e.preventDefault();
+        // 是前一天还是往后挪一天
+        let current = moment($('#booking-date').val(),'YYYY-MM-DD');
+        let today = moment();
+        let newDate = null;
+        let canUpdate = true;
+        if($(this).data('type') === 'prev'){
+            newDate = current.subtract(1,'d');  // 前一天
+            if(newDate.isBefore(today)){
+                // 最早预定不能晚于今天
+                canUpdate = false;
+            }
+        }else{
+            newDate = current.add(1,'d');   // 后一天
+        }
+        if(canUpdate){
+            $('#booking-date').val(newDate.format('YYYY-MM-DD')).trigger('change');
+        }
+      });
+    }
+
+    // 监听当前选定的日期的值发生变化时的事件
+    if($('#booking-date').length > 0){
+      $('#booking-date').on('change',function(e){
+        let productUuid = $('#booking-room').val();
+        let selected = $(this).val();
+        // 检查选定的日期, 有哪些可以选定的时间段. 此处为自定义的一个小工具方法, 采用Promise机制来实现
+        getAvailableTimeSlots(
+            selected,
+            productUuid,
+            $('#booking-time')
+        ).then(res=>{
+            if(res.error_no === 100){
+              $('.book-input input').val('');
+              $('#booking-date').val(selected);
+            }else{
+                alert('No vacancy, please try another day!');
+            }
+        });
+      });
+    }
+
     if($('.bookingCancelbtn').length>0){
         $('.bookingCancelbtn').on('click',function (e) {
             e.preventDefault();

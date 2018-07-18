@@ -17,13 +17,39 @@ class TimeSlot
     const DURATION  = 60;    // 多长时间, 分钟数
     const INTERVAL  = 30;    // 时间间隔, 分钟数
 
+    public $hour;
+    public $minutes;
+    public $text_start;
+    public $text_end;
+    public $duration;
+    public $interval;
+
+    /**
+     * TimeSlot constructor.
+     * @param int $hour
+     * @param string $minutes
+     * @param string $text_start
+     * @param string $text_end
+     * @param int $duration
+     * @param int $interval
+     */
+    public function __construct($hour, $minutes, $text_start, $text_end, $duration, $interval)
+    {
+        $this->hour = $hour;
+        $this->minutes = $minutes;
+        $this->text_start = $text_start;
+        $this->text_end = $text_end;
+        $this->duration = $duration;
+        $this->interval = $interval;
+    }
+
     /**
      * Get All TimeSlots, 根据给定的值来计算所有可用的 time slots
      * @param int $_startAt
      * @param int $_total
      * @param int $_duration
      * @param int $_interval
-     * @return array
+     * @return array[TimeSlot]
      */
     public static function GetAll($_startAt = self::START_AT, $_total = self::TOTAL, $_duration = self::DURATION, $_interval = self::INTERVAL){
         $timeSlots = [];
@@ -41,17 +67,36 @@ class TimeSlot
 
                 $startAt = Carbon::create(1980, 1,1, $hour, $minutes);
 
-                $timeSlots[] = [
-                    'hour'=>intval($hour),
-                    'minutes'=>$minutes,
-                    'text_start'=>$textStart,
-                    'text_end'=>$startAt->addMinutes($_duration)->format('H:i'),
-                    'duration'=>$_duration,
-                    'interval'=>$_interval
-                ];
+                $timeSlots[] = new TimeSlot(
+                    intval($hour),
+                    $minutes,
+                    $textStart,
+                    $startAt->addMinutes($_duration)->format('H:i'),
+                    $_duration,
+                    $_interval
+                );
             }
         }
+
         return $timeSlots;
-        dd($timeSlots);
+    }
+
+    /**
+     * 将slot转成文字输出
+     * @return string
+     */
+    public function toOptionText(){
+        return 'From '.$this->text_start.' to '.$this->text_end;
+    }
+
+    /**
+     * 根据给定的日期获取Carbon对象
+     * @param string $dateInYMD
+     * @param string $fmt
+     * @return Carbon
+     */
+    public function toCarbon($dateInYMD, $fmt = 'Y-m-d'){
+        $str = $dateInYMD.' '.$this->hour.':'.$this->minutes;
+        return Carbon::createFromFormat($fmt.' H:i',$str,'Australia/Melbourne');
     }
 }

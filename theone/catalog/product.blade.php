@@ -77,6 +77,7 @@
             </div>
         </div>
     </section>
+
     @include(_get_frontend_theme_path('pages.elements.reservation'))
     @include(_get_frontend_theme_path('pages.elements.bookingform'))
 @endsection
