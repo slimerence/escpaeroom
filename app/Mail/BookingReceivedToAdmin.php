@@ -20,7 +20,6 @@ class BookingReceivedToAdmin extends Mailable
     use Queueable, SerializesModels;
 
     public $reservation;
-    public $reservationData = [];
 
    public function __construct(Reservation $reservation)
    {
@@ -29,8 +28,7 @@ class BookingReceivedToAdmin extends Mailable
 
     public function build()
     {
-        Log::info('listen',$this->reservationData);
         return $this->subject('The One Room Escape: You got a new booking from the website')
-            ->markdown('emails.services.received.to_admin');
+            ->markdown(_get_frontend_theme_path('emails.reservation.received.to_admin'));
     }
 }

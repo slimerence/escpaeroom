@@ -45,7 +45,7 @@ class ApiController extends Controller
         $reservation = $request->get('reservation');
         if($reservation = Reservation::Persistent($reservation)){
             // 通知网站管理员和用户
-            event(new BookingReceived($reservation, $this->siteConfig->contact_email));
+            event(new BookingReceived($reservation, $this->siteConfig));
 
             return JsonBuilder::Success();
         }

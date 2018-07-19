@@ -16,29 +16,29 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use App\Models\Configuration;
 
 class BookingReceived
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $reservation;
-    public $adminEmail;
+    public $siteConfig;
 
     /**
      * BookingReceived constructor.
      * @param Reservation $reservation
-     * @param $adminEmail
+     * @param Configuration $configuration
      */
 
-    public function __construct(Reservation $reservation, $adminEmail)
+    public function __construct(Reservation $reservation, Configuration $configuration)
     {
         $this->reservation = $reservation;
-        $this->adminEmail = $adminEmail;
+        $this->siteConfig = $configuration;
     }
 
     /**
-     * Get the channels the event should broadcast on.
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return bool
      */
     public function broadcastOn()
     {
