@@ -218,7 +218,7 @@ $(document).ready(function(){
                 if (res.data.error_no == 100) {
                     // 成功
                     $('#book-on-success').css('display', 'block');
-                    theSubmitButton.css('display', 'none');
+                    bookingBtn.css('display', 'none');
                 } else {
                     $('#book-on-fail').css('display', 'block');
                 }
