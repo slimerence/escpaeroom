@@ -11,6 +11,7 @@ namespace Smartbro\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Utils\JsonBuilder;
 use Illuminate\Http\Request;
+use Smartbro\Events\Booking\BookingReceived;
 use Smartbro\Models\Reservation;
 use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
@@ -42,7 +43,12 @@ class ApiController extends Controller
 
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
+        if($reservation = Reservation::Persistent($reservation)){
+            // 通知网站管理员和用户
+            event(new BookingReceived($reservation, $this->siteConfig->contact_email));
 
-        dd($reservation);
+            return JsonBuilder::Success();
+        }
+        return JsonBuilder::Error();
     }
 }

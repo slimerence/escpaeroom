@@ -75,18 +75,19 @@
                     <p>Anything if you want to let us know about your booking</p>
                     <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="message"></textarea>
                 </div>
+                <div class="mb-3" style="display: none;margin-top: 10px;" id="book-on-success">
+                    <p>Your enquiry form has been saved, we will contact you very soon!</p>
+                </div>
+                <div class="mb-3" style="display: none;margin-top: 10px;" id="book-on-fail">
+                    <p>System is busy, please try again later!</p>
+                </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button class="btn btn-default" id="bookingConfirmbtn">Confirm</button>
                 <a href="" class="bookingCancelbtn btn">Cancel</a>
             </div>
             </form>
-            <div class="mb-3" style="display: none;margin-top: 10px;" id="txt-on-success">
-                <p>Your enquiry form has been saved, we will contact you very soon!</p>
-            </div>
-            <div class="mb-3" style="display: none;margin-top: 10px;" id="txt-on-fail">
-                <p>System is busy, please try again later!</p>
-            </div>
+
         </div>
     </div>
 </div>

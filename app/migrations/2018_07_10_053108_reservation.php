@@ -18,7 +18,7 @@ class Reservation extends Migration
             $table->increments('id');
             $table->uuid('uuid');
             $table->unsignedInteger('product_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
 
             // 不使用 Time slot 了, 因为时间关系
             $table->date('at_date');

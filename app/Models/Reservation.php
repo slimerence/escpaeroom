@@ -32,6 +32,10 @@ class Reservation extends Model
         'at',
         'participants',
         'status',
+        'name',         //预定用户信息
+        'phone',
+        'email',
+        'message',
         'booking_fee_required', // 是否该预定需要预付定金
         'transaction_number',   // 如果需要预付费, 这里保存付费的流水单号
         'coupon',               // 如果玩家使用了优惠劵, 填写在这里
@@ -64,8 +68,16 @@ class Reservation extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function Persistent($data){
+    public static function Persistent($reservation){
+        $selectTime= substr($reservation['at_time'],5,5) ;
+        $reservation['at_time'] = $selectTime;
 
+        if(isset($reservation['product_id']) && !empty($reservation['product_id'])){
+            $product = Product::where('uuid',$reservation['product_id'])->first();
+            $reservation['product_id'] = $product->id;
+            $reservation['uuid'] = $product->uuid;
+        }
+        return self::create($reservation);
     }
 
     /**

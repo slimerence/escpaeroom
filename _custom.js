@@ -217,10 +217,10 @@ $(document).ready(function(){
             }).then(function (res) {
                 if (res.data.error_no == 100) {
                     // 成功
-                    $('#txt-on-success').css('display', 'block');
+                    $('#book-on-success').css('display', 'block');
                     theSubmitButton.css('display', 'none');
                 } else {
-                    $('#txt-on-fail').css('display', 'block');
+                    $('#book-on-fail').css('display', 'block');
                 }
                 bookingBtn.removeClass('is-loading');
 
