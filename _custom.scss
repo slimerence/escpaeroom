@@ -675,3 +675,14 @@ footer{
 .unclickable{
   pointer-events: none;
 }
+
+.calendar-title{
+  i{
+    font-size: 1.5rem;
+  }
+}
+
+.modal-header .close {
+  padding:0;
+  margin: 0 0.2em;
+}

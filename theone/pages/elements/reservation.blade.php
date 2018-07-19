@@ -2,13 +2,29 @@
     <div class="container">
         <?php
         $today = Carbon\Carbon::now();
-        $tempDate = Carbon\Carbon::createFromDate($today->year, $today->month, 1);
+        if(empty($frontdate)){
+            $displayDate = $today;
+        }else{
+            $displayDate = $frontdate;
+        }
+        if(empty($month_interval)){
+            $next = 1;
+        }else{
+            $next = intval($month_interval) + 1;
+            $prev = intval($month_interval) - 1;
+        }
+        $tempDate = Carbon\Carbon::createFromDate($displayDate->year, $displayDate->month, 1);
+
         ?>
             <div class="container-fluid">
-                <div class="row mb-4 ">
-                    <div class="col-1"><i class="fa fa-angle-left"></i></div>
-                    <div class="col-10"><h4 class="text-center">{{ $today->format('F Y') }}</h4></div>
-                    <div class="col-1"><i class="fa fa-angle-right"></i></div>
+                <div class="mb-4 calendar-title text-center">
+                    @if(empty($month_interval)||($prev==0))
+                    <a href="{{ url('catalog/product/'.$product->uri) }}"><i class="fa fa-angle-left float-left"></i></a>
+                    @else
+                    <a href="{{ url('catalog/product/'.$product->uri.'/'.$prev) }}"><i class="fa fa-angle-left float-left"></i></a>
+                    @endif
+                    <h4 class="text-center d-inline-block">{{ $displayDate->format('F Y') }}</h4>
+                    <a href="{{ url('catalog/product/'.$product->uri.'/'.$next) }}"><i class="fa fa-angle-right float-right"></i></a>
                 </div>
                 <div class="row d-none d-sm-flex p-1 bg-ye color-dark week-day">
                     <h4 class="col-sm p-1 text-center">Sunday</h4>
@@ -28,7 +44,7 @@
                         $tempDate->subDay();
                     }
                     ?>
-                    @while($tempDate->month == $today->month)
+                    @while($tempDate->month <= $displayDate->month)
                         @for($i=0; $i < 7; $i++)
                             @if( $tempDate < $today )
                                 <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
@@ -38,7 +54,7 @@
                                 </div>
                             @else
                             <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
-                                {{ $tempDate->month == $today->month ? 'bg-special':'bg-dark' }} ">
+                                {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
                                 <?php  $currentDate = $tempDate->toDateString() ?>
                                 <a href="{{ url('api/booking/get-available-time-slot') }}" class="date-picker-btn" data-value="{{ $currentDate }}">
                                 <h5 class="text-center">
