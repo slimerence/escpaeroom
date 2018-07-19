@@ -9,7 +9,7 @@
             </div>
             <form action="{{ url('api/booking/confirm') }}" method="post" id="BookingForm" class="booking-form">
                 {{ csrf_field() }}
-                <input type="hidden" name="product_id" id="booking-room" value="{{ $product->id }}">
+                <input type="hidden" name="product_id" id="booking-room" value="{{ $product->uuid }}">
                 <div class="modal-body mx-3">
                 <div class="mb-3">
                     <p>Please confirm that you would like to request the following appointment:
@@ -17,7 +17,16 @@
                 </div>
                 <div class="md-form mb-3">
                     <label data-error="wrong" data-success="right" for="booking-date">Date</label>
-                    <input type="date" id="booking-date" class="form-control validate book-input" name="at_date" readonly>
+                </div>
+
+                <div class="input-group md-form mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary change-select-date-btn" data-type="prev" type="button" style="border-bottom-right-radius: 0;border-top-right-radius: 0;">&lt;</button>
+                    </div>
+                    <input type="date" id="booking-date" class="form-control validate book-input" name="at_date" style="text-align: center;" readonly>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary change-select-date-btn" data-type="next" type="button" style="border-bottom-left-radius: 0;border-top-left-radius: 0;">&gt;</button>
+                    </div>
                 </div>
 
                 <div class="md-form mb-3 input-group">
@@ -25,11 +34,7 @@
                         <label class="input-group-text" for="booking-time">Time</label>
                     </div>
                     <select class="custom-select book-input" id="booking-time" name="at_time">
-                        <?php   $timeslot =  \Smartbro\Models\TimeSlot::GetAll();
-                        ?>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Please choose ... </option>
                     </select>
                 </div>
 

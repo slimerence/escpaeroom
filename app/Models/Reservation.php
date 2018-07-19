@@ -8,6 +8,7 @@
 
 namespace Smartbro\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Catalog\Product;
@@ -63,4 +64,33 @@ class Reservation extends Model
         return $this->belongsTo(User::class);
     }
 
+    public static function Persistent($data){
+
+    }
+
+    /**
+     * 检查给定的产品和日期时间是否已经被预定了
+     * @param Product $product
+     * @param string $date 日期
+     * @param array[TimeSlot] $timeSlots 最好为一个Carbon类对象的数组
+     * @return array
+     */
+    public static function GetAvailableTimeSlots(Product $product, $date, $timeSlots){
+        $availableIndexes = [];
+        foreach ($timeSlots as $key=>$timeSlot) {
+            /* @var $timeSlot TimeSlot */
+            $count = self::where([
+                'product_id'=>$product->id,
+                'at'=>$timeSlot->toCarbon($date)
+            ])->count();
+            if($count === 0){
+                $availableIndexes[] = $key;
+            }
+        }
+        $result = [];
+        foreach ($availableIndexes as $availableIndex) {
+            $result[] = $timeSlots[$availableIndex];
+        }
+        return $result;
+    }
 }
