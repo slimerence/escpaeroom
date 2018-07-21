@@ -19,6 +19,10 @@ class BookingReceivedEventListener
         //
     }
 
+    /**
+     * 处理预约的完成事件
+     * @param BookingReceived $event
+     */
     public function handle(BookingReceived $event)
     {
         $job = new BookingReceivedJob($event->reservation,$event->siteConfig);
