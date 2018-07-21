@@ -9,6 +9,7 @@
 namespace Smartbro\Jobs\Email\Booking;
 
 use Smartbro\Mail\BookingReceivedToAdmin;
+use Smartbro\Mail\BookingReceivedToCustomer;
 use Smartbro\Models\Reservation;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -42,6 +43,8 @@ class BookingReceived implements ShouldQueue
         if($this->reservation){
             Mail::to($this->siteConfig->contact_email)
                 ->send(new BookingReceivedToAdmin($this->reservation));
+            Mail::to($this->reservation->email)
+                ->send(new BookingReceivedToCustomer($this->reservation));
         }
     }
 
