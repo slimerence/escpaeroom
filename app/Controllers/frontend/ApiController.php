@@ -11,7 +11,9 @@ namespace Smartbro\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Utils\JsonBuilder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 use Smartbro\Events\Booking\BookingReceived;
+use Smartbro\Listeners\Booking\BookingReceivedEventListener;
 use Smartbro\Models\Reservation;
 use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
@@ -41,9 +43,21 @@ class ApiController extends Controller
             JsonBuilder::Error();
     }
 
+    /**
+     * 用户提交了预定表单
+     * 并不会生成新的用户, 而是将用户信息放入到reservation中
+     * @param Request $request
+     * @return string
+     */
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
         if($reservation = Reservation::Persistent($reservation)){
+            // 手动的注册事件
+            Event::listen(
+                BookingReceived::class,
+                BookingReceivedEventListener::class
+            );
+
             // 通知网站管理员和用户
             event(new BookingReceived($reservation, $this->siteConfig));
 
