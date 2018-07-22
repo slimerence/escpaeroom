@@ -71,7 +71,8 @@ class Reservation extends Model
     public static function Persistent($reservation){
         $selectTime= substr($reservation['at_time'],5,5) ;
         $reservation['at_time'] = $selectTime;
-
+        $str = $reservation['at_date'].' '.$selectTime;
+        $reservation['at']= Carbon::createFromFormat('Y-m-d H:i',$str,'Australia/Melbourne');
         if(isset($reservation['product_id']) && !empty($reservation['product_id'])){
             $product = Product::where('uuid',$reservation['product_id'])->first();
             $reservation['product_id'] = $product->id;
