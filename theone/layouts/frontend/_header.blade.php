@@ -4,7 +4,7 @@
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-12 my-auto text-center text-white">
-                <img class="masthead-img img-fluid mb-3" src="{{ asset('images/LOGO.PNG') }}" alt="">
+                <img class="masthead-img img-fluid mb-3" src="{{ asset('images/Logowhite.PNG') }}" alt="">
                 <div class="masthead-title">THE ONE</div>
                 <hr class="colored">
                 <div class="masthead-subtitle">Best Room Escape Experience</div>
