@@ -59,6 +59,21 @@ class CustomPageController extends Controller
         );
     }
 
+    public function faq(){
+        $this->dataForView['menuName'] = 'faq';
+        return view(
+            _get_frontend_theme_path('pages.404'),
+            $this->dataForView
+        );
+    }
+    public function join(){
+    $this->dataForView['menuName'] = 'franchise';
+    return view(
+        _get_frontend_theme_path('pages.404'),
+        $this->dataForView
+    );
+}
+
     public function change_month($uri,$sort){
         $product = Product::GetByUri($uri);
 

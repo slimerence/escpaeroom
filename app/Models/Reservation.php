@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Catalog\Product;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Ramsey\Uuid\Uuid;
 
 class Reservation extends Model
 {
@@ -73,6 +75,24 @@ class Reservation extends Model
         $reservation['at_time'] = $selectTime;
         $str = $reservation['at_date'].' '.$selectTime;
         $reservation['at']= Carbon::createFromFormat('Y-m-d H:i',$str,'Australia/Melbourne');
+        if(isset($reservation['email']) && !empty($reservation['email'])){
+            // 表示是已经登陆的用户
+            $email=$reservation['email'];
+            $user = User::GetByEmail($email);
+            if(!$user){
+                $initPassword='123456';
+                $userData = [
+                    'uuid'=>Uuid::uuid4()->toString(),
+                    'password'=>Hash::make($initPassword),
+                    'email'=>$email,
+                    'name'=>$reservation['name'],
+                    'phone'=>$reservation['phone'],
+                ];
+                User::create($userData);
+            }
+            $customer = User::where('email',$reservation['email'])->first();
+            $reservation['user_id'] = $customer->id;
+        }
         if(isset($reservation['product_id']) && !empty($reservation['product_id'])){
             $product = Product::where('uuid',$reservation['product_id'])->first();
             $reservation['product_id'] = $product->id;

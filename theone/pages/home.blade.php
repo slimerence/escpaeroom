@@ -74,11 +74,11 @@
     <section class="page-section pricing" id="locations" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container wow fadeIn">
             <div class="text-center">
-                <h2 class="color-text">GAMES</h2>
+                <h2 class="color-text">SEASON ONE</h2>
                 <hr class="colored">
-                <p class="color-ye">Our firm has nine locations across three different states. We serve clients in the Western United States.</p>
+                <p class="color-ye">Come and enjoy our amazing games!</p>
             </div>
-            <div class="row">
+            <div class="row mb-20">
             @if(isset($promotionProducts) && count($promotionProducts)>0)
                 @foreach($promotionProducts as $promotionProduct)
                 <div class="col-md-4">
@@ -95,6 +95,22 @@
                 @endforeach
             @endif
             </div>
+            @if(isset($featureProducts) && count($featureProducts)>0)
+            <div class="text-center mt-20">
+                <h2 class="color-text">SEASON TWO</h2>
+                <hr class="colored">
+                <p class="color-ye">Our new games are coming soon!</p>
+            </div>
+            <div class="row">
+                @foreach($featureProducts as $featureProduct)
+                    <div class="col-md-4">
+                        <div class="pricing-item">
+                            <div class="pro-img"><img src="{{ $featureProduct->getProductDefaultImageUrl() }}" alt="{{ $featureProduct->name }}" /></div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            @endif
         </div>
     </section>
 

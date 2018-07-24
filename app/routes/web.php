@@ -9,6 +9,9 @@ Route::get('/about-us', '\Smartbro\Controllers\frontend\CustomPageController@abo
 Route::get('/games', '\Smartbro\Controllers\frontend\CustomPageController@games');
 Route::get('/team-building', '\Smartbro\Controllers\frontend\CustomPageController@team');
 Route::get('/party', '\Smartbro\Controllers\frontend\CustomPageController@party');
+Route::get('/faq', '\Smartbro\Controllers\frontend\CustomPageController@faq');
+Route::get('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@join');
+
 
 Route::prefix('catalog')->group(function() {
     Route::get('product/{uri}/{sort}', '\Smartbro\Controllers\frontend\CustomPageController@change_month');

@@ -222,8 +222,6 @@ $(document).ready(function(){
                 } else {
                     $('#book-on-fail').css('display', 'block');
                 }
-                bookingBtn.removeClass('is-loading');
-
             })
         });
     }

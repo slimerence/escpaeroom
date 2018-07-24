@@ -45,30 +45,30 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <input type="text" id="booking-fname" name="firstname" placeholder="FirstName..." class="form-control validate book-input">
+                            <input type="text" id="booking-fname" name="firstname" placeholder="FirstName..." class="form-control validate book-input" required>
                         </div>
                         <div class="col-6">
-                            <input type="text" id="booking-lname" name="lastname" placeholder="LastName..." class="form-control validate book-input">
+                            <input type="text" id="booking-lname" name="lastname" placeholder="LastName..." class="form-control validate book-input" required>
                         </div>
                         <div class="col-12 mt-3">
-                            <input type="email" id="booking-email" name="email" placeholder="Email Address..." class="form-control validate book-input">
+                            <input type="email" id="booking-email" name="email" placeholder="Email Address..." class="form-control validate book-input" required>
                         </div>
                     </div>
                 </div>
 
                 <div class="md-form mb-3">
                     <label data-error="wrong" data-success="right" for="booking-phone" class="font-weight-bold">Phone Number</label>
-                    <input type="text" id="booking-phone" name="phone" class="form-control validate book-input">
+                    <input type="text" id="booking-phone" name="phone" class="form-control validate book-input" required/>
                 </div>
 
                 <div class="md-form mb-4">
                     <label data-error="wrong" data-success="right" for="book-group" class="font-weight-bold">Number of participants</label>
-                    <input type="number" id="book-group" class="form-control validate book-input" min="4" max="16">
+                    <input type="number" id="book-group" class="form-control validate book-input" min="4" max="16" required>
                 </div>
 
                 <div class="md-form mb-4">
                     <label data-error="wrong" data-success="right" for="group-check" class="w-100 font-weight-bold" >*Minimum 4 players required!*</label>
-                    <input type="checkbox" id="group-check" class="validate d-inline-block" required><span>There will be 4 players at least attending this game</span>
+                    <input type="checkbox" id="group-check" class="validate d-inline-block" required="required" /><span>There will be 4 players at least attending this game</span>
                 </div>
 
                 <div class="md-form mb-4">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-default" id="bookingConfirmbtn">Confirm</button>
+                <button class="btn btn-default" id="bookingConfirmbtn" type="submit">Confirm</button>
                 <a href="" class="bookingCancelbtn btn">Cancel</a>
             </div>
             </form>

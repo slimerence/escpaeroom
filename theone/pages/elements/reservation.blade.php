@@ -17,6 +17,9 @@
 
         ?>
             <div class="container-fluid">
+                <div class="booking-title text-center pt-10 pb-2">
+                    <h2 style="font-size: 35px;color: #ffd152;">BOOK NOW</h2>
+                </div>
                 <div class="mb-4 calendar-title text-center">
                     @if(empty($month_interval)||($prev==0))
                     <a href="{{ url('catalog/product/'.$product->uri) }}"><i class="fa fa-angle-left float-left"></i></a>
