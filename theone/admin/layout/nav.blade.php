@@ -32,10 +32,13 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reservations<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{ url('admin/home') }}">Coming</a>
+                            <a href="{{ url('admin/reservations/all') }}">All</a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/home') }}">Finished</a>
+                            <a href="{{ url('admin/reservations/coming') }}">Coming</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/reservations/finished') }}">Finished</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

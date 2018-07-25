@@ -31,4 +31,8 @@ Route::prefix('api/booking')->group(function(){
 Route::prefix('admin')->middleware('auth')->group(function(){
 
     Route::get('/home','\Smartbro\Controllers\backend\AdminController@index');
+    Route::get('/reservations/all','\Smartbro\Controllers\backend\AdminController@tables');
+    Route::get('/reservations/coming','\Smartbro\Controllers\backend\AdminController@tablescoming');
+    Route::get('/reservations/finished','\Smartbro\Controllers\backend\AdminController@tablespast');
+    Route::get('/reservations/delete/{id}', '\Smartbro\Controllers\backend\AdminController@delete');
 });

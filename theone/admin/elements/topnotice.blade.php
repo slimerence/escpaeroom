@@ -7,12 +7,12 @@
                         <i class="fa fa-comments fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">26</div>
+                        <div class="huge">{{ count($reservations) }}</div>
                         <div>Total Reservations!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="{{ url('admin/reservations/all') }}">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -29,12 +29,12 @@
                         <i class="fa fa-tasks fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">12</div>
+                        <div class="huge">{{ count($comingreservations) }}</div>
                         <div>Coming Reservations!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="{{ url('admin/reservations/coming') }}">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -51,12 +51,12 @@
                         <i class="fa fa-shopping-cart fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge">124</div>
+                        <div class="huge">{{ count($pastreservations) }}</div>
                         <div>Finished Reservations!</div>
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="{{ url('admin/reservations/finished') }}">
                 <div class="panel-footer">
                     <span class="pull-left">View Details</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
