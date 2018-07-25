@@ -185,47 +185,7 @@ $(document).ready(function(){
             e.preventDefault();
             $('#modalBookingForm').modal('hide');
             $('#modalBookingForm input').val('');
-        })
-    }
-
-    if($('#bookingConfirmbtn').length>0){
-        let bookingBtn = $('#bookingConfirmbtn');
-        bookingBtn.on('click',function (e) {
-            e.preventDefault();
-            let inputs = $('input');
-            let names = [];
-            let values = [];
-            $.each(inputs, function (idx, input) {
-                let theInput = $(input);
-                if (theInput.attr('name')) {
-                    names.push(theInput.attr('name'));
-                    values.push(theInput.val());
-                }
-            });
-            bookingBtn.addClass('is-loading');
-            
-            axios.post('/api/booking/confirm', {
-                reservation: {
-                    product_id: $('#booking-room').val(),
-                    at_date: $('#booking-date').val(),
-                    at_time: $('#booking-time').val(),
-                    name:$('#booking-fname').val() + ''+ $('#booking-lname').val(),
-                    email: $('#booking-email').val(),
-                    phone: $('#booking-phone').val(),
-                    participants: $('#book-group').val(),
-                    message: $('#booking-message').val()
-                }
-            }).then(function (res) {
-                if (res.data.error_no == 100) {
-                    alert();
-                    // 成功
-                    $('#book-on-success').css('display', 'block');
-                    bookingBtn.css('display', 'none');
-                } else {
-                    $('#book-on-fail').css('display', 'block');
-                }
-            })
-        });
+    })
     }
 
 });

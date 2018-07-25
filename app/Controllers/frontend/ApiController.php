@@ -60,9 +60,8 @@ class ApiController extends Controller
 
             // 通知网站管理员和用户
             event(new BookingReceived($reservation, $this->siteConfig));
-
-            return JsonBuilder::Success();
+            return back()->with('success','Your reservation has been sent!');
         }
-        return JsonBuilder::Error();
+        return back()->with('error','Something wrong with the server!');
     }
 }

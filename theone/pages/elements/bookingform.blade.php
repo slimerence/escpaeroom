@@ -9,7 +9,7 @@
             </div>
             <form action="{{ url('api/booking/confirm') }}" method="post" id="BookingForm" class="booking-form">
                 {{ csrf_field() }}
-                <input type="hidden" name="product_id" id="booking-room" value="{{ $product->uuid }}">
+                <input type="hidden" name="reservation[product_id]" id="booking-room" value="{{ $product->uuid }}">
                 <div class="modal-body mx-3">
                 <div class="mb-3">
                     <p>Please confirm that you would like to request the following appointment:
@@ -23,7 +23,7 @@
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary change-select-date-btn" data-type="prev" type="button" style="border-bottom-right-radius: 0;border-top-right-radius: 0;">&lt;</button>
                     </div>
-                    <input type="date" id="booking-date" class="form-control validate book-input" name="at_date" style="text-align: center;" readonly>
+                    <input type="date" id="booking-date" class="form-control validate book-input" name="reservation[at_date]" style="text-align: center;" readonly>
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary change-select-date-btn" data-type="next" type="button" style="border-bottom-left-radius: 0;border-top-left-radius: 0;">&gt;</button>
                     </div>
@@ -33,7 +33,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="booking-time">Time</label>
                     </div>
-                    <select class="custom-select book-input" id="booking-time" name="at_time">
+                    <select class="custom-select book-input" id="booking-time" name="reservation[at_time]">
                         <option value="">Please choose ... </option>
                     </select>
                 </div>
@@ -45,25 +45,25 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <input type="text" id="booking-fname" name="firstname" placeholder="FirstName..." class="form-control validate book-input" required>
+                            <input type="text" id="booking-fname" name="reservation[firstname]" placeholder="FirstName..." class="form-control validate book-input" required>
                         </div>
                         <div class="col-6">
-                            <input type="text" id="booking-lname" name="lastname" placeholder="LastName..." class="form-control validate book-input" required>
+                            <input type="text" id="booking-lname" name="reservation[lastname]" placeholder="LastName..." class="form-control validate book-input" required>
                         </div>
                         <div class="col-12 mt-3">
-                            <input type="email" id="booking-email" name="email" placeholder="Email Address..." class="form-control validate book-input" required>
+                            <input type="email" id="booking-email" name="reservation[email]" placeholder="Email Address..." class="form-control validate book-input" required>
                         </div>
                     </div>
                 </div>
 
                 <div class="md-form mb-3">
                     <label data-error="wrong" data-success="right" for="booking-phone" class="font-weight-bold">Phone Number</label>
-                    <input type="text" id="booking-phone" name="phone" class="form-control validate book-input" required/>
+                    <input type="text" id="booking-phone" name="reservation[phone]" class="form-control validate book-input" required/>
                 </div>
 
                 <div class="md-form mb-4">
                     <label data-error="wrong" data-success="right" for="book-group" class="font-weight-bold">Number of participants</label>
-                    <input type="number" id="book-group" class="form-control validate book-input" min="4" max="16" required>
+                    <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="4" max="16" required>
                 </div>
 
                 <div class="md-form mb-4">
@@ -73,7 +73,7 @@
 
                 <div class="md-form mb-4">
                     <p>Anything if you want to let us know about your booking</p>
-                    <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="message"></textarea>
+                    <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="reservation[message]"></textarea>
                 </div>
                 <div class="mb-3" style="display: none;margin-top: 10px;" id="book-on-success">
                     <p>Your enquiry form has been saved, we will contact you very soon!</p>

@@ -14,7 +14,9 @@
     <section class="product-detail bg-normal color-text">
         <div class="container wow fadeIn">
             <div class="row">
-
+                <div class="col-12">
+                    @include(_get_frontend_theme_path('pages.elements.alert'))
+                </div>
                 <div class="col-lg-8 left-info">
                     <div class="row top-info no-margin">
                         @foreach($product_attributes as $key=>$product_attribute)
