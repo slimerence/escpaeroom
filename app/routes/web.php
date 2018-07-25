@@ -27,3 +27,8 @@ Route::prefix('api/booking')->group(function(){
     // 验证 coupon 的 route
     Route::post('coupon-verify','\Smartbro\Controllers\frontend\ApiController@coupon_verify');
 });
+
+Route::prefix('admin')->middleware('auth')->group(function(){
+
+    Route::get('/home','\Smartbro\Controllers\backend\AdminController@index');
+});

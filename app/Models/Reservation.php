@@ -126,4 +126,28 @@ class Reservation extends Model
         }
         return $result;
     }
+
+    public static function  GetPastReservations(){
+        $pastreservations = [];
+        $reservations =  self::orderBy('at','asc')->get();
+        $today = Carbon::now();
+        foreach ($reservations as $key=>$reservation) {
+            if ($reservation->at < $today){
+                $pastreservations[] = $reservation;
+            }
+        }
+        return $pastreservations;
+    }
+
+    public static function GetComingReservations(){
+        $comingreservations = [];
+        $reservations =  self::orderBy('at','asc')->get();
+        $today = Carbon::now();
+        foreach ($reservations as $key=>$reservation) {
+            if ($reservation->at >= $today){
+                $comingreservations[] = $reservation;
+            }
+        }
+        return $comingreservations;
+    }
 }
