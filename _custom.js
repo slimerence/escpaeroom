@@ -203,6 +203,7 @@ $(document).ready(function(){
                 }
             });
             bookingBtn.addClass('is-loading');
+            
             axios.post('/api/booking/confirm', {
                 reservation: {
                     product_id: $('#booking-room').val(),
@@ -216,6 +217,7 @@ $(document).ready(function(){
                 }
             }).then(function (res) {
                 if (res.data.error_no == 100) {
+                    alert();
                     // 成功
                     $('#book-on-success').css('display', 'block');
                     bookingBtn.css('display', 'none');

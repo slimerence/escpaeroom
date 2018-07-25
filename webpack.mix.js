@@ -16,7 +16,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/views/frontend/custom/theone/assets/js/jqBootstrapValidation', 'public/js')
     .js('resources/views/frontend/custom/theone/assets/js/vitality', 'public/js')
     .js('resources/views/frontend/custom/_custom.js', 'public/js')
+    .js('resources/views/frontend/custom/theone/admin/js/admin.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/views/frontend/custom/theone/admin/css/customadmin.scss','public/css')
+    .sass('resources/views/frontend/custom/theone/admin/css/dataTables.responsive.scss','public/css')
     .sass('resources/views/frontend/custom/_custom.scss', 'public/css');
 
 // combine all css/js into a single css/js
@@ -27,6 +30,12 @@ mix.scripts([
     'public/js/_custom.js',
 ], 'public/js/all.js');
 // 最终加载两个文件， all.css 和 all.js
+
+mix.scripts([
+    'resources/views/frontend/custom/theone/admin/js/jquery.dataTables.min.js',
+    'resources/views/frontend/custom/theone/admin/js/dataTables.bootstrap.min.js',
+    'resources/views/frontend/custom/theone/admin/js/dataTables.responsive.js',
+], 'public/js/dataTable.js');
 
 // 后台
 mix.js('resources/assets/js/backend.js', 'public/js')

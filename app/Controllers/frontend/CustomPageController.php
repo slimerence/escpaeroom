@@ -62,7 +62,7 @@ class CustomPageController extends Controller
     public function faq(){
         $this->dataForView['menuName'] = 'faq';
         return view(
-            _get_frontend_theme_path('pages.404'),
+            _get_frontend_theme_path('pages.faq'),
             $this->dataForView
         );
     }

@@ -8,6 +8,7 @@
 
 namespace Smartbro\Controllers\backend;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Configuration;
@@ -30,6 +31,7 @@ class AdminController extends Controller
         $this->dataForView['reservations'] = $reservations->paginate(config('system.PAGE_SIZE'));
         $this->dataForView['pastreservations'] = Reservation::GetPastReservations();
         $this->dataForView['comingreservations'] = Reservation::GetComingReservations();
+        $this->dataForView['users'] = User::where('group_id','1')->orderBy('id','desc')->get();
         $this->dataForView['leads'] = Lead::orderBy('id','desc')
             ->paginate(config('system.PAGE_SIZE'));
         return view(_get_frontend_theme_path('admin.index'), $this->dataForView);
@@ -61,5 +63,12 @@ class AdminController extends Controller
     public function delete($id){
         Reservation::where('id',$id)->delete();
         return redirect('admin/reservations/all');
+    }
+
+    public function customer(){
+        $this->dataForView['menuName'] = 'tables';
+        $this->dataForView['config'] = Configuration::find(1);
+        $this->dataForView['users'] = User::where('group_id','1')->orderBy('id','desc')->get();
+        return view(_get_frontend_theme_path('admin.customers'), $this->dataForView);
     }
 }
