@@ -1,13 +1,18 @@
 @component('mail::message')
     #New appointment request!
-    Name: {{ $reservation->name }}
+    Customer: {{ $reservation->name }}
+
+    Game: {{ $reservation->product->name }}
+    Time: {{ $reservation->at }}
+
     Phone: {{ $reservation->phone }}
     Email: {{ $reservation->email }}
-    Time: {{ $reservation->at_date }} start at{{ $reservation->at_time }}
-    Room: {{ $reservation->product->name }}
+
     Participants: {{ $reservation->participants }}
     Message: {{ $reservation->messgae }}
 
-    Regard!<br>
+    Regard!
+
+    Regard!
 
 @endcomponent
