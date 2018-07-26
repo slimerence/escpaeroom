@@ -34,7 +34,8 @@
                                 <td>{{ $reservation->participants }}</td>
                                 <td class="center">{{ $reservation->name }}</td>
                                 <td class="center">{{ $reservation->phone }}</td>
-                                <td><i class="fa fa-pencil-square-o"></i>
+                                <td>
+                                    <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}"><i class="fa fa-pencil-square-o"></i></a>
                                     <a href="{{ url('admin/reservations/delete/'.$reservation->id) }}"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>

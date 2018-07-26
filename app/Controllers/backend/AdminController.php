@@ -15,6 +15,7 @@ use App\Models\Configuration;
 use Smartbro\Models\Reservation;
 use App\Models\Catalog\Product;
 use App\Models\Lead;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -63,6 +64,21 @@ class AdminController extends Controller
     public function delete($id){
         Reservation::where('id',$id)->delete();
         return redirect('admin/reservations/all');
+    }
+
+    public function edit($id){
+        $this->dataForView['pageTitle'] = 'Reservation Update';
+        $this->dataForView['reservation']=Reservation::find($id);
+        return view(_get_frontend_theme_path('admin.update'),$this->dataForView);
+    }
+
+    public function update($id,Request $request){
+        $reservation = $request->get('reservation');
+        $reservation['name'] = $reservation['firstname'].' '.$reservation['lastname'];
+        $str = $reservation['at_date'].' '.$reservation['at_time'];
+        $reservation['at']= Carbon::createFromFormat('Y-m-d H:i',$str,'Australia/Melbourne');
+        Reservation::find($id)->update($reservation);
+        return redirect('/admin/home');
     }
 
     public function customer(){

@@ -13,6 +13,4 @@
 
     Regard!
 
-    Regard!
-
 @endcomponent

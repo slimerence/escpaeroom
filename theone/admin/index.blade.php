@@ -47,9 +47,9 @@
                                                     <i class="fa fa-gear"></i> <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Edit</a>
+                                                    <li><a href="{{ url('admin/reservations/edit/'.$comingreservation->id) }}">Edit</a>
                                                     </li>
-                                                    <li><a href="#">Cancel</a>
+                                                    <li><a href="{{ url('admin/reservations/delete/'.$comingreservation->id) }}">Cancel</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -85,8 +85,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="{{ url('logout') }}"></i> Sign Out
+                                    <a href="{{ url('logout') }}">
+                                        <i class="fa fa-sign-out fa-fw"></i> Sign Out
                                     </a>
                                 </li>
                             </ul>
