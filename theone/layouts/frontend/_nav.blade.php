@@ -19,6 +19,9 @@
                     <a class="nav-link" href="{{ url('/games') }}">GAMES</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/pricing') }}">PRICING</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/team-building') }}">TEAM BUILDING</a>
                 </li>
                 <li class="nav-item">

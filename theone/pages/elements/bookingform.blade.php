@@ -63,12 +63,26 @@
 
                 <div class="md-form mb-4">
                     <label data-error="wrong" data-success="right" for="book-group" class="font-weight-bold">Number of participants</label>
-                    <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="4" max="16" required>
+                    <?php
+                    switch ($product->id) {
+                        case 1:
+                            $min = 4;
+                            break;
+                        case 2:
+                            $min = 2;
+                            break;
+                        case 3:
+                            $min = 1;
+                            break;
+                        default:
+                    }
+                    ?>
+                    <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="{{ $min }}" max="16" required>
                 </div>
 
                 <div class="md-form mb-4">
-                    <label data-error="wrong" data-success="right" for="group-check" class="w-100 font-weight-bold" >*Minimum 4 players required!*</label>
-                    <input type="checkbox" id="group-check" class="validate d-inline-block" required="required" /><span>There will be 4 players at least attending this game</span>
+                    <label data-error="wrong" data-success="right" for="group-check" class="w-100 font-weight-bold" >*Minimum {{ $min }} players required!*</label>
+                    <input type="checkbox" id="group-check" class="validate d-inline-block" required="required" /><span>There will be {{ $min }} players at least attending this game</span>
                 </div>
 
                 <div class="md-form mb-4">

@@ -16,6 +16,7 @@ use Smartbro\Models\Reservation;
 use App\Models\Catalog\Product;
 use App\Models\Lead;
 use Carbon\Carbon;
+use App\Models\Catalog\Category;
 
 class AdminController extends Controller
 {
@@ -86,5 +87,20 @@ class AdminController extends Controller
         $this->dataForView['config'] = Configuration::find(1);
         $this->dataForView['users'] = User::where('group_id','1')->orderBy('id','desc')->get();
         return view(_get_frontend_theme_path('admin.customers'), $this->dataForView);
+    }
+
+    public function createview(){
+        $this->dataForView['pageTitle'] = 'Reservation Create';
+        $this->dataForView['config'] = Configuration::find(1);
+        $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
+        return view(_get_frontend_theme_path('admin.create'), $this->dataForView);
+    }
+
+    public function create(Request $request){
+        $reservation = $request->get('reservation');
+        if($reservation = Reservation::Persistent($reservation)){
+            return back()->with('success','Your reservation has been sent!');
+        }
+        return back()->with('error','Something wrong with the server!');
     }
 }

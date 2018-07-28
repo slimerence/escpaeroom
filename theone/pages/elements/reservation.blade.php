@@ -14,7 +14,6 @@
             $prev = intval($month_interval) - 1;
         }
         $tempDate = Carbon\Carbon::createFromDate($displayDate->year, $displayDate->month, 1);
-
         ?>
             <div class="container-fluid">
                 <div class="booking-title text-center pt-10 pb-2">
@@ -30,13 +29,13 @@
                     <a href="{{ url('catalog/product/'.$product->uri.'/'.$next) }}"><i class="fa fa-angle-right float-right"></i></a>
                 </div>
                 <div class="row d-none d-sm-flex p-1 bg-ye color-dark week-day">
-                    <h4 class="col-sm p-1 text-center">Sunday</h4>
                     <h4 class="col-sm p-1 text-center">Monday</h4>
                     <h4 class="col-sm p-1 text-center">Tuesday</h4>
                     <h4 class="col-sm p-1 text-center">Wednesday</h4>
                     <h4 class="col-sm p-1 text-center">Thursday</h4>
                     <h4 class="col-sm p-1 text-center">Friday</h4>
                     <h4 class="col-sm p-1 text-center">Saturday</h4>
+                    <h4 class="col-sm p-1 text-center">Sunday</h4>
                 </div>
 
                 <div class="row border border-right-0 border-bottom-0">
@@ -46,10 +45,11 @@
                     {
                         $tempDate->subDay();
                     }
+                    $tempDate->addDay();
                     ?>
                     @while($tempDate->month <= $displayDate->month)
                         @for($i=0; $i < 7; $i++)
-                            @if( $tempDate < $today )
+                            @if( $tempDate < $today || $tempDate->dayOfWeek ==1)
                                 <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
                                     <h5 class="text-center">
                                         <span class="date unclickable">{{ $tempDate->day }}</span>

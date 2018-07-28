@@ -73,6 +73,13 @@ class CustomPageController extends Controller
         $this->dataForView
     );
 }
+    public function pricing(){
+        $this->dataForView['menuName'] = 'pricing';
+        return view(
+            _get_frontend_theme_path('pages.pricing'),
+            $this->dataForView
+        );
+    }
 
     public function change_month($uri,$sort){
         $product = Product::GetByUri($uri);

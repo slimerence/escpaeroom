@@ -29,6 +29,9 @@
                     <a href="{{ url('admin/home') }}"><i class="fa fa-dashboard fa-fw"></i> Overview</a>
                 </li>
                 <li>
+                    <a href="{{ url('admin/reservations/create') }}"><i class="fa fa-plus fa-fw"></i> Create</a>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reservations<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -45,7 +48,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ url('admin/customers') }}"><i class="fa fa-users" aria-hidden="true"></i> Customers</a>
+                    <a href="{{ url('admin/customers') }}"><i class="fa fa-users fa-fw" aria-hidden="true"></i> Customers</a>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
