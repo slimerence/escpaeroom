@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Catalog\Product;
+use Smartbro\Models\BlockReservation;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Ramsey\Uuid\Uuid;
@@ -112,12 +113,16 @@ class Reservation extends Model
     public static function GetAvailableTimeSlots(Product $product, $date, $timeSlots){
         $availableIndexes = [];
         foreach ($timeSlots as $key=>$timeSlot) {
+            $blockcount = BlockReservation::where([
+                'product_id'=>$product->id,
+                'at'=>$timeSlot->toCarbon($date)
+            ])->count();
             /* @var $timeSlot TimeSlot */
             $count = self::where([
                 'product_id'=>$product->id,
                 'at'=>$timeSlot->toCarbon($date)
             ])->count();
-            if($count === 0){
+            if($count === 0 && $blockcount ==0){
                 $availableIndexes[] = $key;
             }
         }
@@ -128,7 +133,7 @@ class Reservation extends Model
         return $result;
     }
 
-    public static function  GetPastReservations(){
+    public static function GetPastReservations(){
         $pastreservations = [];
         $reservations =  self::orderBy('at','asc')->orderBy('created_at','asc')->get();
         $today = Carbon::now();
@@ -151,5 +156,6 @@ class Reservation extends Model
         }
         return $comingreservations;
     }
+
 
 }

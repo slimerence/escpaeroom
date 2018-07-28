@@ -42,5 +42,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::post('/reservations/update/{id}', '\Smartbro\Controllers\backend\AdminController@update');
     Route::get('/customers', '\Smartbro\Controllers\backend\AdminController@customer');
 
-
+    Route::get('/reservations/block','\Smartbro\Controllers\backend\AdminController@block');
+    Route::post('/reservations/block','\Smartbro\Controllers\backend\AdminController@createblock');
 });

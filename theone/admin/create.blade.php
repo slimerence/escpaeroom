@@ -22,7 +22,7 @@
                                 <form role="form" action="{{ url('admin/reservations/create')}}" method="post" id="UpdateForm">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="booking-time">Gane</label>
+                                        <label for="booking-time">Game</label>
                                         <select class="custom-select book-input" id="booking-room" name="reservation[product_id]">
                                             @foreach($promotionProducts as $key=>$promotionProduct)
                                             <option value="{{ $promotionProduct->uuid }}">{{ $promotionProduct->name }}</option>

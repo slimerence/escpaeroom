@@ -32,6 +32,10 @@
                     <a href="{{ url('admin/reservations/create') }}"><i class="fa fa-plus fa-fw"></i> Create</a>
                 </li>
                 <li>
+                    <a href="{{ url('admin/reservations/block') }}"><i class="fa fa-calendar-times-o fa-fw"></i> Schedule</a>
+                </li>
+
+                <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reservations<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

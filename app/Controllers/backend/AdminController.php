@@ -17,6 +17,7 @@ use App\Models\Catalog\Product;
 use App\Models\Lead;
 use Carbon\Carbon;
 use App\Models\Catalog\Category;
+use Smartbro\Models\BlockReservation;
 
 class AdminController extends Controller
 {
@@ -102,5 +103,21 @@ class AdminController extends Controller
             return back()->with('success','Your reservation has been sent!');
         }
         return back()->with('error','Something wrong with the server!');
+    }
+
+    public function block(){
+        $this->dataForView['pageTitle'] = 'New Schedule';
+        $this->dataForView['config'] = Configuration::find(1);
+        $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
+        return view(_get_frontend_theme_path('admin.block'), $this->dataForView);
+    }
+
+    public function createblock(Request $request){
+        $blockreservation = $request->get('blockreservation');
+        if(BlockReservation::CreateBlockReservation($blockreservation)){
+            return back()->with('success','Your schedule has been updated!');
+        }else{
+        return back()->with('error','Something wrong with the server!');
+        }
     }
 }
