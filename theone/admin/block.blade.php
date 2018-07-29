@@ -50,6 +50,46 @@
                                     <button type="submit" class="btn btn-default btn-primary">Submit Button</button>
                                 </form>
                             </div>
+                            <div class="col-lg-12" style="margin-top: 20px;">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Maintenance Record
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+                                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                            <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Game</th>
+                                                <th>From</th>
+                                                <th>To</th>
+                                                <th>Create Time</th>
+                                                <th>Operate</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($maintains as $maintain)
+                                                <tr class="odd gradeX">
+                                                    <td>{{ $maintain->date }}</td>
+                                                    <td>{{ $maintain->product->name }}</td>
+                                                    <td>{{ $maintain->start }}</td>
+                                                    <td>{{ $maintain->end }}</td>
+                                                    <td class="center">{{ $maintain->created_at }}</td>
+                                                    <td>
+                                                        <a href="{{ url('admin/maintains/delete/'.$maintain->id) }}"><i class="fa fa-trash-o"></i></a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <!-- /.panel-body -->
+                                </div>
+                                <!-- /.panel -->
+                            </div>
+                            <!-- /.col-lg-12 -->
                         </div>
                     </div>
                 </div>

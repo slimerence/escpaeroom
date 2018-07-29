@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Catalog\Product;
+use Smartbro\Models\Maintain;
 use Smartbro\Models\TimeSlot;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -23,6 +24,7 @@ class BlockReservation extends Model
 
     protected $fillable = [
         'product_id',
+        'maintain_id',
         'at_date',
         'at_time',
         'at',
@@ -39,10 +41,16 @@ class BlockReservation extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function maintain(){
+        return $this->belongsTo(Maintain::class);
+    }
+
     public static function CreateBlockReservation($data){
+        $maintain = Maintain::CreateMaintain($data);
         $blockreservation = [];
         $blockreservations = [];
         $blockreservation['product_id']=$data['product_id'];
+        $blockreservation['maintain_id']=$maintain->id;
         $blockreservation['at_date']=$data['date'];
         $slots = TimeSlot::GetAll();
         /**

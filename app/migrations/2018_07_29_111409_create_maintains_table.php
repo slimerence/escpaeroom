@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-
-class Blockreservation extends Migration
+class CreateMaintainsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,20 +13,16 @@ class Blockreservation extends Migration
      */
     public function up()
     {
-        Schema::create('block_reservations', function (Blueprint $table) {
+        Schema::create('maintains', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('product_id');
-            $table->unsignedInteger('maintain_id');
-            $table->date('at_date');
-            $table->time('at_time');
-            $table->dateTime('at')->nullable();
-            $table->unsignedSmallInteger('status')->default(1);
-            $table->text('notes')->nullable();
-
+            $table->time('start');
+            $table->time('end');
+            $table->date('date');
             $table->timestamps();
+
             $table->softDeletes();
         });
-
     }
 
     /**
@@ -37,6 +32,6 @@ class Blockreservation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block_reservations');
+        Schema::dropIfExists('maintains');
     }
 }

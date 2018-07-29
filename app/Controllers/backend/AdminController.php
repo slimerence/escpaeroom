@@ -18,6 +18,7 @@ use App\Models\Lead;
 use Carbon\Carbon;
 use App\Models\Catalog\Category;
 use Smartbro\Models\BlockReservation;
+use Smartbro\Models\Maintain;
 
 class AdminController extends Controller
 {
@@ -107,7 +108,9 @@ class AdminController extends Controller
 
     public function block(){
         $this->dataForView['pageTitle'] = 'New Schedule';
+        $this->dataForView['menuName'] = 'tables';
         $this->dataForView['config'] = Configuration::find(1);
+        $this->dataForView['maintains'] = Maintain::orderBy('created_at','asc')->get();
         $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
         return view(_get_frontend_theme_path('admin.block'), $this->dataForView);
     }
@@ -119,5 +122,11 @@ class AdminController extends Controller
         }else{
         return back()->with('error','Something wrong with the server!');
         }
+    }
+
+    public function deleteblock($id){
+        Maintain::where('id',$id)->delete();
+        BlockReservation::where('maintain_id',$id)->delete();
+        return redirect('admin/reservations/block');
     }
 }

@@ -44,4 +44,5 @@ Route::prefix('admin')->middleware('auth')->group(function(){
 
     Route::get('/reservations/block','\Smartbro\Controllers\backend\AdminController@block');
     Route::post('/reservations/block','\Smartbro\Controllers\backend\AdminController@createblock');
+    Route::get('/maintains/delete/{id}','\Smartbro\Controllers\backend\AdminController@deleteblock');
 });
