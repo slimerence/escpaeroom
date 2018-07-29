@@ -710,3 +710,16 @@ footer{
     padding:5px 1.2em 3px 1.2em;
   }
 }
+.price-info{
+  z-index: 1;
+  margin-bottom: 30px;
+  box-shadow: rgba(34, 34, 34, 0.75) 0px 0px 30px 5px;
+  color: rgb(239, 218, 185);
+  padding: 30px;
+  background: rgb(52, 50, 51);
+  ol li{
+    font-size:18px;
+    line-height:1.5em;
+    margin-bottom:9px;
+  }
+}
