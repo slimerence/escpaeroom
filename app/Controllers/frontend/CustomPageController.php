@@ -51,6 +51,14 @@ class CustomPageController extends Controller
         );
     }
 
+    public function terms(){
+        $this->dataForView['menuName'] = 'terms';
+        return view(
+            _get_frontend_theme_path('pages.404'),
+            $this->dataForView
+        );
+    }
+
     public function party(){
         $this->dataForView['menuName'] = 'special party';
         return view(

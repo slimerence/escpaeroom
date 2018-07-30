@@ -12,6 +12,8 @@ Route::get('/party', '\Smartbro\Controllers\frontend\CustomPageController@party'
 Route::get('/faq', '\Smartbro\Controllers\frontend\CustomPageController@faq');
 Route::get('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@join');
 Route::get('/pricing', '\Smartbro\Controllers\frontend\CustomPageController@pricing');
+Route::get('/terms', '\Smartbro\Controllers\frontend\CustomPageController@terms');
+
 
 
 Route::prefix('catalog')->group(function() {
@@ -41,6 +43,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/reservations/edit/{id}', '\Smartbro\Controllers\backend\AdminController@edit');
     Route::post('/reservations/update/{id}', '\Smartbro\Controllers\backend\AdminController@update');
     Route::get('/customers', '\Smartbro\Controllers\backend\AdminController@customer');
+    Route::get('/customers/delete/{id}', '\Smartbro\Controllers\backend\AdminController@customerDelete');
 
     Route::get('/reservations/block','\Smartbro\Controllers\backend\AdminController@block');
     Route::post('/reservations/block','\Smartbro\Controllers\backend\AdminController@createblock');

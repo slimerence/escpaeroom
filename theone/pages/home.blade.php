@@ -123,7 +123,7 @@
                 <div class="col-md-10 offset-md-1">
                     <span class="quote color-text">Our main goal is for you to have an unforgettable and enjoyable experience.</span>
                     <hr class="colored">
-                    <a class="btn js-scroll-trigger btn-private" href="{{ url('/page/courses') }}">Book Now</a>
+                    <a class="btn js-scroll-trigger btn-private" href="{{ url('/games') }}">Book Now</a>
                 </div>
             </div>
         </div>

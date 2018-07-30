@@ -22,6 +22,7 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Join Time</th>
+                                <th>Operate</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,6 +32,9 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td class="center">{{ $user->created_at->format('F d, Y') }}</td>
+                                    <td>
+                                        <a href="{{ url('admin/customers/delete/'.$user->id) }}"><i class="fa fa-trash-o"></i></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

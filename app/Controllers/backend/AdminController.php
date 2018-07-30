@@ -91,6 +91,11 @@ class AdminController extends Controller
         return view(_get_frontend_theme_path('admin.customers'), $this->dataForView);
     }
 
+    public function customerDelete($id){
+        User::where('id',$id)->delete();
+        return redirect('admin/customers');
+    }
+
     public function createview(){
         $this->dataForView['pageTitle'] = 'Reservation Create';
         $this->dataForView['config'] = Configuration::find(1);
