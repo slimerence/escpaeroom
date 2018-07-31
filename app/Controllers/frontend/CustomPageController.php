@@ -121,8 +121,7 @@ class CustomPageController extends Controller
         $this->dataForView['productDescriptionBottom'] = Block::where('short_code','like','product_description_block_bottom%')->get();
         $this->dataForView['productShortDescriptionTop'] = Block::where('short_code','like','product_short_description_block_top%')->get();
         $this->dataForView['productShortDescriptionBottom'] = Block::where('short_code','like','product_short_description_block_bottom%')->get();
-
-        $this->dataForView['frontdate'] = Carbon\Carbon::now()->addMonth(intval($sort))->startOfMonth();
+        $this->dataForView['frontdate'] = Carbon\Carbon::now()->addMonthsNoOverflow(intval($sort))->startOfMonth();
         $this->dataForView['month_interval'] = $sort;
         return view(_get_frontend_theme_path('catalog.product'),$this->dataForView);
     }

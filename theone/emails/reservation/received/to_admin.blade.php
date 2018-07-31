@@ -1,5 +1,5 @@
 @component('mail::message')
-    #New appointment request!
+    #You have received a new appointment request!
     Customer: {{ $reservation->name }}
 
     Game: {{ $reservation->product->name }}

@@ -47,7 +47,7 @@
                     }
                     $tempDate->addDay();
                     ?>
-                    @while($tempDate->month <= $displayDate->month)
+                    @while(($tempDate->month <= $displayDate->month && $tempDate->isSameYear($displayDate)) || $tempDate->year < $displayDate->year)
                         @for($i=0; $i < 7; $i++)
                             @if( $tempDate < $today || $tempDate->dayOfWeek ==1)
                                 <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
@@ -56,23 +56,21 @@
                                     </h5>
                                 </div>
                             @else
-                            <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
-                                {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
-                                <?php  $currentDate = $tempDate->toDateString() ?>
-                                <a href="{{ url('api/booking/get-available-time-slot') }}" class="date-picker-btn" data-value="{{ $currentDate }}">
-                                <h5 class="text-center">
-                                    <span class="date">{{ $tempDate->day }}</span>
-                                </h5>
-                                </a>
-                            </div>
+                                <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
+                            {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
+                                    <?php  $currentDate = $tempDate->toDateString() ?>
+                                    <a href="{{ url('api/booking/get-available-time-slot') }}" class="date-picker-btn" data-value="{{ $currentDate }}">
+                                        <h5 class="text-center">
+                                            <span class="date">{{ $tempDate->day }}</span>
+                                        </h5>
+                                    </a>
+                                </div>
                             @endif
-
                             <?php $tempDate->addDay(); ?>
                         @endfor
                         <div class="w-100"></div>
                     @endwhile
                 </div>
             </div>
-
     </div>
 </section>
