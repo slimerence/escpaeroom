@@ -201,20 +201,18 @@
                 <table>
                     <tr>
                         <td>
-                            <h3>New appointment request!</h3>
+                            <h3>Hi, {{ $reservation->name }}</h3>
                             <p class="lead">Here are your appointment details!</p>
-                            <p><strong>Customer</strong>: {{ $reservation->name }}</p>
+
                             <p><strong>Game</strong>: {{ $reservation->product->name }}</p>
                             <p><strong>Time</strong>: {{ $reservation->at }}</p>
-
-                            <p><strong>Phone number</strong>: {{ $reservation->phone }}</p>
-
                             <p><strong>Participants</strong>: {{ $reservation->participants }}</p>
                             <p><strong>Message</strong>: {{ $reservation->messgae }}</p>
 
+                            <p><strong>Address</strong>: 9 Aristoc Road, Glen Waverley VIC 3150</p>
                             <!-- Callout Panel -->
                             <p class="callout">
-                                Please check the details. Best Wishes!
+                                Please check your details and our address before you come. Thank you!
                             </p><!-- /Callout Panel -->
 
                         </td>

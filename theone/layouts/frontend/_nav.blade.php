@@ -25,9 +25,6 @@
                     <a class="nav-link" href="{{ url('/team-building') }}">TEAM BUILDING</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/party') }}">PARTY</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
                 </li>
                 <li class="nav-item">

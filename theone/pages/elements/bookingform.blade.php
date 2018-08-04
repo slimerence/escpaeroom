@@ -84,11 +84,16 @@
                     <label data-error="wrong" data-success="right" for="group-check" class="w-100 font-weight-bold" >*Minimum {{ $min }} players required!*</label>
                     <input type="checkbox" id="group-check" class="validate d-inline-block" required="required" /><span>There will be {{ $min }} players at least attending this game</span>
                 </div>
-
+                <div class="md-form mb-4">
+                    <label data-error="wrong" data-success="right" for="group-check" class="w-100 font-weight-bold" >*Terms and conditions*</label>
+                    <input type="checkbox" id="group-check" class="validate d-inline-block" required="required" /><span>I have read and accept the <a href="{{ url('/term') }}" target="_blank">Terms &amp; Conditions</a> and <a href="{{ url('/policy') }}" target="_blank">Privacy Policy</a></span>
+                </div>
                 <div class="md-form mb-4">
                     <p>Anything if you want to let us know about your booking</p>
                     <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="reservation[message]"></textarea>
                 </div>
+
+
                 <div class="mb-3" style="display: none;margin-top: 10px;" id="book-on-success">
                     <p>Your enquiry form has been saved, we will contact you very soon!</p>
                 </div>

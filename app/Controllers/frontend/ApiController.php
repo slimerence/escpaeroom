@@ -60,7 +60,7 @@ class ApiController extends Controller
 
             // 通知网站管理员和用户
             event(new BookingReceived($reservation, $this->siteConfig));
-            return back()->with('success','Your reservation has been sent!');
+            return view(_get_frontend_theme_path('pages.confirmation'));
         }
         return back()->with('error','Something wrong with the server!');
     }

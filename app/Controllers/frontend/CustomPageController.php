@@ -46,23 +46,23 @@ class CustomPageController extends Controller
     public function team(){
         $this->dataForView['menuName'] = 'team building';
         return view(
-            _get_frontend_theme_path('pages.404'),
+            _get_frontend_theme_path('pages.team'),
             $this->dataForView
         );
     }
 
-    public function terms(){
-        $this->dataForView['menuName'] = 'terms';
+    public function term(){
+        $this->dataForView['menuName'] = 'Terms and conditions';
         return view(
-            _get_frontend_theme_path('pages.404'),
+            _get_frontend_theme_path('pages.terms'),
             $this->dataForView
         );
     }
 
-    public function party(){
-        $this->dataForView['menuName'] = 'special party';
+    public function policy(){
+        $this->dataForView['menuName'] = 'PRIVACY POLICY';
         return view(
-            _get_frontend_theme_path('pages.404'),
+            _get_frontend_theme_path('pages.policy'),
             $this->dataForView
         );
     }

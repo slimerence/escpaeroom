@@ -8,11 +8,11 @@
 Route::get('/about-us', '\Smartbro\Controllers\frontend\CustomPageController@about');
 Route::get('/games', '\Smartbro\Controllers\frontend\CustomPageController@games');
 Route::get('/team-building', '\Smartbro\Controllers\frontend\CustomPageController@team');
-Route::get('/party', '\Smartbro\Controllers\frontend\CustomPageController@party');
 Route::get('/faq', '\Smartbro\Controllers\frontend\CustomPageController@faq');
 Route::get('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@join');
 Route::get('/pricing', '\Smartbro\Controllers\frontend\CustomPageController@pricing');
-Route::get('/terms', '\Smartbro\Controllers\frontend\CustomPageController@terms');
+Route::get('/term', '\Smartbro\Controllers\frontend\CustomPageController@term');
+Route::get('/policy', '\Smartbro\Controllers\frontend\CustomPageController@policy');
 
 
 

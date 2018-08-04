@@ -37,7 +37,12 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="w-100 text-center font-italic">
-                                    Corporate team building: Contact us please
+                                    10 People or more: $35 per person
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="w-100 text-center font-italic">
+                                    Corporate team building: please contact us
                                 </div>
                             </li>
                         </ul>
@@ -48,12 +53,13 @@
                         <h3 class="text-center">Booking process</h3>
                         <hr class="colored">
                         <ol>
-                            <li>Please decide which game that you would like to experience.</li>
-                            <li>Fill out your detail and select a date and time for your adventure.</li>
-                            <li>Our friendly staff will send you a confirmation letter once we accept your booking request and will remind you again in 24 hours by phone call.</li>
-                            <li>Please arrive at least 15 mins prior to your adventure.</li>
-                            <li>Fees are payable at front desk before you start.</li>
+                            <li>Pick up a game</li>
+                            <li>Pick up a date on the calendar from the game page</li>
+                            <li>Fill out all your details on the form</li>
+                            <li>Make a $50.00 deposit for your reservation online. The balance is payable on the date before the game.</li>
+                            <li>Please check your email, including spam box, for your booking details.</li>
                         </ol>
+                        <p>If you have any trouble, please send us an email <a href="mailto:Bookings.torx@gmail.com" target="_blank">Bookings.torx@gmail.com</a>. Please turn up 10mins before the session time of the game.</p>
                     </div>
                 </div>
                 <div class="col-lg-12 mx-auto">

@@ -90,7 +90,7 @@
                                 <div class="control">
                                     <label class="checkbox">
                                         <input type="checkbox" checked>
-                                        I agree to the <a href="{{ url('/terms') }}">terms and conditions</a>
+                                        I agree to the <a href="{{ url('/term') }}">terms and conditions</a>
                                     </label>
                                 </div>
                             </div>

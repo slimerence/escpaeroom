@@ -723,3 +723,16 @@ footer{
     margin-bottom:9px;
   }
 }
+
+.special-box{
+  -webkit-box-shadow: 0 0 30px 5px rgba(34, 34, 34, 0.75);
+  box-shadow: 0 0 30px 5px rgba(34, 34, 34, 0.75);
+  background: $color-bg;
+  margin-bottom:1.2em;
+  padding:2em;
+}
+.h-color{
+  h1,h2,h3,h4,h5,h6{
+    color: $color-ye;
+  }
+}

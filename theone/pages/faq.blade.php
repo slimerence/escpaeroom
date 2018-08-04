@@ -9,12 +9,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. HOW CAN I BOOK ESCAPE ROOMS AND WHEN DO I PAY?</a>
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. I never play escape room before; do I need to know anything before I come? </a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <p>Register your account and login first. Simply click the “Book” button and select your game. Follow the prompts to input names, number of players, date and time. You can then click “Pay Now” where you’ll be prompted to pay the deposit, followed by a booking confirmation via email. You will pay the remaining amount on the day.</p>
+                            <p>Yes, you need to observe, search, communicate and solve problems as a team to escape at the end. Good luck!</p>
                         </div>
                     </div>
                 </div>
@@ -22,12 +22,12 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
-                                2. CAN I USE A CREDIT CARD?</a>
+                                2. What if I am stuck? </a>
                         </h4>
                     </div>
                     <div id="collapseTen" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>We use PayPal Payments Pro Solutions for transactions and therefore accept Visa or MasterCard credit card.</p>
+                            <p>A game master will be in control, if you are stuck, call the game master via walkie talkie and you will receive the information you need for the game. </p>
                         </div>
                     </div>
                 </div>
@@ -35,12 +35,13 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
-                                3. IS IT POSSIBLE TO BOOK IN FOR SPECIAL EVENTS AND CORPORATE TEAM BUILDING </a>
+                                3. Is there an age limit? </a>
                         </h4>
                     </div>
                     <div id="collapseEleven" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>Yes. Please contact us via email info@doctorq.com.au to make special arrangements or simply book multiple rooms online.</p>
+                            <p>If the participants are under 16 years old, they must be accompanied by an adult.
+                                The adult needs to pay for the game as well.</p>
                         </div>
                     </div>
                 </div>
@@ -48,13 +49,12 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                4. IS THERE AN AGE LIMIT?</a>
+                                4. Will we play with people we don’t know? </a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>Please check each game's description.
-                                Age limit of 12 years or 16 years applies to different games.</p>
+                            <p>No. You are playing with your teammates only. </p>
                         </div>
                     </div>
                 </div>
@@ -62,12 +62,13 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                5. THE NUMBER OF PEOPLE SHOWING UP MAY DIFFER FROM THE NUMBER THAT WAS BOOKED. IS THIS A PROBLEM?</a>
+                                5. What if some of my friends wants to join on the date? Or drop out at the last minute? </a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>No problem, provided the size of the team does not exceed the maximum number of each game.</p>
+                            <p>If you have extra participants, no worries at all. Bring them along and enjoy!
+                                If you have less, no problem, just work harder!</p>
                         </div>
                     </div>
                 </div>
@@ -75,12 +76,14 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                6. WHAT'S THE IDEAL TEAM/GROUP SIZE FOR AN ESCAPE ROOM?</a>
+                                6. What if I am running late? </a>
                         </h4>
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>More people equal more excitement and fun. That said, small groups will of course have fun, but the experience will be different. Why not try both? We have 5 rooms. Please note, the maximum number of players is 6-8 to prevent over-crowding.</p>
+                            <p>We try all our effort to make sure you can have 60mins escape room experience.
+                                However, if you are really running late, that’s a very unfortunate issue, your gaming session will be affected, please make sure you arrive 10 mins in advance.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -88,12 +91,15 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                7. ARE ALL ROOMS OF EQUAL DIFFICULTY?</a>
+                                7. Can I cancel my booking?</a>
                         </h4>
                     </div>
                     <div id="collapseSix" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>We have 5 escape rooms, and they are each very different in terms of story, environment, and game flow, therefore each offers a different escape room experience. Why not try one and experience our unique adventure.</p>
+                            <p>No refund on confirmed bookings or in case of no-show.
+                                We do allow rescheduling if you contact us more than 48 hours ahead of your booking time.
+                                Please contact us if you need to reschedule.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -113,40 +119,55 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">9. HOW DO I GET THERE?</a>
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9">9. What should I wear? </a>
                         </h4>
                     </div>
-                    <div id="collapseNine" class="panel-collapse collapse">
+                    <div id="collapse9" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>A Google map is located on our Contact page.
-                            TRAINS - We are located only metres away from the South Yarra train station.
-                            TRAMS - Trams operate along Toorak Rd, as well as Chapel St which is only metres away.
-                            PARKING - See plenty of parking options only walking distance away.</p>
+                            <p>Make yourself comfortable please. </p>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                10. WHAT TO BRING? ANY SUGGESTIONS BEFORE WE START THE ESCAPE GAME?</a>
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+                                10. Can I book over the phone?</a>
                         </h4>
                     </div>
-                    <div id="collapseFour" class="panel-collapse collapse">
+                    <div id="collapse10" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>You, your friends, and colleagues, and get prepared to have fun. In order to ensure an hour of uninterrupted fun, if possible, please use the restroom before the game starts and mute or power off your mobile phone and give it to the Game Master before entering the game area.</p>
+                            <p>Unfortunately, we do not take bookings over the phone. </p>
                         </div>
                     </div>
                 </div>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">11. HOW LONG DOES IT TAKE TO FINISH THE GAME?</a>
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11">11. Where is The One Room Escape? </a>
                         </h4>
                     </div>
-                    <div id="collapseSeven" class="panel-collapse collapse">
+                    <div id="collapse11" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>It depends on your performance. When the game starts, you have 60/90 minutes to escape depending on the game.</p>
+                            <p>The One Room Escape is located in 9 Aristoc Rd, Glen Waverley.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12">11. Public transport / Parking?</a>
+                        </h4>
+                    </div>
+                    <div id="collapse12" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>10-15 mins walking distance from the Glen Waverley train station.
+                                Heaps of private parking spaces in front of the property and free of charge
+                                Heaps at the rear as well free of charge.
+                                2 hours on the street during week days please refer to the sign.
+                            </p>
                         </div>
                     </div>
                 </div>
