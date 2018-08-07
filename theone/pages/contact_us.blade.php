@@ -46,6 +46,7 @@
                                 <strong>Wechat  </strong><br>
                                 <div class="qrcode">
                                     <span>Scan QR code</span>
+                                    <img src="{{ asset('images/qr.jpg') }}" alt="phone-icon" class="d-block img-fluid">
                                 </div>
                             </li>
                         </ul>
