@@ -12,11 +12,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Utils\JsonBuilder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Smartbro\Events\Booking\BookingReceived;
 use Smartbro\Listeners\Booking\BookingReceivedEventListener;
+use Smartbro\Mail\BookingReceivedToAdmin;
+use Smartbro\Mail\BookingReceivedToCustomer;
+use Illuminate\Support\Facades\Mail;
+use Smartbro\Jobs\Email\Booking\BookingReceived as BookingReceivedJob;
 use Smartbro\Models\Reservation;
 use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
+use App\Models\Configuration;
 
 class ApiController extends Controller
 {
@@ -52,14 +56,10 @@ class ApiController extends Controller
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
         if($reservation = Reservation::Persistent($reservation)){
-            // 手动的注册事件
-            Event::listen(
-                BookingReceived::class,
-                BookingReceivedEventListener::class
-            );
-
-            // 通知网站管理员和用户
-            event(new BookingReceived($reservation, $this->siteConfig));
+            Mail::to($this->siteConfig->contact_email)
+                ->send(new BookingReceivedToAdmin($reservation));
+            Mail::to($reservation->email)
+                ->send(new BookingReceivedToCustomer($reservation));
             return view(_get_frontend_theme_path('pages.confirmation'));
         }
         return back()->with('error','Something wrong with the server!');
