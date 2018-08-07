@@ -736,3 +736,22 @@ footer{
     color: $color-ye;
   }
 }
+
+#teambuilding{
+  .special-box{
+    h4{
+      font-size: 16px;
+    }
+    h2{
+      color:$color-text;
+      text-align:center;
+      font-size:30px;
+    }
+  }
+  .coimg{
+    img{
+      max-width: 120px;
+      margin: 0 10px;
+    }
+  }
+}

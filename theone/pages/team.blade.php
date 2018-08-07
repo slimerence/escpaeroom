@@ -2,9 +2,9 @@
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
-    <section class="page-section bg-special bg-moving" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
+    <section class="page-section bg-special bg-moving" id="teambuilding" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
-            <div class="special-box color-text h-color">
+            <div class="special-box color-text h-color mb-5">
                 <h2>WHY AN ESCAPE ROOM?</h2>
                 <h4>Team working</h4>
                 <p>Here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
@@ -17,7 +17,8 @@
                 A competition in a healthy way.</p>
                 <h4>Fun</h4>
                 <p>It’s an extremely fun way to get your team out of the workplace!</p>
-
+            </div>
+            <div class="special-box color-text h-color mb-5">
                 <h2>Why The One Room Escape?</h2>
                 <p>Since 2017, The One Room Escape have hosted many corporate events and the list of the business is still growing today.</p>
 
@@ -30,10 +31,21 @@
                 <p>Heaps of private parking spaces in front of the property could easily handle your cars and even more parking at rear. Don’t worry about the parking, they all free of charge.</p>
                 <h4>Catering packages</h4>
                 <p>Catering package is available. If you need more than just snacks and drinks, please talk to us, we could order food for your event.</p>
-
-
             </div>
+
+            <div class="special-box color-text h-color">
+                <h2>Our Partners</h2>
+                <div class="d-flex flex-wrap">
+                    @for($i=1;$i<15;$i++)
+                        <div class="coimg align-self-center">
+                            <img src="{{ asset('images/cos/co-'.$i.'.png') }}" alt="{{ $i }}">
+                        </div>
+                    @endfor
+                </div>
+            </div>
+
         </div>
+
     </section>
 
 @endsection
