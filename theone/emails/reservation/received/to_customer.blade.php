@@ -214,7 +214,7 @@
                                 <!-- Callout Panel -->
                                 <p></p>
                                 <p>We are just as excited as you and looking forward to have your adventure hosted here.</p>
-                                <p>If you haven't read our Terms and Conditions and Privacy Policy, please spend few minutes to go through them. It is important.</p>
+                                <p>If you haven't read our <a href="{{ url('/term') }}">Terms and Conditions</a> and <a href="{{ url('/policy') }}">Privacy Policy</a>, please spend few minutes to go through them. It is important.</p>
                                 <p>If there is anything wrong about the booking and you need to contact us, please call on 0430019292 - John</p>
                                 <p></p>
                                 <p>Sincerely,</p>
