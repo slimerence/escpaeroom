@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label data-error="wrong" data-success="right" for="book-group" class="font-weight-bold">Number of participants</label>
-                                        <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="4" max="16" required>
+                                        <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="0" max="16" required>
                                     </div>
 
                                     <div class="form-group">
