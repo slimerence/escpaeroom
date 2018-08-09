@@ -32,7 +32,7 @@ class AdminController extends Controller
         $this->dataForView['config'] = Configuration::find(1);
         $this->dataForView['products'] = Product::orderBy('id','desc')->paginate(config('system.PAGE_SIZE'));
         $reservations = Reservation::orderBy('at','asc')->orderBy('created_at','asc');
-        $this->dataForView['reservations'] = $reservations->paginate(config('system.PAGE_SIZE'));
+        $this->dataForView['reservations'] = $reservations->get();
         $this->dataForView['pastreservations'] = Reservation::GetPastReservations();
         $this->dataForView['comingreservations'] = Reservation::GetComingReservations();
         $this->dataForView['users'] = User::where('group_id','1')->orderBy('id','desc')->get();

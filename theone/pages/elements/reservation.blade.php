@@ -1,7 +1,7 @@
 <section id="reservation" class="bg-normal color-text">
     <div class="container">
         <?php
-        $today = Carbon\Carbon::now();
+        $today = Carbon\Carbon::now('Australia/Melbourne');
         if(empty($frontdate)){
             $displayDate = $today;
         }else{

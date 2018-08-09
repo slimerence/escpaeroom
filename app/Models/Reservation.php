@@ -136,7 +136,7 @@ class Reservation extends Model
     public static function GetPastReservations(){
         $pastreservations = [];
         $reservations =  self::orderBy('at','asc')->orderBy('created_at','asc')->get();
-        $today = Carbon::now();
+        $today = Carbon::now('Australia/Melbourne');
         foreach ($reservations as $key=>$reservation) {
             if ($reservation->at < $today){
                 $pastreservations[] = $reservation;
@@ -148,7 +148,7 @@ class Reservation extends Model
     public static function GetComingReservations(){
         $comingreservations = [];
         $reservations =  self::orderBy('at','asc')->orderBy('created_at','asc')->get();
-        $today = Carbon::now();
+        $today = Carbon::now('Australia/Melbourne');
         foreach ($reservations as $key=>$reservation) {
             if ($reservation->at >= $today){
                 $comingreservations[] = $reservation;
