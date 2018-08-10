@@ -13,7 +13,7 @@ use Carbon\Carbon;
 class TimeSlot
 {
     const START_AT  = 10;    // 开始时的小时数, 10表示早上10点
-    const TOTAL     = 8;     // 每天多少轮
+    const TOTAL     = 9;     // 每天多少轮
     const DURATION  = 60;    // 多长时间, 分钟数
     const INTERVAL  = 30;    // 时间间隔, 分钟数
 
@@ -52,6 +52,45 @@ class TimeSlot
      * @return array[TimeSlot]
      */
     public static function GetAll($_startAt = self::START_AT, $_total = self::TOTAL, $_duration = self::DURATION, $_interval = self::INTERVAL){
+        $timeSlots = [];
+        $totalMinutes = -$_duration - $_interval;
+        for ($i=0;$i<$_total;$i++){
+            $totalMinutes += $_duration + $_interval;
+            $hour = $_startAt + floor($totalMinutes/$_duration);
+
+            if($hour > 23){
+                break;
+            }else{
+                $minutes = $totalMinutes % $_duration;
+                $minutes = $minutes<10 ? '0'.$minutes : ''.$minutes;
+                $textStart = $hour.':'.$minutes;
+
+                $startAt = Carbon::create(1980, 1,1, $hour, $minutes);
+
+                $timeSlots[] = new TimeSlot(
+                    intval($hour),
+                    $minutes,
+                    $textStart,
+                    $startAt->addMinutes($_duration)->format('H:i'),
+                    $_duration,
+                    $_interval
+                );
+            }
+        }
+
+        return $timeSlots;
+    }
+
+    public static function GetSpecific($date){
+        $_startAt = self::START_AT;
+        $_duration = self::DURATION;
+        $_interval = self::INTERVAL;
+        $day = $date->dayOfWeek;
+        if($day==0||$day>=5){
+            $_total=9;
+        }else{
+            $_total=8;
+        }
         $timeSlots = [];
         $totalMinutes = -$_duration - $_interval;
         for ($i=0;$i<$_total;$i++){

@@ -21,6 +21,7 @@ use Smartbro\Models\Reservation;
 use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
 use App\Models\Configuration;
+use Carbon\Carbon;
 
 class ApiController extends Controller
 {
@@ -32,9 +33,11 @@ class ApiController extends Controller
      */
     public function get_available_time_slot(Request $request){
         $product = Product::GetByUuid($request->get('p'));
+        $datestr = substr($request->get('d'),0,10);
+        $date = Carbon::createFromFormat('Y-m-d',$datestr,'Australia/Melbourne');
         $slots = Reservation::GetAvailableTimeSlots($product,
             $request->get('d'),
-            TimeSlot::GetAll()
+            TimeSlot::GetSpecific($date)
         );
         $result = [];
         foreach ($slots as $timeSlot) {
