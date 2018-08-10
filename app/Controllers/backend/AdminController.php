@@ -19,6 +19,7 @@ use Carbon\Carbon;
 use App\Models\Catalog\Category;
 use Smartbro\Models\BlockReservation;
 use Smartbro\Models\Maintain;
+use Smartbro\Models\Franchise;
 
 class AdminController extends Controller
 {
@@ -37,6 +38,8 @@ class AdminController extends Controller
         $this->dataForView['comingreservations'] = Reservation::GetComingReservations();
         $this->dataForView['users'] = User::where('group_id','1')->orderBy('id','desc')->get();
         $this->dataForView['leads'] = Lead::orderBy('id','desc')
+            ->paginate(config('system.PAGE_SIZE'));
+        $this->dataForView['franchises'] = Franchise::orderBy('id','desc')
             ->paginate(config('system.PAGE_SIZE'));
         return view(_get_frontend_theme_path('admin.index'), $this->dataForView);
     }

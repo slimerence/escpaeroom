@@ -16,6 +16,7 @@ use App\Models\Widget\Block;
 use Illuminate\Http\Request;
 use App\Models\Catalog\Product\Colour;
 use App\Models\Catalog\Tag;
+use Smartbro\Models\Franchise;
 use Carbon;
 
 
@@ -77,10 +78,19 @@ class CustomPageController extends Controller
     public function join(){
     $this->dataForView['menuName'] = 'franchise';
     return view(
-        _get_frontend_theme_path('pages.404'),
+        _get_frontend_theme_path('pages.franchise'),
         $this->dataForView
     );
-}
+    }
+    public function joinpost(Request $request){
+        $lead = $request->get('lead');
+        $this->dataForView['menuName'] = 'franchise';
+        if($lead = Franchise::Persistent($lead)){
+            return back()->with('success','Your reservation has been sent!');
+        }
+        return back()->with('error','Something wrong with the server!');
+
+    }
     public function pricing(){
         $this->dataForView['menuName'] = 'pricing';
         return view(

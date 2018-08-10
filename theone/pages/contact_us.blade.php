@@ -57,7 +57,7 @@
                 <div class="col-md-6">
                     <div class="contact-form">
                         <div class="contact-title">
-                            <h3>Contact From</h3>
+                            <h3>Contact Form</h3>
                         </div>
                         <form action="{{ url('contact-us') }}" method="post" id="commentform" class=contact-us-form">
                             {{ csrf_field() }}

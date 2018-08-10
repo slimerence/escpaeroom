@@ -68,7 +68,7 @@
                 <!-- /.panel -->
                 <div class="chat-panel panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-comments fa-fw"></i> Leads
+                        <i class="fa fa-comments fa-fw"></i> Contact
                         <div class="btn-group pull-right">
                             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-chevron-down"></i>
@@ -106,8 +106,12 @@
                                         <small class="pull-right text-muted">
                                             <i class="fa fa-clock-o fa-fw"></i> &nbsp;{{ $difference }}
                                         </small>
+                                        <div class="caption">
+                                            <span><strong>phone:</strong>{{ $lead->phone }}</span>
+                                            <span style="float: right;"><strong>email:</strong>{{ $lead->email }}</span>
+                                        </div>
                                     </div>
-                                    <p>{{$lead->message}}
+                                    <p style="margin-top: 0.5em;">{{$lead->message}}
                                     </p>
                                 </div>
                             </li>
@@ -117,6 +121,43 @@
                     <!-- /.panel-footer -->
                 </div>
                 <!-- /.panel .chat-panel -->
+                <div class="chat-panel panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-comments fa-fw"></i> Franchise
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <ul class="chat">
+                            @foreach($franchises as $lead)
+                                <li class="left clearfix">
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <?php $createtime = $lead->created_at;
+                                            $difference = $createtime->diffForHumans();
+                                            ?>
+                                            <strong class="primary-font">{{ $lead->name }}</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> &nbsp;{{ $difference }}
+                                            </small>
+                                            <div class="caption">
+                                                <span><strong>phone:</strong>{{ $lead->phone }}</span>
+                                                <span style="float: right;"><strong>email:</strong>{{ $lead->email }}</span>
+                                            </div>
+                                            @if(isset($lead->money)&& $lead->money !='')
+                                                <div class="caption">
+                                                    <span><strong>estimated budget:</strong>{{ $lead->money }}</span>
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <p style="margin-top: 0.5em;">{{$lead->message}}
+                                        </p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <!-- /.panel-footer -->
+                </div>
             </div>
             <!-- /.col-lg-4 -->
         </div>
