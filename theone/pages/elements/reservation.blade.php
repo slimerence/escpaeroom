@@ -49,7 +49,7 @@
                     ?>
                     @while(($tempDate->month <= $displayDate->month && $tempDate->isSameYear($displayDate)) || $tempDate->year < $displayDate->year)
                         @for($i=0; $i < 7; $i++)
-                            @if( $tempDate < $today || $tempDate->dayOfWeek ==1)
+                            @if( $tempDate->startOfDay() < $today->startOfDay() || $tempDate->dayOfWeek ==1)
                                 <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
                                     <h5 class="text-center">
                                         <span class="date unclickable">{{ $tempDate->day }}</span>
@@ -57,7 +57,7 @@
                                 </div>
                             @else
                                 <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
-                            {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
+                                {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
                                     <?php  $currentDate = $tempDate->toDateString() ?>
                                     <a href="{{ url('api/booking/get-available-time-slot') }}" class="date-picker-btn" data-value="{{ $currentDate }}">
                                         <h5 class="text-center">
