@@ -104,24 +104,30 @@ class Reservation extends Model
     }
 
     /**
-     * 检查给定的产品和日期时间是否已经被预定了
+     * 检查给定的产品和日期时间是否已经被预定了; 同时根据当前的日期， 决定哪个时间段可以下发
      * @param Product $product
      * @param string $date 日期
-     * @param array[TimeSlot] $timeSlots 最好为一个Carbon类对象的数组
+     * @param array $timeSlots 最好为一个Carbon类对象的数组
      * @return array
      */
     public static function GetAvailableTimeSlots(Product $product, $date, $timeSlots){
+
         $availableIndexes = [];
         foreach ($timeSlots as $key=>$timeSlot) {
+            /**
+             * @var TimeSlot $timeSlot
+             */
             $blockcount = BlockReservation::where([
                 'product_id'=>$product->id,
                 'at'=>$timeSlot->toCarbon($date)
             ])->count();
-            /* @var $timeSlot TimeSlot */
+
+
             $count = self::where([
                 'product_id'=>$product->id,
                 'at'=>$timeSlot->toCarbon($date)
             ])->count();
+
             if($count === 0 && $blockcount ==0){
                 $availableIndexes[] = $key;
             }

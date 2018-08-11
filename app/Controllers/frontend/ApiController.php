@@ -33,12 +33,20 @@ class ApiController extends Controller
      */
     public function get_available_time_slot(Request $request){
         $product = Product::GetByUuid($request->get('p'));
-        $datestr = substr($request->get('d'),0,10);
-        $date = Carbon::createFromFormat('Y-m-d',$datestr,'Australia/Melbourne');
-        $slots = Reservation::GetAvailableTimeSlots($product,
+        $dateString = substr($request->get('d'),0,10);
+
+        $date = Carbon::createFromFormat(
+            'Y-m-d',
+            $dateString,
+            TimeSlot::DEFAULT_TIME_ZONE
+        );
+        
+        $slots = Reservation::GetAvailableTimeSlots(
+            $product,
             $request->get('d'),
             TimeSlot::GetSpecific($date)
         );
+
         $result = [];
         foreach ($slots as $timeSlot) {
             /* @var $timeSlot TimeSlot */
