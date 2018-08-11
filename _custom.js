@@ -141,13 +141,13 @@ $(document).ready(function(){
         e.preventDefault();
         // 是前一天还是往后挪一天
         let current = moment($('#booking-date').val(),'YYYY-MM-DD');
-        let today = moment();
+        let yesterday = moment().add(-1,'day');
         let newDate = null;
         let canUpdate = true;
         if($(this).data('type') === 'prev'){
             newDate = current.subtract(1,'d');  // 前一天
-            if(newDate.isBefore(today)){
-                // 最早预定不能晚于今天
+            if(newDate.isBefore(yesterday)){
+                // 最早预定不能晚于昨天
                 canUpdate = false;
             }
         }else{

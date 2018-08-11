@@ -17,6 +17,11 @@ class TimeSlot
     const DURATION  = 60;    // 多长时间, 分钟数
     const INTERVAL  = 30;    // 时间间隔, 分钟数
 
+    /**
+     * @var string 定义要使用的时区
+     */
+    const DEFAULT_TIME_ZONE = 'Australia/Melbourne';
+
     public $hour;
     public $minutes;
     public $text_start;
@@ -65,7 +70,11 @@ class TimeSlot
                 $minutes = $minutes<10 ? '0'.$minutes : ''.$minutes;
                 $textStart = $hour.':'.$minutes;
 
-                $startAt = Carbon::create(1980, 1,1, $hour, $minutes);
+                $startAt = Carbon::createFromFormat(
+                    'H:i',
+                    $textStart,
+                    self::DEFAULT_TIME_ZONE
+                );
 
                 $timeSlots[] = new TimeSlot(
                     intval($hour),
@@ -77,26 +86,45 @@ class TimeSlot
                 );
             }
         }
-
         return $timeSlots;
     }
 
-    public static function GetSpecific($date){
+    /**
+     * 根据给定的日期，返回time slots
+     * @param Carbon $date
+     * @return array
+     */
+    public static function GetSpecific(Carbon $date){
         $_startAt = self::START_AT;
         $_duration = self::DURATION;
         $_interval = self::INTERVAL;
-        $day = $date->dayOfWeek;
-        if($day==0||$day>=5){
-            $_total=9;
-        }else{
-            $_total=8;
-        }
+        /**
+         * 获取给定日期的场数, 8场或者9场
+         * @var int $_total
+         */
+        $_total = self::_calcGivenDateTotal($date);
+
         $timeSlots = [];
         $totalMinutes = -$_duration - $_interval;
+
+        /**
+         * 检查一下, 给定日期，如果是今天
+         */
+        // 获取当前时间
+        $now = Carbon::now(self::DEFAULT_TIME_ZONE);
+        $isToday = $date->isToday();
+
+        /**
+         * 不是今天，而是今天以后的
+         */
         for ($i=0;$i<$_total;$i++){
+            /**
+             * 首先假定是可以添加的有效时间
+             */
+            $isAvailableTime = true;
+
             $totalMinutes += $_duration + $_interval;
             $hour = $_startAt + floor($totalMinutes/$_duration);
-
             if($hour > 23){
                 break;
             }else{
@@ -104,20 +132,45 @@ class TimeSlot
                 $minutes = $minutes<10 ? '0'.$minutes : ''.$minutes;
                 $textStart = $hour.':'.$minutes;
 
-                $startAt = Carbon::create(1980, 1,1, $hour, $minutes);
-
-                $timeSlots[] = new TimeSlot(
-                    intval($hour),
-                    $minutes,
+                $startAt = Carbon::createFromFormat(
+                    'H:i',
                     $textStart,
-                    $startAt->addMinutes($_duration)->format('H:i'),
-                    $_duration,
-                    $_interval
+                    self::DEFAULT_TIME_ZONE
                 );
+
+                if($isToday && $startAt->lessThan($now)){
+                    // 指定日期为今天, 并且开始时间小于当前时间, 那么就是无效时间了
+                    $isAvailableTime = false;
+                }
+
+                if($isAvailableTime){
+                    // 有效时间
+                    $timeSlots[] = new TimeSlot(
+                        intval($hour),
+                        $minutes,
+                        $textStart,
+                        $startAt->addMinutes($_duration)->format('H:i'),
+                        $_duration,
+                        $_interval
+                    );
+                }
             }
         }
 
         return $timeSlots;
+    }
+
+    /**
+     * 根据给定的日期，获取该日期应该有几场
+     * @param Carbon $date
+     * @return int
+     */
+    protected static function _calcGivenDateTotal(Carbon $date){
+        if($date->isSunday() || $date->isSaturday() || $date->isFriday()){
+            return self::TOTAL;
+        }else{
+            return self::TOTAL - 1;
+        }
     }
 
     /**
