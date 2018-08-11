@@ -64,7 +64,7 @@
 
                                 <div class="form-group">
                                     <p>Anything if you want to let us know about your booking</p>
-                                    <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="reservation[message]" value="{{$reservation->message}}"></textarea>
+                                    <textarea rows="6" class="textarea form-control book-input" id="booking-message" name="reservation[message]">{{$reservation->message}}</textarea>
                                 </div>
                                 <button type="submit" class="btn btn-default btn-primary">Submit Button</button>
                             </form>
