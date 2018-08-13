@@ -12,6 +12,10 @@
         }else{
             $next = intval($month_interval) + 1;
             $prev = intval($month_interval) - 1;
+            if(intval($month_interval)>=12)
+                {
+                    $next = 12;
+                }
         }
         $tempDate = Carbon\Carbon::createFromDate($displayDate->year, $displayDate->month, 1);
         ?>
