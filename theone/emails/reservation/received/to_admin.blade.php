@@ -210,7 +210,7 @@
                             <p><strong>Phone number</strong>: {{ $reservation->phone }}</p>
 
                             <p><strong>Participants</strong>: {{ $reservation->participants }}</p>
-                            <p><strong>Message</strong>: {{ $reservation->messgae }}</p>
+                            <p><strong>Message</strong>: {{ $reservation->message }}</p>
 
                             <!-- Callout Panel -->
                             <p class="callout">

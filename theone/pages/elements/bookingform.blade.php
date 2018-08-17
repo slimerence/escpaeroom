@@ -106,7 +106,6 @@
                 <a href="" class="bookingCancelbtn btn">Cancel</a>
             </div>
             </form>
-
         </div>
     </div>
 </div>

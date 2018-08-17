@@ -187,5 +187,9 @@ $(document).ready(function(){
             $('#modalBookingForm input').val('');
     })
     }
-
+    if($('#BookingForm').length>0){
+        $("#BookingForm").on("submit", function(){
+            $("#pageloader").fadeIn();
+        });
+    }
 });
