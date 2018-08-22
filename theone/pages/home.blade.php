@@ -1,4 +1,8 @@
 @extends(_get_frontend_layout_path('frontend'))
+@section('seoconfig')
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+@endsection
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._header'))
