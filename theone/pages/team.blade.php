@@ -1,7 +1,7 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
-    <meta name="keywords" content="Team Building | Escape Rooms Melbourne">
-    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room is the best activities for team building. Book now, see if you and your team can be the winner.">
+    <meta name="keywords" content="Team Building | Corporate Event | Escape Rooms Melbourne">
+    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room can be a corporate event is the best activities for team building. Book now, see if you and your team can be the winner.">
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@
     <section class="page-section bg-special bg-moving" id="teambuilding" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
             <div class="special-box color-text h-color mb-5">
-                <h1>WHY AN ESCAPE ROOM? | Team Building</h1>
+                <h1>WHY AN ESCAPE ROOM? | Team Building | Corporate Event</h1>
                 <h2>The reason whey the escape room can be the most efficient method to help improve team building</h2>
                 <h4>Team working</h4>
-                <p>Here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
+                <p>When the event hold as a corporate event, here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
                 <h4>Problem-solving</h4>
                 <p>To escape is not easy, you need to solve problems as you go. Think about the problems and talk to your mates and find out the solution. Thinking outside of the box sometimes will be very helpful.</p>
                 <h4>Leadership</h4>

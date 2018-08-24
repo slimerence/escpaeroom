@@ -1,7 +1,7 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
-    <meta name="keywords" content="Team Building | Birthday Party Ideas">
-    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room is the best activities for team building. Book now, see if you and your team can be the winner.">
+    <meta name="keywords" content="Escape Experience | Team Building Activity">
+    <meta name="description" content="The one room escape offers customers the best escape experience in Melbourne. Escape Room is the best team building activities. Book now, see if you and your team can be the winner.">
 @endsection
 
 @section('content')
@@ -9,6 +9,7 @@
     <section class="page-section bg-special bg-moving" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
             <div class="panel-group faq" id="accordion">
+                <h1 class="faqHeader">Unforgettable escape experience and team building activities</h1>
                 <div class="faqHeader">General questions</div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -18,7 +19,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <p>Yes, you need to observe, search, communicate and solve problems as a team to escape at the end. Good luck!</p>
+                            <p>Yes, you need to observe, search, communicate and solve problems as a team to escape at the end, which can be a unforgettable escape experience for you. Good luck!</p>
                         </div>
                     </div>
                 </div>
@@ -58,7 +59,7 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>No. You are playing with your teammates only. </p>
+                            <p>No. You are playing with your teammates only. Which is the one of the best team building activities for people in almost all age. </p>
                         </div>
                     </div>
                 </div>

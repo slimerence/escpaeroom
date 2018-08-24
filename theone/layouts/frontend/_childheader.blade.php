@@ -4,6 +4,7 @@
         <div class="row h-100">
             <div class="col-12 my-auto text-center text-white">
                 <div class="child-title">{{ $menuName }}</div>
+
             </div>
         </div>
     </div>

@@ -1,4 +1,8 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Best Escape Room Melbourne | Adventure Games Melbourne | Franchise">
+    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room as the adventure games can be a challenge to many people. Book now, see if you and your team can escape out.">
+@endsection
 
 @section('content')
     <header class="childhead" style="background-image:  url({{ asset('images/backgrounds/childbanner.jpg') }}) ">
@@ -6,6 +10,7 @@
             <div class="row h-100">
                 <div class="col-12 my-auto text-center text-white">
                     <div class="child-title">FRANCHISE</div>
+                    <h1 class="text-center">Best Escape Room Melbourne | Adventure Games Melbourne</h1>
                 </div>
             </div>
         </div>
