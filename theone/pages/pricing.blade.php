@@ -1,4 +1,8 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Escape Room Near Me | Escape Room Glen Waverley">
+    <meta name="description" content="The one room escape offers customers the best escape room in Glen Waverley. Find the fabulous escape room near me. Book now, see if you can be the winner.">
+@endsection
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
@@ -50,7 +54,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="price-info">
-                        <h3 class="text-center">Booking process</h3>
+                        <h2 class="text-center">Process of Booking A "Escape Room Near Me"</h2>
                         <hr class="colored">
                         <ol>
                             <li>Pick up a game</li>
@@ -60,6 +64,9 @@
                             <li>Please check your email, including spam box, for your booking details.</li>
                         </ol>
                         <p>If you have any trouble, please send us an email <a href="mailto:Bookings.torx@gmail.com" target="_blank">Bookings.torx@gmail.com</a>. Please turn up 10mins before the session time of the game.</p>
+                        <h1 class="text-center">Escape Room Near Me | Escape Room Glen Waverley</h1>
+                        <p>The One Room Escape is focusing on providing the wonderful experience to all escape room fans in Glen Waverley and all areas in Melbourne.  </p>
+                        <p>If you want to find a different experience of "escape room near me"， Please also email us and discuss with our staff. </p>
                     </div>
                 </div>
                 <div class="col-lg-12 mx-auto">

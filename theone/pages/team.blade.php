@@ -1,11 +1,16 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Team Building | Escape Rooms Melbourne">
+    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room is the best activities for team building. Book now, see if you and your team can be the winner.">
+@endsection
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
     <section class="page-section bg-special bg-moving" id="teambuilding" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
             <div class="special-box color-text h-color mb-5">
-                <h2>WHY AN ESCAPE ROOM?</h2>
+                <h1>WHY AN ESCAPE ROOM? | Team Building</h1>
+                <h2>The reason whey the escape room can be the most efficient method to help improve team building</h2>
                 <h4>Team working</h4>
                 <p>Here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
                 <h4>Problem-solving</h4>
@@ -17,10 +22,11 @@
                 A competition in a healthy way.</p>
                 <h4>Fun</h4>
                 <p>It’s an extremely fun way to get your team out of the workplace!</p>
+
             </div>
             <div class="special-box color-text h-color mb-5">
-                <h2>Why The One Room Escape?</h2>
-                <p>Since 2017, The One Room Escape have hosted many corporate events and the list of the business is still growing today.</p>
+                <h2>Why The One Room Escape? | Escape Rooms Melbourne</h2>
+                <p>Since 2017, The One Room Escape have hosted many corporate events and the list of the business is still growing today. We are one of the best escape room providers in Melbourne.</p>
 
                 <h4>Huge lounge area</h4>
                 <p>More than 200m2 space, you could make yourselves very comfortable.</p>

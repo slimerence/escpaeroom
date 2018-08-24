@@ -1,4 +1,9 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Escape Rooms | Things To Do Near Me">
+    <meta name="description" content="The one room escape provides board games, team building activities and surprise to customers in Melbourne. Escape rooms will be an exciting experience, which can be the most interested things to do near me. Come to experience our fabulous escape room game in Melbourne.
+">
+@endsection
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
@@ -8,6 +13,7 @@
                 <div class="col-lg-6 about-text">
                     <div class="wow fadeIn text-center">
                         <h2 class="color-text">We are ...</h2>
+                        <h1>Escape Rooms -- things to do near me</h1>
                     </div>
                     <hr class="colored">
                     <p class="color-text">The One Room Escape is established in 2016, covering an area of 1600 square metres, located at 9 ARISTOC ROAD, GLEN WAVERLEY. After a 12-month preparation, we could finally announce we are open now.<br/><br/>
@@ -22,7 +28,7 @@
                     </div>
                     <hr class="colored">
                     <p class="color-text">200 square metres lounge with a low-key style of decoration and a modern photobooth.<br/><br/>
-                        Sitting down with your mates after a brain-burning adventure, for a great relaxing, we provide you snacks, soft drinks and board games.<br/><br/>
+                        Sitting down with your mates after a brain-burning adventure, for a great relaxing, we provide you snacks, soft drinks and board games. Escape room can be listed in top 3 as the ranking of things to do near me. <br/><br/>
                         We can also handle private parties, corporate team building activities and even a custom marriage proposal!</p>
                 </div>
                 <div class="col-lg-6">

@@ -1,7 +1,8 @@
 @extends(_get_frontend_layout_path('frontend'))
 @section('seoconfig')
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="Escape Room | Escape Room Melbourne">
+    <meta name="description" content="The one room escape provides board games, team building activities and surprise to customers in Melbourne. Escape room will be an exciting experience. Come to experience our fabulous escape room game in Melbourne.
+">
 @endsection
 
 @section('content')
@@ -15,7 +16,7 @@
                     <img class="img-fluid rounded my-5 special-img" src="{{ asset('images/backgrounds/intro.png') }}" alt="Info Image">
                 </div>
                 <div class="col-lg-6 my-auto">
-                    <h2 class="text-center">WHAT IS ESCAPE ROOM</h2>
+                    <h1 class="text-center">WHAT IS ESCAPE ROOM</h1>
                     <hr class="colored">
                     <p>Escape room is an exciting experience.You and your teammate will be given new identities. Settled into a room specially setup where you are faced with a series of puzzles to solve using only the available items.<br/>
                         It could be</p>

@@ -1,4 +1,8 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Team Building | Birthday Party Ideas">
+    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room is the best activities for team building. Book now, see if you and your team can be the winner.">
+@endsection
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
