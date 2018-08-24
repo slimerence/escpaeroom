@@ -1,4 +1,8 @@
 @extends(_get_frontend_layout_path('childfrontend'))
+@section('seoconfig')
+    <meta name="keywords" content="Escape Rooms Near Me | Escape | Contact Us">
+    <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Come to see one of the top ranking of the near escape rooms near me. Book now, see if you and your team can escape out.">
+@endsection
 
 @section('content')
     <header class="childhead" style="background-image:  url({{ asset('images/backgrounds/childbanner.jpg') }}) ">
@@ -6,6 +10,7 @@
             <div class="row h-100">
                 <div class="col-12 my-auto text-center text-white">
                     <div class="child-title">CONTACT NOW</div>
+                    <h1 class="text-center">Escape Rooms Near Me | Escape</h1>
                 </div>
             </div>
         </div>
