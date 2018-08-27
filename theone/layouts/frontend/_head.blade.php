@@ -29,9 +29,15 @@
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:image" content="{{ isset($siteConfig) ? $siteConfig->logo : null }}" />
 
-    <!-- Plugin CSS
-    <link href="device-mockups/device-mockups.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104338229-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    <!-- Custom styles for this theme -->
+        gtag('config', 'UA-104338229-1');
+    </script>
+
 </head>
 
