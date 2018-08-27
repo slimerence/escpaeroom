@@ -2,7 +2,11 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
-    <title>@yield('title','The One Room Escape')</title>
+    @if(isset($pageTitle))
+    <title>{{$pageTitle}}</title>
+    @else
+    <title>The One Room Escape</title>
+    @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="bhruPXG49zw4HUTOZo2w2Aj8AyF_nmPF8vzo7xEDVNI" />
     @yield('seoconfig')
@@ -20,7 +24,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ url('/css/all.css')}}"/>
-
+    <meta property="og:title" content="{{ isset($pageTitle) ? $pageTitle : null }}" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:image" content="{{ isset($siteConfig) ? $siteConfig->logo : null }}" />
 
     <!-- Plugin CSS
     <link href="device-mockups/device-mockups.min.css" rel="stylesheet" type="text/css"> -->

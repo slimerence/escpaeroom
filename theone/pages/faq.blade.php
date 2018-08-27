@@ -7,10 +7,12 @@
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
     <section class="page-section bg-special bg-moving" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
-        <div class="container">
+        <div class="container " style="background-color: #222222e6;box-shadow: 0 0 30px 5px rgba(34, 34, 34, 0.78);padding: 2em 3em 2em 3em;">
+
             <div class="panel-group faq" id="accordion">
-                <h1 class="faqHeader">Unforgettable escape experience and team building activities</h1>
-                <div class="faqHeader">General questions</div>
+
+                <div class="faqHeader text-center mb-10" style="font-family: unset;font-size: 32px;">General questions</div>
+                <h1 class="text-center mb-30" style="font-family: unset;font-size: 20px;color: #ffd152;">Unforgettable escape experience and team building activities</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">

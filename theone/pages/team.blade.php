@@ -9,8 +9,8 @@
     <section class="page-section bg-special bg-moving" id="teambuilding" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
             <div class="special-box color-text h-color mb-5">
-                <h1>WHY AN ESCAPE ROOM? | Team Building | Corporate Event</h1>
-                <h2>The reason whey the escape room can be the most efficient method to help improve team building</h2>
+                <h1 class="text-center" style="font-size: 30px;">WHY AN ESCAPE ROOM? | Team Building | Corporate Event</h1>
+                <h2 style="font-family: unset;font-size: 18px;text-transform: unset;">The reason whey the escape room can be the most efficient method to help improve team building</h2>
                 <h4>Team working</h4>
                 <p>When the event hold as a corporate event, here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
                 <h4>Problem-solving</h4>
@@ -25,7 +25,7 @@
 
             </div>
             <div class="special-box color-text h-color mb-5">
-                <h2>Why The One Room Escape? | Escape Rooms Melbourne</h2>
+                <h2 class="color-ye" style="font-family: unset;color: #ffd152;">Why The One Room Escape? | Escape Rooms Melbourne</h2>
                 <p>Since 2017, The One Room Escape have hosted many corporate events and the list of the business is still growing today. We are one of the best escape room providers in Melbourne.</p>
 
                 <h4>Huge lounge area</h4>

@@ -6,14 +6,24 @@
 @endsection
 
 @section('content')
-    @include(_get_frontend_layout_path('frontend._childheader'))
+    <!-- Masthead -->
+    <header class="childhead" style="background-image:  url({{ asset('images/backgrounds/childbanner.jpg') }}) ">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <div class="child-title">{{ $menuName }}</div>
+                    <h1>Escape Rooms -- things to do near me</h1>
+                </div>
+            </div>
+        </div>
+    </header>
     <section class="page-section bg-special">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 about-text">
                     <div class="wow fadeIn text-center">
                         <h2 class="color-text">We are ...</h2>
-                        <h1>Escape Rooms -- things to do near me</h1>
+
                     </div>
                     <hr class="colored">
                     <p class="color-text">The One Room Escape is established in 2016, covering an area of 1600 square metres, located at 9 ARISTOC ROAD, GLEN WAVERLEY. After a 12-month preparation, we could finally announce we are open now.<br/><br/>
