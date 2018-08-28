@@ -1,5 +1,7 @@
 @extends(_get_frontend_layout_path('childfrontend'))
-
+@section('seoconfig')
+    <title>Terms and Conditions</title>
+@endsection
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
     <section class="page-section bg-special bg-moving" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">

@@ -1,7 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
-    <meta name="keywords" content="Room Escape | Indoor Activities Melbourne">
-    <meta name="description" content="The one room escape offers customers the best room escape experience. Room escape can be of the most interesting indoor activities Melbourne. Book now, see if you can be the winner.">
+    <title>Room Escape | Indoor Activities Melbourne</title>
 @endsection
 
 @section('content')

@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Escape Rooms | Things To Do Near Me</title>
     <meta name="keywords" content="Escape Rooms | Things To Do Near Me">
     <meta name="description" content="The one room escape provides board games, team building activities and surprise to customers in Melbourne. Escape rooms will be an exciting experience, which can be the most interested things to do near me. Come to experience our fabulous escape room game in Melbourne.
 ">

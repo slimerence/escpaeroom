@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>{{ $product->keywords }}</title>
     <meta name="keywords" content="{{ $product->keywords }}">
     <meta name="description" content="{{ $product->description }}">
 @endsection

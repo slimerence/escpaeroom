@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Team Building | Corporate Event | Escape Rooms Melbourne</title>
     <meta name="keywords" content="Team Building | Corporate Event | Escape Rooms Melbourne">
     <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room can be a corporate event is the best activities for team building. Book now, see if you and your team can be the winner.">
 @endsection

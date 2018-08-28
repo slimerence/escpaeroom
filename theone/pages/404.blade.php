@@ -1,5 +1,7 @@
 @extends(_get_frontend_layout_path('childfrontend'))
-
+@section('seoconfig')
+    <title>404</title>
+@endsection
 @section('content')
     <header class="masthead" style="background-image:  url({{ asset('images/backgrounds/nbg.png') }}) ">
         <div class="container h-100">

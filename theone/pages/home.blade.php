@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('frontend'))
 @section('seoconfig')
+    <title>Escape Room | Escape Room Melbourne</title>
     <meta name="keywords" content="Escape Room | Escape Room Melbourne">
     <meta name="description" content="The one room escape provides board games, team building activities and surprise to customers in Melbourne. Escape room will be an exciting experience. Come to experience our fabulous escape room game in Melbourne.">
 @endsection

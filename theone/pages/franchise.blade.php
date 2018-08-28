@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Best Escape Room Melbourne | Adventure Games Melbourne | Franchise</title>
     <meta name="keywords" content="Best Escape Room Melbourne | Adventure Games Melbourne | Franchise">
     <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Escape Room as the adventure games can be a challenge to many people. Book now, see if you and your team can escape out.">
 @endsection

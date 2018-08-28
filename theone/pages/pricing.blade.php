@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Escape Room Near Me | Escape Room Glen Waverley</title>
     <meta name="keywords" content="Escape Room Near Me | Escape Room Glen Waverley">
     <meta name="description" content="The one room escape offers customers the best escape room in Glen Waverley. Find the fabulous escape room near me. Book now, see if you can be the winner.">
 @endsection

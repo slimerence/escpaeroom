@@ -29,6 +29,7 @@ class CustomPageController extends Controller
 
     public function about(){
         $this->dataForView['menuName'] = 'about-us';
+        $this->dataForView['pageTitle'] = 'Escape Rooms | Things To Do Near Mee';
         return view(
             _get_frontend_theme_path('pages.about_us'),
             $this->dataForView
@@ -45,6 +46,7 @@ class CustomPageController extends Controller
         );
     }
     public function team(){
+        $this->dataForView['pageTitle'] = 'WHY AN ESCAPE ROOM? | Team Building | Corporate Event';
         $this->dataForView['menuName'] = 'team building';
         return view(
             _get_frontend_theme_path('pages.team'),
@@ -53,6 +55,7 @@ class CustomPageController extends Controller
     }
 
     public function term(){
+        $this->dataForView['pageTitle'] = 'Terms and Conditions';
         $this->dataForView['menuName'] = 'Terms and conditions';
         return view(
             _get_frontend_theme_path('pages.terms'),
@@ -61,6 +64,7 @@ class CustomPageController extends Controller
     }
 
     public function policy(){
+        $this->dataForView['pageTitle'] = 'PRIVACY POLICY';
         $this->dataForView['menuName'] = 'PRIVACY POLICY';
         return view(
             _get_frontend_theme_path('pages.policy'),
@@ -69,6 +73,7 @@ class CustomPageController extends Controller
     }
 
     public function faq(){
+        $this->dataForView['pageTitle'] = 'Escape Experience | Team Building Activity';
         $this->dataForView['menuName'] = 'faq';
         return view(
             _get_frontend_theme_path('pages.faq'),
@@ -76,7 +81,8 @@ class CustomPageController extends Controller
         );
     }
     public function join(){
-    $this->dataForView['menuName'] = 'franchise';
+        $this->dataForView['pageTitle'] = 'Best Escape Room Melbourne | Adventure Games Melbourne | Franchise';
+        $this->dataForView['menuName'] = 'franchise';
     return view(
         _get_frontend_theme_path('pages.franchise'),
         $this->dataForView
@@ -92,6 +98,7 @@ class CustomPageController extends Controller
 
     }
     public function pricing(){
+        $this->dataForView['pageTitle'] = 'Escape Room Near Me | Escape Room Glen Waverley';
         $this->dataForView['menuName'] = 'pricing';
         return view(
             _get_frontend_theme_path('pages.pricing'),

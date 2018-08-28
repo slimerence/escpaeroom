@@ -1,5 +1,8 @@
 @extends(_get_frontend_layout_path('childfrontend'))
-
+@section('seoconfig')
+    <title>Escape Rooms | Things To Do Near Me</title>
+    <meta name="keywords" content="Escape Rooms | Things To Do Near Me">
+@endsection
 @section('content')
     <section class="product-detail bg-normal color-text h-100">
         <div class="container wow fadeIn my-auto">

@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Escape Rooms Near Me | Escape | Contact Us</title>
     <meta name="keywords" content="Escape Rooms Near Me | Escape | Contact Us">
     <meta name="description" content="The one room escape offers customers the best escape rooms experience in Melbourne. Come to see one of the top ranking of the near escape rooms near me. Book now, see if you and your team can escape out.">
 @endsection

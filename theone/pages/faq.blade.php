@@ -1,5 +1,6 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 @section('seoconfig')
+    <title>Escape Experience | Team Building Activity</title>
     <meta name="keywords" content="Escape Experience | Team Building Activity">
     <meta name="description" content="The one room escape offers customers the best escape experience in Melbourne. Escape Room is the best team building activities. Book now, see if you and your team can be the winner.">
 @endsection
