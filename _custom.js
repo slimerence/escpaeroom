@@ -173,9 +173,13 @@ $(document).ready(function(){
             if(res.error_no === 100){
               $('.book-input input').val('');
               $('#booking-date').val(selected);
+              $('#bookingConfirmbtn').attr('disabled',false);
             }else{
                 alert('No vacancy, please try another day!');
             }
+        }).catch(err=>{
+            alert(err);
+            $('#bookingConfirmbtn').attr('disabled',true);
         });
       });
     }
