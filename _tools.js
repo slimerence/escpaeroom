@@ -22,6 +22,7 @@ export default function getAvailableTimeSlots(date, productUuid,targetSelectElem
           // 获取数据成功
           resolve(res.data)
         }else{
+          targetSelectElement.html('');
           // 没有获得或者, 指定日期没有可以预定的时间段了
           reject('No vacancy, please try another day!')
         }
