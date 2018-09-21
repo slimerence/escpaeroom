@@ -30,7 +30,7 @@
                 You must not copy, reproduce, modify, distribute, imitate, publish, commercially exploit or link to or deep-link into this website.
             </p>
             <h4>The place</h4>
-            <p>The One Room Escape operate the escape rooms and other activities in 9 Aristoc Road, Glen Waverley VIC 3150 (The place) The place is smoking free.
+            <p>The One Room Escape operate the escape rooms and other activities in 9 Aristoc Road, Glen Waverley VIC 3150, Australia (The place) The place is smoking free.
                 The place is under surveillance with recording function. We promise our customers that these records will not be released to any third parties for any purposes without the customers’ consent. The One Room Escape will use it if damages to the properties are found. The old records will be deleted within 30 days.
             </p>
             <h4>Your booking</h4>

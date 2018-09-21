@@ -158,7 +158,7 @@
                     </div>
                     <div id="collapse11" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>The One Room Escape is located in 9 Aristoc Rd, Glen Waverley.</p>
+                            <p>The One Room Escape is located in 9 Aristoc Rd, Glen Waverley, Australia.</p>
                         </div>
                     </div>
                 </div>

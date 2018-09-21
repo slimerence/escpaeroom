@@ -210,7 +210,7 @@
                                 <p><strong>Date</strong>: {{ $reservation->at_date }}</p>
                                 <p><strong>Time</strong>: {{ $reservation->at_time }}</p>
 
-                                <p><strong>Address</strong>: 9 Aristoc Road, Glen Waverley VIC 3150</p>
+                                <p><strong>Address</strong>: 9 Aristoc Road, Glen Waverley VIC 3150, Australia</p>
                                 <!-- Callout Panel -->
                                 <p></p>
                                 <p>We are just as excited as you and looking forward to have your adventure hosted here.</p>

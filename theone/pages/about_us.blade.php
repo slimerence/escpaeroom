@@ -27,7 +27,7 @@
 
                     </div>
                     <hr class="colored">
-                    <p class="color-text">The One Room Escape is established in 2016, covering an area of 1600 square metres, located at 9 ARISTOC ROAD, GLEN WAVERLEY. After a 12-month preparation, we could finally announce we are open now.<br/><br/>
+                    <p class="color-text">The One Room Escape is established in 2016, covering an area of 1600 square metres, located at 9 ARISTOC ROAD, GLEN WAVERLEY, AUSTRALIA. After a 12-month preparation, we could finally announce we are open now.<br/><br/>
                         The One built a high-end centre of escape rooms with a huge cost. We pursue the most real environment and your better gaming experience by focusing on various types of settings including mechanical high-tech interactive setups, high-quality stereo sound effects, innovative and original themes and special logic design, all these make us different from the traditional escape rooms with pad locks and physical keys etc.<br><br>
                         Now we are opening three different theme escape rooms. There will be more coming soon.
                         <br><br>Do you want to try something exciting and unique? Do you want to challenge your limit of thinking?
@@ -70,7 +70,7 @@
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <div class="w-100 text-center font-italic">
-                                    9 Aristoc Road, Glen Waverley VIC 3150
+                                    9 Aristoc Road, Glen Waverley VIC 3150, Australia
                                 </div>
                             </li>
                             <li class="list-group-item">
