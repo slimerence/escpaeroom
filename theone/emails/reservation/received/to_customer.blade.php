@@ -196,7 +196,6 @@
         <tr>
             <td></td>
             <td class="container" bgcolor="#FFFFFF">
-
                 <div class="content">
                     <table>
                         <tr>

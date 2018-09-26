@@ -106,6 +106,10 @@ class CustomPageController extends Controller
         );
     }
 
+    public function verify($file){
+        return response()->download( public_path(). '/storage/uploads/'.$file);
+    }
+
     public function change_month($uri,$sort){
         $product = Product::GetByUri($uri);
 
