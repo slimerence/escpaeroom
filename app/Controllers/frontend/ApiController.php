@@ -75,4 +75,8 @@ class ApiController extends Controller
         }
         return back()->with('error','Something wrong with the server!');
     }
+
+    public function pay(){
+        return view(_get_frontend_theme_path('catalog.payment'));
+    }
 }

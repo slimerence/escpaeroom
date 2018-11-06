@@ -14,6 +14,9 @@ Route::post('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@j
 Route::get('/pricing', '\Smartbro\Controllers\frontend\CustomPageController@pricing');
 Route::get('/term', '\Smartbro\Controllers\frontend\CustomPageController@term');
 Route::get('/policy', '\Smartbro\Controllers\frontend\CustomPageController@policy');
+
+
+
 Route::get('/.well-known/pki-validation/{file}','\Smartbro\Controllers\frontend\CustomPageController@verify');
 
 
@@ -30,6 +33,7 @@ Route::prefix('api/booking')->group(function(){
     Route::post('confirm','\Smartbro\Controllers\frontend\ApiController@booking_confirm');
     // 取消
     Route::post('cancel','\Smartbro\Controllers\frontend\ApiController@booking_cancel');
+    Route::get('pay','\Smartbro\Controllers\frontend\ApiController@pay');
     // 验证 coupon 的 route
     Route::post('coupon-verify','\Smartbro\Controllers\frontend\ApiController@coupon_verify');
 });

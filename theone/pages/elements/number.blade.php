@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="wow fadeIn px-4 pb-4 pb-lg-0" data-wow-delay=".4s">
-                    <span class="count">6215</span>
+                    <span class="count">1000</span>+
                     <h3>PLAYERS</h3>
                 </div>
             </div>
