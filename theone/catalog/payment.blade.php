@@ -1,41 +1,10 @@
 @extends(_get_frontend_layout_path('childfrontend'))
 
 @section('seoconfig')
-    <script src="https://paymentgateway.commbank.com.au/checkout/version/49/checkout.js"
-            data-error="errorCallback"
-            data-cancel="cancelCallback">
-    </script>
-
-    <script type="text/javascript">
-        function errorCallback(error) {
-            console.log(JSON.stringify(error));
-        }
-        function cancelCallback() {
-            confirm('Are you sure you want to cancel?');
-        }
-
-        Checkout.configure({
-            merchant: 'TESTLYZGROCOM201',
-            order: {
-                amount: function() {
-                    //Dynamic calculation of amount
-                    return 80 + 20;
-                },
-                currency: 'USD',
-                description: 'Ordered goods',
-                id: 'Easdqwe3'
-            },
-            interaction: {
-                merchant: {
-                    name: 'Your merchant name',
-                    address: {
-                        line1: '200 Sample St',
-                        line2: '1234 Example Town'
-                    }
-                }
-            }
-        });
-    </script>
+    <!-- INCLUDE SESSION.JS JAVASCRIPT LIBRARY -->
+    <script src="https://paymentgateway.commbank.com.au/form/version/48/merchant/TESTLYZGROCOM201/session.js"></script>
+    <!-- APPLY CLICK-JACKING STYLING AND HIDE CONTENTS OF THE PAGE -->
+    <style id="antiClickjack">body{display:none !important;}</style>
 @endsection
 @section('content')
     <!-- Masthead -->
@@ -51,9 +20,22 @@
     </header>
     <section class="page-section bg-special">
         <div class="container">
-            <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
-            <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="box text-white">
+                        <div>Please enter your payment details:</div>
+                        <div>Card Number: <input type="text" id="card-number" class="input-field" value="" readonly></div>
+                        <div>Expiry Month:<input type="text" id="expiry-month" class="input-field" value=""></div>
+                        <div>Expiry Year:<input type="text" id="expiry-year" class="input-field" value=""></div>
+                        <div>Security Code:<input type="text" id="security-code" class="input-field" value="" readonly></div>
+                        <div><button id="payButton" onclick="pay();">Pay Now</button></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
+    @include(_get_frontend_theme_path('catalog.payjs'))
 @endsection
