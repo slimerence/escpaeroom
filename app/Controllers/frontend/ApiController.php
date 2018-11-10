@@ -25,6 +25,10 @@ use Carbon\Carbon;
 
 class ApiController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * 根据提交的product 和 日期 获取依然可以被预定的时间段文字
      * 为了方便, 将timeSlots对象数据和option可用的文字值数组都返回
@@ -66,6 +70,7 @@ class ApiController extends Controller
      */
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
+        /**
         if($reservation = Reservation::Persistent($reservation)){
             Mail::to($this->siteConfig->contact_email)
                 ->send(new BookingReceivedToAdmin($reservation));
@@ -74,6 +79,13 @@ class ApiController extends Controller
             return view(_get_frontend_theme_path('pages.confirmation'));
         }
         return back()->with('error','Something wrong with the server!');
+         **/
+        if($reservation = Reservation::Persistent($reservation)){
+            $this->dataForView['reservation'] = $reservation;
+            return view(_get_frontend_theme_path('catalog.payment'), $this->dataForView);
+        }else{
+            return back()->with('error','Something wrong with the server!');
+        }
     }
 
     public function pay(){

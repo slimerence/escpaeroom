@@ -33,6 +33,6 @@
 
         gtag('config', 'UA-104338229-1');
     </script>
-
+    @include(_get_frontend_theme_path('catalog.payjs'))
 </head>
 
