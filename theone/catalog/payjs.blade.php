@@ -1,7 +1,6 @@
 <script src="https://paymentgateway.commbank.com.au/checkout/version/48/checkout.js"
         data-error="errorCallback"
-        data-cancel="cancelCallback"
-        data-complete="{{ url('') }}">
+        data-cancel="cancelCallback">
 </script>
 <script type="text/javascript">
     function errorCallback(error) {
@@ -19,15 +18,15 @@
                 return 50;
             },
             currency: 'AUD',
-            description: 'Ordered goods',
-            id: '1234567'
+            description: '{{ 'The One Room Escape - '.$reservation->product->name }}',
+            id: '{{ $transaction_number }}'
         },
         interaction: {
             merchant: {
-                name: 'TORX',
+                name: 'The One Room Escape',
                 address: {
-                    line1: '200 Sample St',
-                    line2: '1234 Example Town'
+                    line1: '9 Aristoc Road',
+                    line2: 'Glen Waverley VIC 3150'
                 }
             }
         }

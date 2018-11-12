@@ -82,6 +82,10 @@ class ApiController extends Controller
          **/
         if($reservation = Reservation::Persistent($reservation)){
             $this->dataForView['reservation'] = $reservation;
+            //生成新的订单编号
+            $orderid = $reservation->created_at->format('ymdhis');
+            $this->dataForView['transaction_number'] = $orderid;
+            Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
             return view(_get_frontend_theme_path('catalog.payment'), $this->dataForView);
         }else{
             return back()->with('error','Something wrong with the server!');

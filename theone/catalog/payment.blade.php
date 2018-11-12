@@ -27,35 +27,36 @@
                                 @if(isset($reservation))
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
-                                        <p><strong>Customer</strong>: {{ $reservation->name }}</p>
+                                        <strong>Customer</strong>: {{ $reservation->name }}
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
-                                        <p><strong>Game</strong>: {{ $reservation->product->name }}</p>
+                                        <strong>Game</strong>: {{ $reservation->product->name }}
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
-                                        <p><strong>Time</strong>: {{ $reservation->at }}</p>
+                                       <strong>Time</strong>: {{ $reservation->at }}
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
-                                        <p><strong>Phone number</strong>: {{ $reservation->phone }}</p>
+                                       <strong>Phone number</strong>: {{ $reservation->phone }}
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
-                                        <p><strong>Participants</strong>: {{ $reservation->participants }}</p>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="w-100 text-center font-italic">
-                                        <p><strong>Message</strong>: {{ $reservation->message }}</p>
+                                        <strong>Participants</strong>: {{ $reservation->participants }}
                                     </div>
                                 </li>
                                 @endif
+                                <li class="list-group-item">
+                                    <div class="w-100 text-center font-italic">
+                                        <p style="font-size: 0.9em;">Notice: You need to pay $50 if you want to confirm this booking.<br/>
+                                        If you have any question please call 043 001 9292 for help.</p>
+                                    </div>
+                                </li>
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-6">
