@@ -44,6 +44,6 @@
                 </ul>
             </div>
         </div>
-        <p class="copyright">&copy; 2018 WebMelbourne</p>
+        <p class="copyright">&copy; Web Design & SEO by <a href="https://www.webmelbourne.com/" target="_blank">WebMelbourne</a> All Rights Reserved.</p>
     </div>
 </footer>
