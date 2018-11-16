@@ -10,6 +10,7 @@
             <form action="{{ url('api/booking/confirm') }}" method="post" id="BookingForm" class="booking-form">
                 {{ csrf_field() }}
                 <input type="hidden" name="reservation[product_id]" id="booking-room" value="{{ $product->uuid }}">
+                <input type="hidden" name="form_token" value="{{ str_random(40) }}">
                 <div class="modal-body mx-3">
                 <div class="mb-3">
                     <p>Please confirm that you would like to request the following appointment:

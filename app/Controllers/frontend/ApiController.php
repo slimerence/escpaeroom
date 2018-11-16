@@ -67,29 +67,42 @@ class ApiController extends Controller
      * 并不会生成新的用户, 而是将用户信息放入到reservation中
      * @param Request $request
      * @return string
+     * @throws
      */
+
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
-        /**
-        if($reservation = Reservation::Persistent($reservation)){
-            Mail::to($this->siteConfig->contact_email)
-                ->send(new BookingReceivedToAdmin($reservation));
-            Mail::to($reservation->email)
-                ->send(new BookingReceivedToCustomer($reservation));
-            return view(_get_frontend_theme_path('pages.confirmation'));
+        $token = $request->input('form_token');
+
+        if (cache()->has($token)) {
+            return back()->with('status', 'Please do not try to repeat submit the reservation!');
         }
-        return back()->with('error','Something wrong with the server!');
-         **/
+
+        cache([$token => 'value'], 1);
+
         if($reservation = Reservation::Persistent($reservation)){
             $this->dataForView['reservation'] = $reservation;
             //生成新的订单编号
             $orderid = $reservation->created_at->format('ymdhis');
             $this->dataForView['transaction_number'] = $orderid;
             Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
+            Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
             return view(_get_frontend_theme_path('catalog.payment'), $this->dataForView);
         }else{
             return back()->with('error','Something wrong with the server!');
         }
+    }
+
+    public function success($id){
+        $reservation = Reservation::find($id);
+        if(count($reservation)>0){
+            Mail::to($this->siteConfig->contact_email)
+            ->send(new BookingReceivedToAdmin($reservation));
+            Mail::to($reservation->email)
+            ->send(new BookingReceivedToCustomer($reservation));
+            return view(_get_frontend_theme_path('pages.confirmation'));
+        }
+        return back()->with('error','Something wrong with the server!');
     }
 
     public function pay(){

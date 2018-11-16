@@ -1,6 +1,7 @@
-<script src="https://paymentgateway.commbank.com.au/checkout/version/48/checkout.js"
+<script src="https://paymentgateway.commbank.com.au/checkout/version/49/checkout.js"
         data-error="errorCallback"
-        data-cancel="cancelCallback">
+        data-cancel="cancelCallback"
+        >
 </script>
 <script type="text/javascript">
     function errorCallback(error) {
@@ -27,8 +28,11 @@
                 address: {
                     line1: '9 Aristoc Road',
                     line2: 'Glen Waverley VIC 3150'
-                }
-            }
+                },
+                /*email  : 'order@yourMerchantEmailAddress.com',
+                phone  : '+1 123 456 789 012',*/
+            },
+            locale        : 'en_US',
         }
     });
 </script>

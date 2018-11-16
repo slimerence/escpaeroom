@@ -22,7 +22,7 @@
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-12 text-center">
-
+                    @include(_get_frontend_theme_path('pages.elements.alert'))
                 </div>
                 <div class="col-lg-8 left-info">
                     <div class="row top-info no-margin">

@@ -77,6 +77,7 @@ class Reservation extends Model
         $reservation['name'] = $reservation['firstname'].' '.$reservation['lastname'];
         $str = $reservation['at_date'].' '.$selectTime;
         $reservation['at']= Carbon::createFromFormat('Y-m-d H:i',$str,'Australia/Melbourne');
+        $reservation['status'] = self::STATUS_PENDING_PAYMENT;
         if(isset($reservation['email']) && !empty($reservation['email'])){
             // 表示是已经登陆的用户
             $email=$reservation['email'];
@@ -89,6 +90,7 @@ class Reservation extends Model
                     'email'=>$email,
                     'name'=>$reservation['name'],
                     'phone'=>$reservation['phone'],
+
                 ];
                 User::create($userData);
             }

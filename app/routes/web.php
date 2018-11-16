@@ -34,6 +34,7 @@ Route::prefix('api/booking')->group(function(){
     // 取消
     Route::post('cancel','\Smartbro\Controllers\frontend\ApiController@booking_cancel');
     Route::get('pay','\Smartbro\Controllers\frontend\ApiController@pay');
+    Route::get('success/{id}','\Smartbro\Controllers\frontend\ApiController@success');
     // 验证 coupon 的 route
     Route::post('coupon-verify','\Smartbro\Controllers\frontend\ApiController@coupon_verify');
 });
