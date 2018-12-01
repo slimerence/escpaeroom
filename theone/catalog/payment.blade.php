@@ -63,7 +63,7 @@
                                             <input type="button" class="button pay-btn bg-ye" value="Pay" onclick="Checkout.showLightbox();" />
                                         </div>
                                         <div class="col-6">
-                                            <input type="button" class="button pay-btn bg-normal text-white" value="Cancel" onclick="Checkout.showPaymentPage();" />
+                                            <a class="button pay-btn bg-normal text-white" href="{{ url('api/booking/cancel/'.$reservation->id )}}">Cancel</a>
                                         </div>
                                     </div>
                                 </li>

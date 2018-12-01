@@ -1,6 +1,7 @@
-<script src="https://paymentgateway.commbank.com.au/checkout/version/49/checkout.js"
+<script src="https://paymentgateway.commbank.com.au/checkout/version/50/checkout.js"
         data-error="errorCallback"
         data-cancel="cancelCallback"
+        data-complete="completeCallback"
         >
 </script>
 <script type="text/javascript">
@@ -9,6 +10,9 @@
     }
     function cancelCallback() {
         console.log('Payment cancelled');
+    }
+    function completeCallback(resultIndicator, sessionVersion) {
+        console.log(resultIndicator);
     }
 
     Checkout.configure({
@@ -24,7 +28,7 @@
         },
         interaction: {
             merchant: {
-                name: 'The One Room Escape',
+                name: 'TORX',
                 address: {
                     line1: '9 Aristoc Road',
                     line2: 'Glen Waverley VIC 3150'

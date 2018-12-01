@@ -167,7 +167,7 @@ class Reservation extends Model
 
     public static function DeleteReservation($id){
         $reservation = self::find($id);
-        if(count($reservation)>0){
+        if($reservation){
             return $reservation-> forceDelete();
         }else{
             return 0;

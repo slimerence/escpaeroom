@@ -22,6 +22,8 @@ use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
 use App\Models\Configuration;
 use Carbon\Carbon;
+use Ixudra\Curl\Facades\Curl;
+use Smartbro\Models\Merchant;
 
 class ApiController extends Controller
 {
@@ -73,12 +75,14 @@ class ApiController extends Controller
     public function booking_confirm(Request $request){
         $reservation = $request->get('reservation');
         $token = $request->input('form_token');
-
-        if (cache()->has($token)) {
+        /**
+         * 用于防止客户多次提交相同订单
+         */
+        /*if (cache()->has($token)) {
             return back()->with('status', 'Please do not try to repeat submit the reservation!');
         }
+        cache([$token => 'value'], 1);*/
 
-        cache([$token => 'value'], 1);
 
         if($reservation = Reservation::Persistent($reservation)){
             $this->dataForView['reservation'] = $reservation;
@@ -86,11 +90,37 @@ class ApiController extends Controller
             $orderid = $reservation->created_at->format('ymdhis');
             $this->dataForView['transaction_number'] = $orderid;
             Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
-            Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
             return view(_get_frontend_theme_path('catalog.payment'), $this->dataForView);
         }else{
             return back()->with('error','Something wrong with the server!');
         }
+    }
+
+    public static function try_curl(){
+        $merchantObj = new Merchant();
+
+        $requestData = [
+            'apiOperation' =>'CREATE_CHECKOUT_SESSION',
+            'order' => [
+                    "id" => '12345678',
+                    "currency" => $merchantObj->GetCurrency()],
+            'apiPassword' => 
+
+        ];
+        $jsonRequest = json_encode($requestData);
+        //dd($jsonRequest);
+
+        $response = Curl::to($merchantObj->GetCheckoutSessionUrl())
+            ->withData($jsonRequest)
+            ->post();
+
+        dd($response);
+    }
+
+    public function booking_cancel($id){
+        $reservation = Reservation::find($id);
+        Reservation::DeleteReservation($id);
+        return redirect('/');
     }
 
     public function success($id){

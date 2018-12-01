@@ -8,6 +8,7 @@
             </div>
         </div>
         <!-- /.row -->
+
         @include(_get_frontend_theme_path('admin.elements.topnotice'))
         <div class="row">
             <div class="col-lg-8">
@@ -15,14 +16,12 @@
                     <div class="panel-heading">
                         <i class="fa fa-clock-o fa-fw"></i> Coming Reservations
                     </div>
-
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <ul class="timeline">
                             @foreach( $comingreservations as $key=>$comingreservation )
                                 <li class="{{ $key%2 ==0 ? '':'timeline-inverted' }}">
-                                    <div class="timeline-badge info"><i class="fa fa-check"></i>
-                                    </div>
+                                    <div class="timeline-badge info"><i class="fa fa-check"></i></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">{{ substr($comingreservation->at,0,16) }} for {{ $comingreservation->product->name }}</h4>
