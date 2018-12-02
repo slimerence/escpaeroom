@@ -19,7 +19,7 @@
                     <i class="fa fa-envelope"></i>
                     Email</h4>
                 <p>
-                    <a href="mailto:mail@example.com">{{ $siteConfig->contact_email }}</a>
+                    <a href="mailto:{{ $siteConfig->contact_email }}">{{ $siteConfig->contact_email }}</a>
                 </p>
             </div>
         </div>
