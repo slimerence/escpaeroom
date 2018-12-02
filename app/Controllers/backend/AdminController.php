@@ -29,7 +29,7 @@ class AdminController extends Controller
     }
 
     public function index(){
-        $this->dataForView['menuName'] = 'dashboard';
+        $this->dataForView['menuName'] = 'tables';
         $this->dataForView['config'] = Configuration::find(1);
         $this->dataForView['products'] = Product::orderBy('id','desc')->paginate(config('system.PAGE_SIZE'));
         $reservations = Reservation::orderBy('at','asc')->orderBy('created_at','asc');

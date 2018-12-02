@@ -14,6 +14,8 @@ Route::post('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@j
 Route::get('/pricing', '\Smartbro\Controllers\frontend\CustomPageController@pricing');
 Route::get('/term', '\Smartbro\Controllers\frontend\CustomPageController@term');
 Route::get('/policy', '\Smartbro\Controllers\frontend\CustomPageController@policy');
+Route::get('/marriage', '\Smartbro\Controllers\frontend\CustomPageController@marriage');
+
 
 
 

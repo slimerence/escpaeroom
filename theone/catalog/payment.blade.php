@@ -55,6 +55,7 @@
                                     <div class="w-100 text-center font-italic">
                                         <p style="font-size: 0.9em;">Notice: You need to pay $50 if you want to confirm this booking.<br/>
                                         If you have any question please call 043 001 9292 for help.</p>
+                                        <p>The Deposit is non-refundable; the balance is payable on the date.</p>
                                     </div>
                                 </li>
                                 <li class="list-group-item">

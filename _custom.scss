@@ -800,3 +800,14 @@ footer{
   padding: 0.5em;
   display: inline-block;
 }
+
+.dropdown-menu{
+  background-color: $color-bg;
+  .dropdown-item{
+    color:#fff;
+    &:hover{
+      text-decoration: none;
+      text-shadow: 2px 2px 5px;
+    }
+  }
+}

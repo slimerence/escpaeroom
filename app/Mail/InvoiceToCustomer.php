@@ -15,7 +15,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 
-class BookingReceivedToCustomer extends Mailable
+class InvoiceToCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 

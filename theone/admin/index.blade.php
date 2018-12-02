@@ -16,49 +16,54 @@
                     <div class="panel-heading">
                         <i class="fa fa-clock-o fa-fw"></i> Coming Reservations
                     </div>
-                    <!-- /.panel-heading -->
+
                     <div class="panel-body">
-                        <ul class="timeline">
-                            @foreach( $comingreservations as $key=>$comingreservation )
-                                <li class="{{ $key%2 ==0 ? '':'timeline-inverted' }}">
-                                    <div class="timeline-badge info"><i class="fa fa-check"></i></div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">{{ substr($comingreservation->at,0,16) }} for {{ $comingreservation->product->name }}</h4>
-                                            <?php $createtime = $comingreservation->created_at;
-                                                $diff = $createtime->diffForHumans();
-                                            ?>
-                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> &nbsp;{{ $diff }}</small></p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-12"><p><span style="font-weight: bold;">name:</span>{{ $comingreservation->name }}</p></div>
-                                                <div class="col-md-6 col-sm-12"><p><span style="font-weight: bold;">participants:</span>{{ $comingreservation->participants }}</p></div>
-                                                <div class="col-sm-12"><p><span style="font-weight: bold;">phone:</span>{{ $comingreservation->phone }}</div>
-                                                <div class="col-sm-12"><p><span style="font-weight: bold;">email:</span>{{ $comingreservation->email }}</div>
-                                                @if($comingreservation->message && $comingreservation->message!='')
-                                                    <div class="col-sm-12"><p><span style="font-weight: bold;">message:</span>{{ $comingreservation->message }}</div>
-                                                @endif
-                                            </div>
-                                            <hr>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fa fa-gear"></i> <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="{{ url('admin/reservations/edit/'.$comingreservation->id) }}">Edit</a>
-                                                    </li>
-                                                    <li><a href="{{ url('admin/reservations/delete/'.$comingreservation->id) }}">Cancel</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Game</th>
+                                <th>Participants</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Order#</th>
+                                <th>Status</th>
+                                <th>Operate</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($comingreservations as $key=>$reservation)
+                                <tr class="odd gradeX">
+                                    <td>{{ substr($reservation->at,0,16) }}</td>
+                                    <td>{{ $reservation->product->name }}</td>
+                                    <td>{{ $reservation->participants }}</td>
+                                    <td class="center">{{ $reservation->name }}</td>
+                                    <td class="center">{{ $reservation->phone }}</td>
+                                    <td class="center">{{ $reservation->transaction_number }}</td>
+                                    <td class="center">
+                                        @switch($reservation->status )
+                                            @case(1)
+                                                Pending
+                                            @break
+
+                                            @case(3)
+                                                Complete
+                                            @break
+
+                                            @default
+                                                No Fee
+                                        @endswitch
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="{{ url('admin/reservations/delete/'.$reservation->id) }}"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
                             @endforeach
-                        </ul>
+                            </tbody>
+                        </table>
+
                     </div>
-                    <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>

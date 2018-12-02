@@ -23,22 +23,39 @@
                                 <th>Participants</th>
                                 <th>Name</th>
                                 <th>Phone</th>
+                                <th>Order#</th>
+                                <th>Status</th>
                                 <th>Operate</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($reservations as $reservation)
-                            <tr class="odd gradeX">
-                                <td>{{ $reservation->at }}</td>
-                                <td>{{ $reservation->product->name }}</td>
-                                <td>{{ $reservation->participants }}</td>
-                                <td class="center">{{ $reservation->name }}</td>
-                                <td class="center">{{ $reservation->phone }}</td>
-                                <td>
-                                    <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}"><i class="fa fa-pencil-square-o"></i></a>
-                                    <a href="{{ url('admin/reservations/delete/'.$reservation->id) }}"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
+                            @foreach($reservations as $key=>$reservation)
+                                <tr class="odd gradeX">
+                                    <td>{{ substr($reservation->at,0,16) }}</td>
+                                    <td>{{ $reservation->product->name }}</td>
+                                    <td>{{ $reservation->participants }}</td>
+                                    <td class="center">{{ $reservation->name }}</td>
+                                    <td class="center">{{ $reservation->phone }}</td>
+                                    <td class="center">{{ $reservation->transaction_number }}</td>
+                                    <td class="center">
+                                        @switch($reservation->status )
+                                            @case(1)
+                                            Pending
+                                            @break
+
+                                            @case(3)
+                                            Complete
+                                            @break
+
+                                            @default
+                                            No Fee
+                                        @endswitch
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}" class="btn btn-success"><i class="fa fa-pencil-square-o fa-fw"></i> Update</a>
+                                        <a href="{{ url('admin/reservations/delete/'.$reservation->id) }}" class="btn btn-danger"><i class="fa fa-trash-o fa-fw"></i>Delete</a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>

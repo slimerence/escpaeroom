@@ -105,6 +105,14 @@ class CustomPageController extends Controller
             $this->dataForView
         );
     }
+    public function marriage(){
+        $this->dataForView['pageTitle'] = 'Escape Room | Marriage Proposal';
+        $this->dataForView['menuName'] = 'marriage';
+        return view(
+            _get_frontend_theme_path('pages.404'),
+            $this->dataForView
+        );
+    }
 
     public function verify($file){
         return response()->download( public_path(). '/storage/uploads/'.$file);

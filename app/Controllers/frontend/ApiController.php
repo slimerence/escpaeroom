@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Event;
 use Smartbro\Listeners\Booking\BookingReceivedEventListener;
 use Smartbro\Mail\BookingReceivedToAdmin;
 use Smartbro\Mail\BookingReceivedToCustomer;
+use Smartbro\Mail\InvoiceToCustomer;
 use Illuminate\Support\Facades\Mail;
 use Smartbro\Jobs\Email\Booking\BookingReceived as BookingReceivedJob;
 use Smartbro\Models\Reservation;
@@ -78,10 +79,10 @@ class ApiController extends Controller
         /**
          * 用于防止客户多次提交相同订单
          */
-        /*if (cache()->has($token)) {
+        if (cache()->has($token)) {
             return back()->with('status', 'Please do not try to repeat submit the reservation!');
         }
-        cache([$token => 'value'], 1);*/
+        cache([$token => 'value'], 1);
 
         if($reservation = Reservation::Persistent($reservation)){
             $this->dataForView['reservation'] = $reservation;
