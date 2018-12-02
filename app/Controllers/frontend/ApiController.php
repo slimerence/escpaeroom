@@ -22,8 +22,8 @@ use Smartbro\Models\TimeSlot;
 use App\Models\Catalog\Product;
 use App\Models\Configuration;
 use Carbon\Carbon;
-use Ixudra\Curl\Facades\Curl;
 use Smartbro\Models\Merchant;
+use Smartbro\Models\Parser;
 
 class ApiController extends Controller
 {
@@ -83,38 +83,20 @@ class ApiController extends Controller
         }
         cache([$token => 'value'], 1);*/
 
-
         if($reservation = Reservation::Persistent($reservation)){
             $this->dataForView['reservation'] = $reservation;
             //生成新的订单编号
             $orderid = $reservation->created_at->format('ymdhis');
+            $response = json_decode($this->try_curl($orderid));
+            //dd($response->session);
+            $this->dataForView['transaction_session'] = $response->session->id;
             $this->dataForView['transaction_number'] = $orderid;
             Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
             return view(_get_frontend_theme_path('catalog.payment'), $this->dataForView);
         }else{
             return back()->with('error','Something wrong with the server!');
         }
-    }
-
-    public static function try_curl(){
-        $merchantObj = new Merchant();
-
-        $requestData = [
-            'apiOperation' =>'CREATE_CHECKOUT_SESSION',
-            'order' => [
-                    "id" => '12345678',
-                    "currency" => $merchantObj->GetCurrency()],
-            'apiPassword' => 
-
-        ];
-        $jsonRequest = json_encode($requestData);
-        //dd($jsonRequest);
-
-        $response = Curl::to($merchantObj->GetCheckoutSessionUrl())
-            ->withData($jsonRequest)
-            ->post();
-
-        dd($response);
+        
     }
 
     public function booking_cancel($id){
@@ -125,7 +107,8 @@ class ApiController extends Controller
 
     public function success($id){
         $reservation = Reservation::find($id);
-        if(count($reservation)>0){
+        if($reservation){
+            $reservation->update(['status'=> Reservation::STATUS_COMPLETED ]);
             Mail::to($this->siteConfig->contact_email)
             ->send(new BookingReceivedToAdmin($reservation));
             Mail::to($reservation->email)
@@ -137,5 +120,37 @@ class ApiController extends Controller
 
     public function pay(){
         return view(_get_frontend_theme_path('catalog.payment'));
+    }
+
+    public function try_curl($orderid){
+        $merchantObj = new Merchant();
+        //dd($merchantObj);
+        $requestData = [
+            'apiOperation' =>'CREATE_CHECKOUT_SESSION',
+            'order' => [
+                "id" => $orderid,
+                "currency" => $merchantObj->GetCurrency(),
+                "amount"=>'50',
+            ],
+        ];
+        $jsonRequest = json_encode($requestData);
+        $ch = curl_init($merchantObj->GetCheckoutSessionUrl());
+        curl_setopt($ch, CURLOPT_USERPWD, $merchantObj->GetApiUsername() . ":" . $merchantObj->GetPassword());
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonRequest);
+
+        // execute!
+        $response = curl_exec($ch);
+
+        // close the connection, release resources used
+        curl_close($ch);
+
+        return $response;
+        // do anything you want with your response
+        //dd($response);
+    }
+
+    public function autoclean(){
+        Reservation::AutoDeleteUnpaid();
     }
 }

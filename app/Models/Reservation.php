@@ -78,6 +78,7 @@ class Reservation extends Model
         $str = $reservation['at_date'].' '.$selectTime;
         $reservation['at']= Carbon::createFromFormat('Y-m-d H:i',$str,'Australia/Melbourne');
         $reservation['status'] = self::STATUS_PENDING_PAYMENT;
+        $reservation['booking_fee_required'] = 1;
         if(isset($reservation['email']) && !empty($reservation['email'])){
             // 表示是已经登陆的用户
             $email=$reservation['email'];
@@ -174,4 +175,18 @@ class Reservation extends Model
         }
     }
 
+    public static function AutoDeleteUnpaid(){
+        $reservations = self::where('booking_fee_required',1)->where('status',1)->get();
+        $now = Carbon::now();
+        if(count($reservations)>0){
+            foreach ($reservations as $reservation){
+                $interval = $reservation->created_at->diffInMinutes($now);
+                if( $interval>10 ){
+                    $reservation->forceDelete();
+                }
+            }
+            return 1;
+        }
+        return 0;
+    }
 }

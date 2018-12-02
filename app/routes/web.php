@@ -39,6 +39,8 @@ Route::prefix('api/booking')->group(function(){
     Route::post('coupon-verify','\Smartbro\Controllers\frontend\ApiController@coupon_verify');
 
     Route::get('test','\Smartbro\Controllers\frontend\ApiController@try_curl');
+    Route::get('autoclean','\Smartbro\Controllers\frontend\ApiController@autoclean');
+
 });
 
 Route::prefix('admin')->middleware('auth')->group(function(){

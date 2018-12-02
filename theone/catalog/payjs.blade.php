@@ -1,7 +1,7 @@
 <script src="https://paymentgateway.commbank.com.au/checkout/version/50/checkout.js"
         data-error="errorCallback"
         data-cancel="cancelCallback"
-        data-complete="completeCallback"
+        data-complete="{{ url('api/booking/success/'.$reservation->id) }}"
         >
 </script>
 <script type="text/javascript">
@@ -10,10 +10,11 @@
     }
     function cancelCallback() {
         console.log('Payment cancelled');
+        window.location.herf = '{{ url('api/booking/cancel/'.$reservation->id) }}';
     }
-    function completeCallback(resultIndicator, sessionVersion) {
+    /*function completeCallback(resultIndicator, sessionVersion) {
         console.log(resultIndicator);
-    }
+    }*/
 
     Checkout.configure({
         merchant: 'TESTLYZGROCOM201',
@@ -37,6 +38,9 @@
                 phone  : '+1 123 456 789 012',*/
             },
             locale        : 'en_US',
-        }
+        },
+        session: {
+            id: '{{ $transaction_session }}'
+        },
     });
 </script>
