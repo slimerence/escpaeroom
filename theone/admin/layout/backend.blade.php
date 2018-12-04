@@ -59,7 +59,10 @@
             $('#btn-show-all-children').hide();
             $('#btn-hide-all-children').show();
             var table = $('#dataTables-example').DataTable({
-                responsive: true
+                responsive: true,
+                "columnDefs": [
+                    { "width": "20%", "targets": 0 }
+                ]
             });
             table.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
 
