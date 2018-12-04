@@ -22,7 +22,7 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                             <tr>
-                                <th>Time</th>
+                                <th>Reservation Time</th>
                                 <th>Game</th>
                                 <th>Participants</th>
                                 <th>Name</th>
@@ -37,7 +37,7 @@
                             <tbody>
                             @foreach($reservations as $key=>$reservation)
                                 <tr class="odd gradeX">
-                                    <td>{{ substr($reservation->at,0,16) }}</td>
+                                    <td>{{ $reservation->at->format('D H:i m-d Y') }}</td>
                                     <td>{{ $reservation->product->name }}</td>
                                     <td>{{ $reservation->participants }}</td>
                                     <td class="center">{{ $reservation->name }}</td>
