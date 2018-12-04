@@ -101,7 +101,7 @@ class Reservation extends Model
         if(isset($reservation['product_id']) && !empty($reservation['product_id'])){
             $product = Product::where('uuid',$reservation['product_id'])->first();
             $reservation['product_id'] = $product->id;
-            $reservation['uuid'] = $product->uuid;
+            $reservation['uuid'] = Uuid::uuid4()->toString();
         }
         return self::create($reservation);
     }

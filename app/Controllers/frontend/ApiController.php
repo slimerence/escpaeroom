@@ -106,6 +106,12 @@ class ApiController extends Controller
         return redirect('/');
     }
 
+    public function booking_remove(Request $request){
+        $id = $request->get('id');
+        Reservation::DeleteReservation($id);
+        return redirect('/');
+    }
+
     public function success($id){
         $reservation = Reservation::find($id);
         if($reservation){

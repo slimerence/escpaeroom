@@ -65,7 +65,11 @@
                                             <input type="button" class="button pay-btn bg-ye" value="Pay" onclick="Checkout.showLightbox();" />
                                         </div>
                                         <div class="col-6">
-                                            <a class="button pay-btn bg-normal text-white" href="{{ url('api/booking/cancel/'.$reservation->id )}}">Cancel</a>
+                                            <form action="{{ url('api/booking/cancel')}}" method="post">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="id" value="{{ $reservation->id }}">
+                                                <button class="button pay-btn bg-normal text-white" type="submit">Cancel</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </li>
