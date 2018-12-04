@@ -186,6 +186,93 @@
                     width:auto!important;
                 }
             }
+            .invoice-box {
+                max-width: 800px;
+                margin: auto;
+                padding: 15px;
+                border: 1px solid #eee;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+                font-size: 14px;
+                line-height: 22px;
+                color: #555;
+                margin-bottom: 10px;
+            }
+
+            .invoice-box table {
+                width: 100%;
+                line-height: inherit;
+                text-align: left;
+            }
+
+            .invoice-box table td {
+                padding: 5px;
+                vertical-align: top;
+            }
+
+            .invoice-box table tr td:nth-child(2) {
+                text-align: right;
+            }
+
+            .invoice-box table tr.top table td {
+                padding-bottom: 20px;
+            }
+
+            .invoice-box table tr.top table td.title {
+                font-size: 40px;
+                line-height: 40px;
+                color: #333;
+            }
+
+            .invoice-box table tr.heading td {
+                background: #eee;
+                border-bottom: 1px solid #ddd;
+                font-weight: bold;
+            }
+
+            .invoice-box table tr.details td {
+                padding-bottom: 20px;
+            }
+
+            .invoice-box table tr.item td{
+                border-bottom: 1px solid #eee;
+            }
+
+            .invoice-box table tr.item.last td {
+                border-bottom: none;
+            }
+
+            .invoice-box table tr.total td:nth-child(2) {
+                border-top: 2px solid #eee;
+                font-weight: bold;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .invoice-box table tr.top table td {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+
+                .invoice-box table tr.information table td {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            /** RTL **/
+            .rtl {
+                direction: rtl;
+                font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            }
+
+            .rtl table {
+                text-align: right;
+            }
+
+            .rtl table tr td:nth-child(2) {
+                text-align: left;
+            }
         </style>
     </head>
 
@@ -213,6 +300,57 @@
                                 <!-- Callout Panel -->
                                 <p></p>
                                 <p>We are just as excited as you and looking forward to have your adventure hosted here.</p>
+
+                                <div class="invoice-box">
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr class="heading">
+                                            <td>
+                                                Description
+                                            </td>
+                                            <td>
+                                                Total(inc GST)
+                                            </td>
+                                        </tr>
+
+                                        <tr class="item last">
+                                            <td>
+                                                Escape Room Challenge deposit
+                                            </td>
+
+                                            <td>
+                                                $50.00
+                                            </td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td></td>
+                                            <td>
+                                                Total: $50
+                                            </td>
+                                        </tr>
+
+                                        <tr class="information">
+                                            <td colspan="2">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            LYZ GROUP PTY LTD<br>
+                                                            ACN: 611 968 917<br>
+                                                            9 Aristoc Rd, Glen Waverley 3150
+                                                        </td>
+
+                                                        <td>
+                                                            The Trustee for ZHANG TRADING TRUST<br>
+                                                            ABN: 74 573 995 884<br>
+                                                            TEL: 043 001 9292
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
                                 <p>If you haven't read our <a href="{{ url('/term') }}">Terms and Conditions</a> and <a href="{{ url('/policy') }}">Privacy Policy</a>, please spend few minutes to go through them. It is important.</p>
                                 <p>If there is anything wrong about the booking and you need to contact us, please call on 0430019292 - John</p>
                                 <p></p>

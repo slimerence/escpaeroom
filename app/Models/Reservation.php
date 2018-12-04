@@ -83,6 +83,7 @@ class Reservation extends Model
             // 表示是已经登陆的用户
             $email=$reservation['email'];
             $user = User::GetByEmail($email);
+            //dd(User::where('email','slimerence@gmail.com')->get());
             if(!$user){
                 $initPassword='123456';
                 $userData = [
@@ -91,7 +92,6 @@ class Reservation extends Model
                     'email'=>$email,
                     'name'=>$reservation['name'],
                     'phone'=>$reservation['phone'],
-
                 ];
                 User::create($userData);
             }

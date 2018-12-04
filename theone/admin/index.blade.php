@@ -18,16 +18,18 @@
                     </div>
 
                     <div class="panel-body">
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                             <thead>
                             <tr>
                                 <th>Time</th>
                                 <th>Game</th>
-                                <th>Participants</th>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Order#</th>
                                 <th>Status</th>
+                                <th>Message</th>
+                                <th>Note</th>
                                 <th>Operate</th>
                             </tr>
                             </thead>
@@ -55,8 +57,13 @@
                                         @endswitch
                                     </td>
                                     <td>
-                                        <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}"><i class="fa fa-pencil-square-o"></i></a>
-                                        <a href="{{ url('admin/reservations/delete/'.$reservation->id) }}"><i class="fa fa-trash-o"></i></a>
+                                        {{ $reservation->message }}
+                                    </td>
+                                    <td>
+                                        {{ $reservation->notes }}
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}" class="btn btn-success"><i class="fa fa-pencil-square-o fa-fw"></i> Update</a>
                                     </td>
                                 </tr>
                             @endforeach

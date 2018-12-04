@@ -56,9 +56,9 @@
 <script>
     $(document).ready(function() {
         if($('#dataTables-example').length>0){
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
         }
     });
 </script>
