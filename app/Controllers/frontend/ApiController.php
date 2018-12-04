@@ -25,6 +25,7 @@ use App\Models\Configuration;
 use Carbon\Carbon;
 use Smartbro\Models\Merchant;
 use Smartbro\Models\Parser;
+use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
 {
@@ -89,7 +90,6 @@ class ApiController extends Controller
             //生成新的订单编号
             $orderid = $reservation->created_at->format('ymdhis');
             $response = json_decode($this->try_curl($orderid));
-            //dd($response->session);
             $this->dataForView['transaction_session'] = $response->session->id;
             $this->dataForView['transaction_number'] = $orderid;
             Reservation::find($reservation->id)->update(['transaction_number'=> $orderid]);
