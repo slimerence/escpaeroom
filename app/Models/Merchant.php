@@ -18,8 +18,8 @@ class Merchant
     private $debug = FALSE;
     private $version = "50";
     private $currency = "AUD";
-    private $merchantId = "LYZGROCOM201";
-    private $password = "4199e63db8811c87f44c9ead8799eaa0";
+    private $merchantId = "TESTLYZGROCOM201";
+    private $password = "0dc5600dfe66466af2dc3f664b81a886";
     private $apiUsername = "merchant.[INSERT-MERCHANT-ID]";
     private $sessionJsUrl = "";
     private $checkoutJsUrl = "";
