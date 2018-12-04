@@ -12,6 +12,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Reservations
+                        <span class="table-control">
+                            <button id="btn-show-all-children" class="btn btn-success" type="button">Expand All</button>
+                            <button id="btn-hide-all-children" class="btn btn-primary" type="button">Collapse All</button>
+                        </span>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -25,6 +29,8 @@
                                 <th>Phone</th>
                                 <th>Order#</th>
                                 <th>Status</th>
+                                <th>Message</th>
+                                <th>Note</th>
                                 <th>Operate</th>
                             </tr>
                             </thead>
@@ -50,6 +56,12 @@
                                             @default
                                             No Fee
                                         @endswitch
+                                    </td>
+                                    <td>
+                                        {{ $reservation->message }}
+                                    </td>
+                                    <td>
+                                        {{ $reservation->notes }}
                                     </td>
                                     <td>
                                         <a href="{{ url('admin/reservations/edit/'.$reservation->id) }}" class="btn btn-success"><i class="fa fa-pencil-square-o fa-fw"></i> Update</a>

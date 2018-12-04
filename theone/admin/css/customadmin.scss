@@ -1,1 +1,7 @@
 @import "admin.css";
+
+@media (min-width: 992px) {
+  .table-control {
+    display: none;
+  }
+}

@@ -15,6 +15,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-clock-o fa-fw"></i> Coming Reservations
+                        <span class="table-control">
+                            <button id="btn-show-all-children" class="btn btn-success" type="button">Expand All</button>
+                            <button id="btn-hide-all-children" class="btn btn-primary" type="button">Collapse All</button>
+                        </span>
                     </div>
 
                     <div class="panel-body">
