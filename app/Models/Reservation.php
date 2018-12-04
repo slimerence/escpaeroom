@@ -25,6 +25,7 @@ class Reservation extends Model
     const STATUS_BOOKED             = 2;
     const STATUS_COMPLETED          = 3;
     const STATUS_CANCELLED          = 4;
+    const STATUS_HOSTED        = 5;
 
     protected $fillable = [
         'uuid',
@@ -181,7 +182,7 @@ class Reservation extends Model
         if(count($reservations)>0){
             foreach ($reservations as $reservation){
                 $interval = $reservation->created_at->diffInMinutes($now);
-                if( $interval>10 ){
+                if($reservation->status != 5 && $interval>10 ){
                     $reservation->forceDelete();
                 }
             }

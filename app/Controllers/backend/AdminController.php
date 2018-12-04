@@ -109,6 +109,9 @@ class AdminController extends Controller
     public function create(Request $request){
         $reservation = $request->get('reservation');
         if($reservation = Reservation::Persistent($reservation)){
+            $orderid = $reservation->created_at->format('ymdhis');
+            $reservation->update(['transaction_number'=> $orderid]);
+            $reservation->update(['status'=> Reservation::STATUS_HOSTED ]);
             return back()->with('success','Your reservation has been sent!');
         }
         return back()->with('error','Something wrong with the server!');

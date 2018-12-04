@@ -56,6 +56,10 @@
                                                 Complete
                                             @break
 
+                                            @case(5)
+                                                Host
+                                            @break
+
                                             @default
                                                 No Fee
                                         @endswitch
