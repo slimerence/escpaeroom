@@ -22,7 +22,6 @@
                     <div class="open-item">
                         <h3>Booking Details</h3>
                         <hr class="colored">
-
                             <ul class="list-group">
                                 @if(isset($reservation))
                                 <li class="list-group-item">
@@ -54,7 +53,7 @@
                                 <li class="list-group-item">
                                     <div class="w-100 text-center font-italic">
                                         <p style="font-size: 0.9em;">Notice: You need to pay $50 if you want to confirm this booking.<br/>
-                                            This reservation will expire in <span class="color-ye">10</span> minutes. <br/>
+                                            This reservation will expire in <span class="color-ye" style="font-size: 2em;">10 minutes</span>. <br/>
                                         If you have any question please call <span class="color-ye">043 001 9292</span> for help.</p>
                                         <p style="font-size: 0.9em;">The Deposit is non-refundable; the balance is payable on the date.</p>
                                     </div>

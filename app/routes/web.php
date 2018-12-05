@@ -7,6 +7,7 @@
  */
 Route::get('/about-us', '\Smartbro\Controllers\frontend\CustomPageController@about');
 Route::get('/games', '\Smartbro\Controllers\frontend\CustomPageController@games');
+Route::get('/games/expire', '\Smartbro\Controllers\frontend\CustomPageController@games_expire');
 Route::get('/team-building', '\Smartbro\Controllers\frontend\CustomPageController@team');
 Route::get('/faq', '\Smartbro\Controllers\frontend\CustomPageController@faq');
 Route::get('/franchise', '\Smartbro\Controllers\frontend\CustomPageController@join');

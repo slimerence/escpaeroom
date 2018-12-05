@@ -5,10 +5,19 @@
 
 @section('content')
     @include(_get_frontend_layout_path('frontend._childheader'))
+
     <!-- Call to Action -->
     <section class="page-section pricing" id="locations" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container wow fadeIn">
             <div class="row">
+                @if ($message = Session::get('expire'))
+                    <div class="col-12">
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong style="color: #000">{{ $message }}</strong>
+                        </div>
+                    </div>
+                @endif
                 @if(isset($promotionProducts) && count($promotionProducts)>0)
                     @foreach($promotionProducts as $promotionProduct)
                         <div class="col-md-4">

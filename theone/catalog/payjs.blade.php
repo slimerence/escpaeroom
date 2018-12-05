@@ -43,4 +43,5 @@
             id: '{{ $transaction_session }}'
         },
     });
+    setTimeout(function(){location.href="{{ url('/games/expire') }}"} , 600000);
 </script>

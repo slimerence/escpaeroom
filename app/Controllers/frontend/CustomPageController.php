@@ -45,6 +45,11 @@ class CustomPageController extends Controller
             $this->dataForView
         );
     }
+
+    public function games_expire(){
+        return redirect('/games')->with('expire', 'Your reservation was expired. Please make a new one!');
+
+    }
     public function team(){
         $this->dataForView['pageTitle'] = 'WHY AN ESCAPE ROOM? | Team Building | Corporate Event';
         $this->dataForView['menuName'] = 'team building';
