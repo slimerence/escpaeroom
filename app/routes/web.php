@@ -17,7 +17,10 @@ Route::get('/term', '\Smartbro\Controllers\frontend\CustomPageController@term');
 Route::get('/policy', '\Smartbro\Controllers\frontend\CustomPageController@policy');
 Route::get('/marriage', '\Smartbro\Controllers\frontend\CustomPageController@marriage');
 
-
+Route::get('/sitemap.xml',function(){
+    return response()->view(_get_frontend_theme_path('pages.sitemap'))
+        ->header('Content-Type', 'xml');
+});
 
 
 Route::get('/.well-known/pki-validation/{file}','\Smartbro\Controllers\frontend\CustomPageController@verify');
