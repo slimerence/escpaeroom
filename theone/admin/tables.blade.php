@@ -37,7 +37,7 @@
                             <tbody>
                             @foreach($reservations as $key=>$reservation)
                                 <tr class="odd gradeX">
-                                    <td>{{ $reservation->at->format('D H:i m-d Y') }}</td>
+                                    <td>{{ $reservation->at->format('Y-m-d H:i D') }}</td>
                                     <td>{{ $reservation->product->name }}</td>
                                     <td>{{ $reservation->participants }}</td>
                                     <td class="center">{{ $reservation->name }}</td>
