@@ -22,10 +22,11 @@
                     <a class="nav-link" href="{{ url('/pricing') }}">PRICING</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ url('/team-building') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         TEAM BUILDING
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url('/team-building') }}">TEAM BUILDING</a>
                         <a class="dropdown-item" href="{{ url('/marriage') }}">CUSTOM MARRIAGE PROPOSAL</a>
                     </div>
                 </li>
