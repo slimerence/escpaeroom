@@ -43,7 +43,7 @@
             <div class="special-box color-text h-color">
                 <h2>Our Partners</h2>
                 <div class="d-flex flex-wrap">
-                    @for($i=1;$i<15;$i++)
+                    @for($i=1;$i<25;$i++)
                         <div class="coimg align-self-center">
                             <img src="{{ asset('images/cos/co-'.$i.'.png') }}" alt="{{ $i }}">
                         </div>
