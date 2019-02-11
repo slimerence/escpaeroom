@@ -20,6 +20,7 @@ use App\Models\Catalog\Category;
 use Smartbro\Models\BlockReservation;
 use Smartbro\Models\Maintain;
 use Smartbro\Models\Franchise;
+use Smartbro\Models\Textblock;
 
 class AdminController extends Controller
 {
@@ -139,5 +140,24 @@ class AdminController extends Controller
         Maintain::where('id',$id)->delete();
         BlockReservation::where('maintain_id',$id)->delete();
         return redirect('admin/reservations/block');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function view_content(){
+        $info = Textblock::find(1);
+        $this->dataForView['pageTitle'] = 'Info';
+        $this->dataForView['info'] = $info;
+        return view(_get_frontend_theme_path('admin.info'), $this->dataForView);
+    }
+
+    public function update_content(Request $request){
+        $data = $request->get('info');
+        if(Textblock::where('id',1)->update($data)){
+            return back()->with('success','Your text has been updated!');
+        }else{
+            return back()->with('error','Something wrong with the server!');
+        }
     }
 }

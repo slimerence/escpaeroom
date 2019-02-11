@@ -10,6 +10,13 @@
     <section class="page-section bg-special bg-moving" style="background-image:url({{ asset('images/backgrounds/nbg.png') }}) ">
         <div class="container wow fadeIn">
             <div class="row">
+                @if(isset($info) && $info->display == 1)
+                    <div class="col-12">
+                        <div class="open-item">
+                            {!! $info->content !!}
+                        </div>
+                    </div>
+                @endif
                 <div class="col-lg-6">
                     <div class="open-item">
                         <h3>Price List</h3>

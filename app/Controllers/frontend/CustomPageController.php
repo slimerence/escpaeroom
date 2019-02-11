@@ -18,6 +18,7 @@ use App\Models\Catalog\Product\Colour;
 use App\Models\Catalog\Tag;
 use Smartbro\Models\Franchise;
 use Carbon;
+use Smartbro\Models\Textblock;
 
 
 class CustomPageController extends Controller
@@ -103,6 +104,7 @@ class CustomPageController extends Controller
 
     }
     public function pricing(){
+        $this->dataForView['info']= Textblock::find(1);
         $this->dataForView['pageTitle'] = 'Escape Room Near Me | Escape Room Glen Waverley';
         $this->dataForView['menuName'] = 'pricing';
         return view(

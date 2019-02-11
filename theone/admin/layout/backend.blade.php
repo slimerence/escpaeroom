@@ -82,6 +82,9 @@
                 $('#btn-hide-all-children').hide();
             });
         }
+        if($('.rich-text-editor').length>0){
+            console.log('init');
+        }
     });
 </script>
 </body>

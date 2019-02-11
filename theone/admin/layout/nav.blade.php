@@ -56,6 +56,9 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
+                    <a href="{{ url('admin/info') }}"><i class="fa fa-info fa-fw" aria-hidden="true"></i> Info</a>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-user fa-fw"></i> User<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

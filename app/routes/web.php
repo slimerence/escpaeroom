@@ -65,6 +65,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/customers', '\Smartbro\Controllers\backend\AdminController@customer');
     Route::get('/customers/delete/{id}', '\Smartbro\Controllers\backend\AdminController@customerDelete');
 
+    Route::get('/info', '\Smartbro\Controllers\backend\AdminController@view_content');
+    Route::post('/info', '\Smartbro\Controllers\backend\AdminController@update_content');
+
     Route::get('/reservations/block','\Smartbro\Controllers\backend\AdminController@block');
     Route::post('/reservations/block','\Smartbro\Controllers\backend\AdminController@createblock');
     Route::get('/maintains/delete/{id}','\Smartbro\Controllers\backend\AdminController@deleteblock');
