@@ -45,7 +45,7 @@
                                             <option value="From 17:30 to 18:30">From 17:30 to 18:30</option>
                                             <option value="From 19:00 to 20:00">From 19:00 to 20:00</option>
                                             <option value="From 20:30 to 21:30">From 20:30 to 21:30</option>
-                                            <option value="From 20:30 to 21:30">From 22:00 to 23:00</option>
+                                            <option value="From 22:00 to 23:00">From 22:00 to 23:00</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
