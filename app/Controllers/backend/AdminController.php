@@ -103,7 +103,7 @@ class AdminController extends Controller
     public function createview(){
         $this->dataForView['pageTitle'] = 'Reservation Create';
         $this->dataForView['config'] = Configuration::find(1);
-        $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
+        $this->dataForView['promotionProducts'] = Product::where('type','1')->get();
         return view(_get_frontend_theme_path('admin.create'), $this->dataForView);
     }
 
@@ -123,7 +123,7 @@ class AdminController extends Controller
         $this->dataForView['menuName'] = 'tables';
         $this->dataForView['config'] = Configuration::find(1);
         $this->dataForView['maintains'] = Maintain::orderBy('created_at','asc')->get();
-        $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
+        $this->dataForView['promotionProducts'] = Product::where('type','1')->get();
         return view(_get_frontend_theme_path('admin.block'), $this->dataForView);
     }
 

@@ -111,6 +111,14 @@
                     <div class="col-md-4">
                         <div class="pricing-item">
                             <div class="pro-img"><img src="{{ $featureProduct->getProductDefaultImageUrl() }}" alt="{{ $featureProduct->name }}" /></div>
+                            @if($featureProduct->type == 1)
+                                <h3>{{ $featureProduct->name }}</h3>
+                                <div class="product-caption">{!! $featureProduct->short_description !!}</div>
+                                <hr class="colored">
+                                <div class="bookbtn w-100">
+                                    <a href="{{ url('catalog/product/'.$featureProduct->uri) }}">BOOK GAME NOW</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

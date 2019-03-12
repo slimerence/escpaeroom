@@ -75,6 +75,9 @@
                         case 3:
                             $min = 1;
                             break;
+                        case 4:
+                            $min = 2;
+                            break;
                         default:
                     }
                     ?>
