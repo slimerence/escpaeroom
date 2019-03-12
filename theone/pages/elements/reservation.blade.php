@@ -59,6 +59,12 @@
                                         <span class="date unclickable">{{ $tempDate->day }}</span>
                                     </h5>
                                 </div>
+                            @elseif( $product->id == 4 && $tempDate->startOfDay()< \Carbon\Carbon::createFromDate(2019,3,16)->startOfDay() )
+                                <div class="col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text bg-grey">
+                                    <h5 class="text-center">
+                                        <span class="date unclickable">{{ $tempDate->day }}</span>
+                                    </h5>
+                                </div>
                             @else
                                 <div class="day col-sm col p-2 border border-left-0 border-top-0 text-truncate color-text
                                 {{ $tempDate->month == $displayDate->month ? 'bg-special':'bg-dark' }} ">
