@@ -38,7 +38,7 @@ class CustomPageController extends Controller
     }
     public function games(){
         $this->dataForView['featureProducts'] = Category::LoadFeatureProducts();
-        $this->dataForView['promotionProducts'] = Category::LoadPromotionProducts();
+        $this->dataForView['promotionProducts'] =Product::where('type',1)->get();
 
         $this->dataForView['menuName'] = 'games';
         return view(
