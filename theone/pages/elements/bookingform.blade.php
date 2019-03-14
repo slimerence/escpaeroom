@@ -77,11 +77,12 @@
                             break;
                         case 4:
                             $min = 2;
+                            $max = 6
                             break;
                         default:
                     }
                     ?>
-                    <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="{{ $min }}" max="16" required>
+                    <input type="number" id="book-group" name="reservation[participants]" class="form-control validate book-input" min="{{ $min }}" max="{{ isset($max)&& $max !='' ? $max : 16 }}" required>
                 </div>
 
                 <div class="md-form mb-4">
