@@ -77,7 +77,7 @@
                             break;
                         case 4:
                             $min = 2;
-                            $max = 6
+                            $max = 6;
                             break;
                         default:
                     }
