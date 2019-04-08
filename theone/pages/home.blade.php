@@ -93,7 +93,7 @@
                         <div class="product-caption">{!! $promotionProduct->short_description !!}</div>
                         <hr class="colored">
                         <div class="bookbtn w-100">
-                            <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">BOOK GAME NOW</a>
+                            <a href="{{ url('catalog/product/'.$promotionProduct->uri) }}">EXPLORE MORE</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                                 <div class="product-caption">{!! $featureProduct->short_description !!}</div>
                                 <hr class="colored">
                                 <div class="bookbtn w-100">
-                                    <a href="{{ url('catalog/product/'.$featureProduct->uri) }}">BOOK GAME NOW</a>
+                                    <a href="{{ url('catalog/product/'.$featureProduct->uri) }}"> EXPLORE MORE </a>
                                 </div>
                             @endif
                         </div>
