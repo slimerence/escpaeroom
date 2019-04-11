@@ -38,7 +38,7 @@
     <section class="page-section bg-special" id="services">
         <div class="container">
             <div class="wow fadeIn text-center">
-                <h2 class="color-text">WHO CAN PLAY?</h2>
+                <h2 class="color-text">WHO CAN PLAY ESCAPE GAMES?</h2>
                 <p class="mb-0 color-ye" style="color:#ffd152">We recommend our rooms to following groups</p>
             </div>
             <hr class="colored">
@@ -81,7 +81,7 @@
             <div class="text-center">
                 <h2 class="color-text">SEASON ONE</h2>
                 <hr class="colored">
-                <p class="color-ye">Come and enjoy our amazing games!</p>
+                <p class="color-ye">Come and enjoy our amazing escape games!</p>
             </div>
             <div class="row mb-20">
             @if(isset($promotionProducts) && count($promotionProducts)>0)
@@ -104,7 +104,7 @@
             <div class="text-center mt-20">
                 <h2 class="color-text">SEASON TWO</h2>
                 <hr class="colored">
-                <p class="color-ye">Our new games are coming soon!</p>
+                <p class="color-ye">Our new escape games are coming soon!</p>
             </div>
             <div class="row">
                 @foreach($featureProducts as $featureProduct)
@@ -134,7 +134,7 @@
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <span class="quote color-text">Our main goal is for you to have an unforgettable and enjoyable experience.</span>
+                    <span class="quote color-text">Our main goal is for you to have an unforgettable and enjoyable escape room experience.</span>
                     <hr class="colored">
                     <a class="btn js-scroll-trigger btn-private" href="{{ url('/games') }}">Book Now</a>
                 </div>

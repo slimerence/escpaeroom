@@ -6,16 +6,29 @@
 @endsection
 
 @section('content')
-    @include(_get_frontend_layout_path('frontend._childheader'))
+    <!-- Masthead -->
+    <header class="childhead" style="background-image:  url({{ asset('images/backgrounds/childbanner.jpg') }}) ">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <div class="child-title">WHY AN ESCAPE ROOM?
+                        <h1>Team Building</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section class="page-section bg-special bg-moving" id="teambuilding" style="background-image: url({{ asset('images/backgrounds/nbg.png') }})">
         <div class="container">
             <div class="special-box color-text h-color mb-5">
-                <h1 class="text-center" style="font-size: 30px;">WHY AN ESCAPE ROOM? | Team Building | Corporate Event</h1>
-                <h2 style="font-family: unset;font-size: 18px;text-transform: unset;">The reason whey the escape room can be the most efficient method to help improve team building</h2>
+                <h2 class="text-center color-ye" style="font-family: unset;font-size: 30px;color: #ffd152;">WHY AN ESCAPE ROOM? | TEAM BUILDING | CORPORATE EVENT</h2>
+                <h3 class="color-text" style="color: #efdab9;font-family: unset;font-size: 18px;text-transform: unset;">The reason whey the escape room can be the most efficient method to help improve team building</h3>
                 <h4>Team working</h4>
                 <p>When the event hold as a corporate event, here at The One Room Escape, the games require participants to work as a team. You all have the same goal which is to escape within the time limit.</p>
                 <h4>Problem-solving</h4>
-                <p>To escape is not easy, you need to solve problems as you go. Think about the problems and talk to your mates and find out the solution. Thinking outside of the box sometimes will be very helpful.</p>
+                <p>To escape is not easy, you need to solve problems as you go. Think about the problems and talk to your mates and <f></f>ind out the solution. Thinking outside of the box sometimes will be very helpful.</p>
                 <h4>Leadership</h4>
                 <p>However, randomly talking and guessing is not going to help, one of you will have to stand out and lead the conversations and actions.</p>
                 <h4>Competitions</h4>

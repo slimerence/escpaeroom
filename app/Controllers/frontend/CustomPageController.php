@@ -52,7 +52,7 @@ class CustomPageController extends Controller
 
     }
     public function team(){
-        $this->dataForView['pageTitle'] = 'WHY AN ESCAPE ROOM? | Team Building | Corporate Event';
+        $this->dataForView['pageTitle'] = 'WHY AN ESCAPE ROOM?';
         $this->dataForView['menuName'] = 'team building';
         return view(
             _get_frontend_theme_path('pages.team'),
