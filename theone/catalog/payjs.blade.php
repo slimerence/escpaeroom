@@ -1,4 +1,4 @@
-<script src="https://paymentgateway.commbank.com.au/checkout/version/50/checkout.js"
+<script src="https://paymentgateway.commbank.com.au/checkout/version/51/checkout.js"
         data-error="errorCallback"
         data-cancel="cancelCallback"
         data-complete="{{ url('api/booking/success/'.$reservation->id) }}"
@@ -17,7 +17,7 @@
     }*/
 
     Checkout.configure({
-        merchant: 'LYZGROCOM201',
+        merchant: 'TESTLYZGROCOM201',
         order: {
             amount: function() {
                 //Dynamic calculation of amount
