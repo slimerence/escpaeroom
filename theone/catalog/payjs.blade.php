@@ -17,7 +17,7 @@
     }*/
 
     Checkout.configure({
-        merchant: 'TESTLYZGROCOM201',
+        merchant: 'LYZGROCOM201',
         order: {
             amount: function() {
                 //Dynamic calculation of amount
