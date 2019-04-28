@@ -48,6 +48,10 @@ class ApiController extends Controller
             $dateString,
             TimeSlot::DEFAULT_TIME_ZONE
         );
+
+        if($date->isDayOfWeek(1)){
+            return JsonBuilder::Error();
+        }
         
         $slots = Reservation::GetAvailableTimeSlots(
             $product,
